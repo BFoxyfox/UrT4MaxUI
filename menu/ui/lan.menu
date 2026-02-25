@@ -1,0 +1,84 @@
+#include "ui/menudef.h"
+#include "ui/theme.inc"
+
+{
+	\\ LAN POPUP MENU \\
+
+	menuDef {
+		itemDef { name theme_logo rect 0 0 0 0 visible 0 decoration }
+
+		#include "ui/theme_common.menu"
+		name "lan_popmenu"
+		visible 0
+		fullscreen 0
+		rect 70 60 500 340
+		focusColor 1 1 1 1
+		style 1
+		border 1
+		popup
+		onOpen { setcvar ui_netSource 1 ; uiScript UpdateFilter ; uiScript RefreshServers ; setfocus lanlist }
+		onESC { setcvar ui_netSource 0 ; uiScript UpdateFilter ; uiScript RefreshFilter ; close lan_popmenu }
+
+		itemdef {
+			name background
+			rect 0 0 500 340
+			style WINDOW_STYLE_SHADER
+			background URT4_THEME_BG
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			visible 1
+			decoration
+		}
+
+		itemDef {
+			name title
+			rect 0 0 500 28
+			style 1
+			text "LAN Servers"
+			textalign 2
+			textstyle 0
+			textscale .333
+			textalignx 486
+			textaligny 20
+			forecolor 1 1 1 1
+			backcolor 0.12 0.2 0.3 0.9
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			visible 1
+			decoration
+		}
+
+		itemDef { name list_panel style WINDOW_STYLE_FILLED rect 20 46 460 220 backcolor 0.06 0.08 0.12 0.7 visible 1 decoration }
+
+		itemDef {
+			name lanlist
+			rect 30 56 440 200
+			type ITEM_TYPE_LISTBOX
+			style WINDOW_STYLE_FILLED
+			elementwidth 120
+			elementheight 20
+			textscale .23
+			elementtype LISTBOX_TEXT
+			feeder FEEDER_SERVERS
+			forecolor 1 1 1 1
+			outlinecolor 0 0 0 0
+			visible 1
+			columns 4 2 210 36
+			214 120 20
+			336 50 10
+			388 50 10
+			doubleClick { uiScript JoinServer }
+		}
+
+		itemDef { name hint text "Double-Click To Connect" style 0 textscale .20 rect 30 262 250 18 textalign 0 textalignx 0 textaligny 14 forecolor 0.7 0.7 0.7 0.9 visible 1 decoration }
+
+		// ACTIONS
+		itemDef { name lan_connect type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 320 286 90 26 backcolor 0.12 0.2 0.3 0.7 forecolor 1 1 1 1 visible 1 action { play "sound/misc/kcaction.wav" ; uiScript JoinServer } mouseEnter { setcolor backcolor 0.16 0.26 0.38 0.8 } mouseExit { setcolor backcolor 0.12 0.2 0.3 0.7 } }
+		itemDef { name lan_connect_text text "Connect" type 0 textscale .25 style WINDOW_STYLE_FILLED rect 320 286 90 26 textalign 1 textalignx 45 textaligny 18 backcolor 0 0 0 0 forecolor 1 1 1 1 visible 1 decoration }
+
+		itemDef { name lan_close type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 420 286 60 26 backcolor 0.06 0.08 0.12 0.7 forecolor 1 1 1 1 visible 1 action { play "sound/misc/kcaction.wav" ; setcvar ui_netSource 0 ; uiScript UpdateFilter ; uiScript RefreshFilter ; close lan_popmenu } mouseEnter { setcolor backcolor 0.12 0.2 0.3 0.7 } mouseExit { setcolor backcolor 0.06 0.08 0.12 0.7 } }
+		
+		itemDef { name close_icon style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_close.tga" rect 420 290 16 16 visible 1 decoration }
+itemDef { name lan_close_text text "Close" type 0 textscale .25 style WINDOW_STYLE_FILLED rect 420 286 60 26 textalign 1 textalignx 30 textaligny 18 backcolor 0 0 0 0 forecolor 1 1 1 1 visible 1 decoration }
+	}
+}

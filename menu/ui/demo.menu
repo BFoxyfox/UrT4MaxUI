@@ -1,0 +1,362 @@
+#include "ui/menudef.h"
+#include "ui/theme.inc"
+{
+
+	/* DEMO MENU
+	Revised by woekele, started on august 2006 for 4.0. Made the width larger, so long demonames fit.
+	*/
+
+	// DEMOS //
+	menuDef {
+		#include "ui/theme_common.menu"
+		name "demo"
+		visible 0
+		fullscreen 1
+		rect 0 0 640 480
+		background URT4_THEME_BG
+		focusColor 1 1 1 1
+		style 1
+		border 1
+		onEsc { close demo ; open main }
+		onOpen { uiScript LoadDemos ; setfocus demolist }
+
+		// BLACK TOP BAR //
+		itemDef {
+			name window
+			rect -5 -6 650 76
+			style 1
+			border 0
+			backcolor 0.06 0.08 0.12 0.85
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			visible 0
+			decoration
+		}
+
+		// BLACK BOTTOM BAR //
+		itemDef {
+			name window
+			rect -5 410 650 76
+			style 1
+			border 0
+			backcolor 0.06 0.08 0.12 0.85
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			visible 0
+			decoration
+		}
+
+		itemDef {
+			name ut_logo_graphic
+			style WINDOW_STYLE_SHADER
+			background "ui/assets/utlogo.tga"
+			rect 6 6 256 64
+			visible 0
+			//forecolor .25 .25 .25 1
+			decoration
+		}
+
+		// UI ANIMATIONS	//
+		itemDef {
+			name ui_lines1
+			style WINDOW_STYLE_SHADER
+			rect 0 90 640 64
+			visible 0
+			background "ui_lines1"
+			decoration
+		}
+
+		itemDef {
+			name ui_lines2
+			style WINDOW_STYLE_SHADER
+			rect 0 262 640 128
+			visible 0
+			background "ui_lines2"
+			decoration
+		}
+
+		itemdef {
+			name Circle01
+			visible 1
+			type 7
+			rect -170 -300 700 700
+			asset_model "models/misc/Circle01.md3"
+			model_skin "models/misc/square_circle.skin"
+			model_fovx 90
+			model_fovy 90
+			model_angle -35 215 0
+			model_rotation 0 0 -500
+			decoration
+		}
+
+		itemDef {
+			name demos_title
+			group grpControlbutton
+			text "demos"
+			textscale .33
+			textalign 2
+			textalignx 476
+			textaligny 25
+			rect 80 110 480 31
+			style 1
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			forecolor 1 1 1 1
+			backcolor 0.06 0.08 0.12 0.85
+			visible 1
+			decoration
+		}
+
+		itemDef {
+			name demos_hint
+			type 0
+			text "Double-click a demo to play. Use Reload to rescan."
+			textscale .20
+			style WINDOW_STYLE_FILLED
+			rect 80 92 480 16
+			textalign 1
+			textalignx 236
+			textaligny 13
+			backcolor 0 0 0 0
+			forecolor 0.85 0.88 0.92 0.92
+			visible 1
+			decoration
+		}
+
+		itemDef {
+			name demolist
+			rect 80 140 480 260
+			type ITEM_TYPE_LISTBOX
+			style WINDOW_STYLE_FILLED
+			elementwidth 480
+			elementheight 20
+			textscale .22
+			elementtype LISTBOX_TEXT
+			feeder FEEDER_DEMOS
+			textalign 3
+			textaligny 13
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			forecolor 1 1 1 1
+			backcolor 0.06 0.08 0.12 0.72
+			outlinecolor 0.12 0.2 0.3 0.6
+			visible 1
+			doubleClick { uiScript Rundemo }
+		}
+
+		itemDef {
+			name window
+			rect 80 140 464 260
+			style 1
+			backcolor 0 0 0 0
+			forecolor 0 0 0 0
+			border 1
+			bordersize 1
+			bordercolor 0.2 0.25 0.3 0.6
+			visible 1
+			decoration
+		}
+
+		// BACK //
+		itemDef {
+			name back
+			style 3
+			background "ui/assets/backarrow.tga"
+			rect 20 426 32 32
+			visible 0
+			mouseEnter { hide back ; show back_on }
+		}
+
+		itemDef {
+			name back_on
+			style WINDOW_STYLE_SHADER
+			background "ui/assets/backarrow_on.tga"
+			rect 20 426 32 32
+			//backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 0
+			type ITEM_TYPE_BUTTON
+			mouseExit { hide back_on ; show back }
+			action { play "sound/misc/kcaction.wav" ; close demo ; open main }
+		}
+
+		itemDef {
+			name back_text
+			group grpControlbutton
+			text "back"
+			textscale .25
+			textalignx 11
+			textaligny 12
+			rect 11 462 60 20
+			style 1
+			//border 1
+			//bordercolor 0.2 0.25 0.3 0.6
+			forecolor 1 1 1 1
+			//backcolor 0 0 0 .65
+			visible 0
+			decoration
+		}
+
+		// ACCEPT //
+
+		itemDef {
+			name accept
+			style 3
+			background "ui/assets/acceptarrow.tga"
+			rect 584 426 32 32
+			visible 0
+			mouseEnter { hide accept ; show accept_on }
+		}
+
+		itemDef {
+			name accept_on
+			style WINDOW_STYLE_SHADER
+			background "ui/assets/acceptarrow_on.tga"
+			rect 584 426 32 32
+			//backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 0
+			type ITEM_TYPE_BUTTON
+			mouseExit { hide accept_on ; show accept }
+			action { play "sound/misc/kcaction.wav" ; uiScript Rundemo }
+		}
+
+		itemDef {
+			name accept_text
+			group grpControlbutton
+			text "play demo"
+			textscale .25
+			textalignx 11
+			textaligny 12
+			rect 564 462 60 20
+			style 1
+			//border 1
+			//bordercolor 0.2 0.25 0.3 0.6
+			forecolor 1 1 1 1
+			//backcolor 0 0 0 .65
+			visible 0
+			decoration
+		}
+
+		// BACK / PLAY (MENU STYLE, like JoinServers)
+		itemDef {
+			name back_btn
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			rect 20 418 140 36
+			backcolor 0.06 0.08 0.12 0.45
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; close demo ; open main }
+			mouseEnter { setcolor backcolor 0.12 0.2 0.3 0.55 }
+			mouseExit { setcolor backcolor 0.06 0.08 0.12 0.45 }
+		}
+		itemDef {
+			name back_btn_icon
+			style WINDOW_STYLE_SHADER
+			background "ui/assets/urt4_icon_back.tga"
+			rect 28 426 20 20
+			visible 1
+			decoration
+		}
+		itemDef {
+			name back_btn_text
+			text "Back"
+			type 0
+			textscale .25
+			style WINDOW_STYLE_FILLED
+			rect 20 418 140 36
+			textalign 1
+			textalignx 86
+			textaligny 22
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			decoration
+		}
+
+		itemDef {
+			name play_btn
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			rect 480 418 140 36
+			backcolor 0.12 0.2 0.3 0.55
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; uiScript Rundemo }
+			mouseEnter { setcolor backcolor 0.16 0.26 0.38 0.65 }
+			mouseExit { setcolor backcolor 0.12 0.2 0.3 0.55 }
+		}
+		itemDef {
+			name play_btn_icon
+			style WINDOW_STYLE_SHADER
+			background "ui/assets/urt4_icon_connect.tga"
+			rect 488 426 20 20
+			visible 1
+			decoration
+		}
+		itemDef {
+			name play_btn_text
+			text "Play Demo"
+			type 0
+			textscale .25
+			style WINDOW_STYLE_FILLED
+			rect 480 418 140 36
+			textalign 1
+			textalignx 86
+			textaligny 22
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			decoration
+		}
+
+		itemDef {
+			name reload_btn
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			rect 250 418 140 36
+			backcolor 0.06 0.08 0.12 0.45
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; uiScript LoadDemos }
+			mouseEnter { setcolor backcolor 0.12 0.2 0.3 0.55 }
+			mouseExit { setcolor backcolor 0.06 0.08 0.12 0.45 }
+		}
+		itemDef {
+			name reload_btn_icon
+			style WINDOW_STYLE_SHADER
+			background "ui/assets/urt4_icon_refresh.tga"
+			rect 258 426 20 20
+			visible 1
+			decoration
+		}
+		itemDef {
+			name reload_btn_text
+			text "Reload"
+			type 0
+			textscale .25
+			style WINDOW_STYLE_FILLED
+			rect 250 418 140 36
+			textalign 1
+			textalignx 86
+			textaligny 22
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			decoration
+		}
+
+		itemDef {
+			name othermodoption
+			type 1
+			style 1
+			rect 582 129 5 5
+			backcolor 0 0 0 0
+			forecolor 0 0 0 0
+			visible 1
+			action { close mod ; open mod2 }
+		}
+
+	}
+}

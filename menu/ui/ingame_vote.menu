@@ -1,0 +1,108 @@
+#include "ui/menudef.h"
+#include "ui/theme.inc"
+
+{
+	\\ SERVER INFO MENU \\
+
+	menuDef {
+		itemDef { name theme_logo rect 0 0 0 0 visible 0 decoration }
+
+		#include "ui/theme_common.menu"
+		name "ingame_vote"
+		visible 0
+		fullscreen 0
+		outOfBoundsClick			// this closes the window if it gets a click out of the rectangle
+		rect 398 31 100 145
+		focusColor 1 1 1 1
+		style 1
+
+		itemdef {
+			name background
+			rect 0 15 100 75
+			style WINDOW_STYLE_SHADER
+		background URT4_THEME_BG
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			visible 1
+			decoration
+		}
+
+
+		//  BUTTONS	//
+
+
+		itemDef {
+			name yes
+			type 1
+			style 1
+			rect 10 25 80 20
+			forecolor 1 1 1 1
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			backcolor 0.06 0.08 0.12 0.7
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; exec "vote yes" ; uiScript closeingame }
+			mouseEnter { setcolor backcolor 0.16 0.26 0.38 1}
+			mouseExit { setcolor backcolor 0.06 0.08 0.12 0.7 }
+		}
+
+		itemDef {
+			name no
+			type 1
+			style 1
+			rect 10 55 80 20
+			forecolor 1 1 1 1
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			backcolor 0.06 0.08 0.12 0.7
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; exec "vote no" ; uiScript closeingame }
+			mouseEnter { setcolor backcolor 0.16 0.26 0.38 1}
+			mouseExit { setcolor backcolor 0.06 0.08 0.12 0.7 }
+		}
+
+
+		//   TEXT	//
+
+		itemDef {
+			name yes
+			text "yes"
+			type 0
+			style 1
+			textscale .22
+			rect 10 25 80 20
+			textalign 2
+			textalignx 76
+			textaligny 16
+			forecolor 1 1 1 1
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			backcolor 0 0 0 0
+			visible 1
+			decoration
+		}
+
+		itemDef {
+			name no
+			text "no"
+			type 0
+			style 1
+			textscale .22
+			rect 10 55 80 20
+			textalign 2
+			textalignx 76
+			textaligny 16
+			forecolor 1 1 1 1
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			backcolor 0 0 0 0
+			visible 1
+			decoration
+		}
+
+	}
+
+
+}
+
+

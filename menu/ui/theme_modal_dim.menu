@@ -1,0 +1,9 @@
+		// Fullscreen dim layer behind active ingame menus (modal-like backdrop)
+		itemDef {
+			name theme_modal_dim
+			rect 0 0 640 480
+			style WINDOW_STYLE_FILLED
+			backcolor 0 0 0 0.42
+			visible 1
+			decoration
+		}

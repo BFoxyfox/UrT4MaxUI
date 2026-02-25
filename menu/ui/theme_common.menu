@@ -1,0 +1,10 @@
+
+		// THEME HEADER (MINIMAL)
+		itemDef {
+			name theme_logo
+			style WINDOW_STYLE_SHADER
+			background "ui/assets/utlogo.tga"
+			rect 20 12 240 60
+			visible 1
+			decoration
+		}

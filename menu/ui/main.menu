@@ -1,0 +1,266 @@
+#include "ui/menudef.h"
+#include "ui/theme.inc"
+{
+
+	assetGlobalDef {
+		font "fonts/fontImage_40" 40
+		smallFont "fonts/fontImage_30" 30
+		bigFont "fonts/fontImage_50" 50
+
+		cursor "ui/assets/3_cursor3.tga"
+		itemFocusSound "sound/misc/menu2.wav"
+
+		fadeClamp 1.0
+		fadeCycle 1
+		fadeAmount 0.1
+
+		shadowColor 0.1 0.1 0.1 0.0
+	}
+
+	menuDef {
+		#include "ui/theme_common.menu"
+		#include "ui/theme_footer_credits.menu"
+		name "main"
+		background URT4_THEME_BG
+		fullScreen 1
+		visible 1
+		focusColor 1 1 1 1
+		onOpen { setcvar ui_urt4max_version "UrT4Max UI 1.0 BETA" ; uiScript stopRefresh ; uiScript update "ui_GetName" ; playlooped "ui/music/mainmenu.wav" }
+		onESC { close main; open quitcredit }
+
+
+		#include "ui/theme_circle.menu"
+
+		// LEFT PANEL
+		itemDef {
+			name mainpanel
+			style WINDOW_STYLE_SHADER
+			background "ui/assets/urt4_panel_round.tga"
+			rect 26 92 280 330
+			visible 0
+			decoration
+		}
+
+		// BUTTON ROWS
+		itemDef { name login_row style WINDOW_STYLE_FILLED rect 44 116 186 30 backcolor 0.03 0.05 0.08 0.78 visible 1 decoration }
+		itemDef { name login_row_hover style WINDOW_STYLE_FILLED rect 44 116 186 30 backcolor 0.08 0.13 0.2 0.78 visible 0 decoration }
+
+		itemDef { name play_row style WINDOW_STYLE_FILLED rect 44 156 186 30 backcolor 0.03 0.05 0.08 0.78 visible 1 decoration }
+		itemDef { name play_row_hover style WINDOW_STYLE_FILLED rect 44 156 186 30 backcolor 0.08 0.13 0.2 0.78 visible 0 decoration }
+
+		itemDef { name setup_row style WINDOW_STYLE_FILLED rect 44 196 186 30 backcolor 0.03 0.05 0.08 0.78 visible 1 decoration }
+		itemDef { name setup_row_hover style WINDOW_STYLE_FILLED rect 44 196 186 30 backcolor 0.08 0.13 0.2 0.78 visible 0 decoration }
+
+		itemDef { name demo_row style WINDOW_STYLE_FILLED rect 44 236 186 30 backcolor 0.03 0.05 0.08 0.78 visible 1 decoration }
+		itemDef { name demo_row_hover style WINDOW_STYLE_FILLED rect 44 236 186 30 backcolor 0.08 0.13 0.2 0.78 visible 0 decoration }
+
+		// ICONS
+		itemDef { name login_icon style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_login.tga" rect 58 121 20 20 visible 1 decoration }
+		itemDef { name login_icon_hover style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_login.tga" rect 58 121 20 20 visible 0 decoration }
+
+		itemDef { name play_icon style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_play.tga" rect 58 161 20 20 visible 1 decoration }
+		itemDef { name play_icon_hover style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_play.tga" rect 58 161 20 20 visible 0 decoration }
+
+		itemDef { name setup_icon style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_setup.tga" rect 58 201 20 20 visible 1 decoration }
+		itemDef { name setup_icon_hover style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_setup.tga" rect 58 201 20 20 visible 0 decoration }
+
+		itemDef { name demo_icon style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_demo.tga" rect 58 241 20 20 visible 1 decoration }
+		itemDef { name demo_icon_hover style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_demo.tga" rect 58 241 20 20 visible 0 decoration }
+
+		// QUIT ICON (TOP RIGHT)
+		itemDef { name quitoption_bg style WINDOW_STYLE_FILLED rect 548 4 84 30 backcolor 0.03 0.05 0.08 0.78 visible 1 decoration }
+		itemDef { name quitoption_icon style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_quit.tga" rect 560 10 20 20 visible 1 decoration }
+		itemDef { name quitoption_icon_hover style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_quit.tga" rect 560 10 20 20 visible 0 decoration }
+		itemDef { name quitoption_text text "Quit" type 0 textscale .22 style WINDOW_STYLE_FILLED rect 584 6 50 28 textalign 1 textalignx 25 textaligny 18 backcolor 0 0 0 0 forecolor 1 1 1 1 visible 1 decoration }
+
+		// CREDITS ROW
+		itemDef { name credits_row style WINDOW_STYLE_FILLED rect 44 276 186 30 backcolor 0.03 0.05 0.08 0.78 visible 1 decoration }
+		itemDef { name credits_row_hover style WINDOW_STYLE_FILLED rect 44 276 186 30 backcolor 0.08 0.13 0.2 0.78 visible 0 decoration }
+		itemDef { name credits_icon style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_credits.tga" rect 58 281 20 20 visible 1 decoration }
+		itemDef { name credits_icon_hover style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_credits.tga" rect 58 281 20 20 visible 0 decoration }
+		itemDef { name credits_label text "Credits" style 0 textscale .26 rect 90 276 140 30 textalign 0 textalignx 20 textaligny 20 forecolor 0.98 0.96 0.9 1 visible 1 decoration }
+
+		// CLICK AREAS
+		itemDef {
+			name loginoption
+			cvartest "name"
+			hideCvar { "New_UrT_Player", "Unnamed Player" }
+			cvartest "cl_auth"
+			hideCvar { "10" }
+			type 1
+			style WINDOW_STYLE_EMPTY
+			rect 44 116 186 30
+			border 0
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; close main ; open authkey }
+			mouseEnter { show login_row_hover ; show login_icon_hover ; hide login_icon }
+			mouseExit { hide login_row_hover ; hide login_icon_hover ; show login_icon }
+		}
+
+		itemDef {
+			name loginoption
+			cvartest "name"
+			hideCvar { "New_UrT_Player", "Unnamed Player" }
+			cvartest "cl_auth"
+			showCvar { "10" }
+			type 1
+			style WINDOW_STYLE_EMPTY
+			rect 44 116 186 30
+			border 0
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; uiScript deleteAuthKey ; exec vid_restart }
+			mouseEnter { show login_row_hover ; show login_icon_hover ; hide login_icon }
+			mouseExit { hide login_row_hover ; hide login_icon_hover ; show login_icon }
+		}
+
+		itemDef {
+			name multiplayeroption
+			cvartest "name"
+			hideCvar { "New_UrT_Player", "Unnamed Player" }
+			type 1
+			style WINDOW_STYLE_EMPTY
+			rect 44 156 186 30
+			border 0
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; setcvar ui_ingameMaster 0 ; open joinserver ; close main }
+			mouseEnter { show play_row_hover ; show play_icon_hover ; hide play_icon }
+			mouseExit { hide play_row_hover ; hide play_icon_hover ; show play_icon }
+		}
+
+		itemDef {
+			name setupoption
+			cvartest "name"
+			hideCvar { "New_UrT_Player", "Unnamed Player" }
+			type 1
+			style WINDOW_STYLE_EMPTY
+			rect 44 196 186 30
+			border 0
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; close main ; open setup_menu }
+			mouseEnter { show setup_row_hover ; show setup_icon_hover ; hide setup_icon }
+			mouseExit { hide setup_row_hover ; hide setup_icon_hover ; show setup_icon }
+		}
+
+		itemDef {
+			name demooption
+			cvartest "name"
+			hideCvar { "New_UrT_Player", "Unnamed Player" }
+			type 1
+			style WINDOW_STYLE_EMPTY
+			rect 44 236 186 30
+			border 0
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; close main ; open demo }
+			mouseEnter { show demo_row_hover ; show demo_icon_hover ; hide demo_icon }
+			mouseExit { hide demo_row_hover ; hide demo_icon_hover ; show demo_icon }
+		}
+
+		itemDef {
+			name creditsoption
+			cvartest "name"
+			hideCvar { "New_UrT_Player", "Unnamed Player" }
+			type 1
+			style WINDOW_STYLE_EMPTY
+			rect 44 276 186 30
+			border 0
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; close main ; open quitCredit }
+			mouseEnter { show credits_row_hover ; show credits_icon_hover ; hide credits_icon }
+			mouseExit { hide credits_row_hover ; hide credits_icon_hover ; show credits_icon }
+		}
+
+		itemDef {
+			name quitoption
+			cvartest "name"
+			hideCvar { "New_UrT_Player", "Unnamed Player" }
+			type 1
+			style WINDOW_STYLE_EMPTY
+			rect 556 6 78 28
+			border 0
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; uiScript "quit" }
+			mouseEnter { show quitoption_icon_hover ; hide quitoption_icon }
+			mouseExit { hide quitoption_icon_hover ; show quitoption_icon }
+		}
+
+		// VERSIONS (MAIN ONLY)
+		itemDef { name theme_version text "Urban Terror" style 0 textscale .16 rect 0 442 640 40 textaligny 16 textalignx 539 forecolor 0.85 0.65 0.2 0.9 visible 1 decoration }
+		itemDef { name theme_version2 rect 0 442 640 40 type ITEM_TYPE_TEXT cvar "ui_modversion" textalign 1 textaligny 16 textalignx 600 textscale .16 style 0 forecolor 0.85 0.65 0.2 0.9 visible 1 decoration }
+		itemDef { name theme_urt4max rect 0 454 640 40 type ITEM_TYPE_TEXT cvar "ui_urt4max_version" textalign 1 textaligny 16 textalignx 539 textscale .16 style 0 forecolor 0.9 0.88 0.82 0.9 visible 1 decoration }
+
+		// RENDERER (MAIN ONLY)
+		itemDef { name resolution_label text "Resolution:" style 0 textscale .14 rect 10 382 80 18 textaligny 13 textalignx 0 forecolor 0.62 0.64 0.68 0.72 visible 1 decoration }
+		itemDef {
+			name resolution_value
+			type ITEM_TYPE_MULTI
+			text ""
+			cvar "r_mode"
+			cvarFloatList { "Custom" -1 "640*480" 3 "800*600" 4 "1024*768" 6 "1280*1024" 8 "1600*1200" 9 "2048*1536" 10 "856*480 (wide)" 11 "1280*720 (wide)" 12 "1366x768 (wide)" 13 "1600*900 (wide)" 14 "1680*1050 (wide)" 15 "1920*1080 (wide)" 16 "2560*1440 (wide)" 17 }
+			rect 90 382 300 18
+			textalign ITEM_ALIGN_LEFT
+			textalignx -9
+			textaligny 13
+			textscale .14
+			forecolor 0.62 0.64 0.68 0.72
+			visible 1
+			decoration
+		}
+		itemDef { name renderer_label text "Driver:" style 0 textscale .14 rect 10 396 80 18 textaligny 13 textalignx 0 forecolor 0.62 0.64 0.68 0.72 visible 1 decoration }
+		itemDef { name renderer_value type ITEM_TYPE_TEXT cvar "r_glDriver" style 0 textscale .14 rect 90 396 300 18 textaligny 13 textalignx 0 forecolor 0.62 0.64 0.68 0.72 visible 1 decoration }
+		itemDef { name cpu_label text "CPU:" style 0 textscale .14 rect 10 410 80 18 textaligny 13 textalignx 0 forecolor 0.62 0.64 0.68 0.72 visible 1 decoration }
+		itemDef { name cpu_value type ITEM_TYPE_TEXT cvar "sys_cpuString" style 0 textscale .14 rect 90 410 300 18 textaligny 13 textalignx 0 forecolor 0.62 0.64 0.68 0.72 visible 1 decoration }
+		itemDef { name github_label text "Github:" style 0 textscale .14 rect 10 424 80 18 textaligny 13 textalignx 0 forecolor 0.62 0.64 0.68 0.72 visible 1 decoration }
+		itemDef { name github_value text "https://github.com/BFoxyfox/UrT4MaxUI" style 0 textscale .14 rect 90 424 300 18 textaligny 13 textalignx 0 forecolor 0.62 0.64 0.68 0.72 visible 1 decoration }
+
+		// LABELS
+		itemDef { name login_label text "Log In" style 0 textscale .26 rect 90 116 140 30 textalign 0 textalignx 20 textaligny 20 forecolor 0.98 0.96 0.9 1 visible 1 decoration cvartest "cl_auth" hideCvar { "10" } }
+		itemDef { name logout_label text "Logout" style 0 textscale .26 rect 90 116 140 30 textalign 0 textalignx 20 textaligny 20 forecolor 0.98 0.96 0.9 1 visible 1 decoration cvartest "cl_auth" showCvar { "10" } }
+		itemDef { name auth_welcome_value type ITEM_TYPE_TEXT cvar "cl_auth_status" style 0 textscale .28 rect 290 220 260 30 textalign 1 textalignx 130 textaligny 20 forecolor 0.85 0.9 1 0.88 visible 1 decoration cvartest "cl_auth" showCvar { "10" } }
+		itemDef { name play_label text "Play Online" style 0 textscale .26 rect 90 156 140 30 textalign 0 textalignx 20 textaligny 20 forecolor 0.98 0.96 0.9 1 visible 1 decoration }
+		itemDef { name setup_label text "Setup" style 0 textscale .26 rect 90 196 140 30 textalign 0 textalignx 20 textaligny 20 forecolor 0.98 0.96 0.9 1 visible 1 decoration }
+		itemDef { name demo_label text "Demos" style 0 textscale .26 rect 90 236 140 30 textalign 0 textalignx 20 textaligny 20 forecolor 0.98 0.96 0.9 1 visible 1 decoration }
+
+		// AUTO SCOREBOARD FIX MODAL (shown when old scoreboard setting is detected)
+		itemDef { name scorefix_modal_dim cvartest "cg_drawteamscores" hideCvar { "1" } rect 0 0 640 480 style WINDOW_STYLE_FILLED backcolor 0 0 0 0.74 visible 1 decoration }
+		itemDef { name scorefix_modal_box cvartest "cg_drawteamscores" hideCvar { "1" } rect 130 142 380 186 style WINDOW_STYLE_FILLED backcolor 0.06 0.08 0.12 0.94 border 1 bordercolor 0.2 0.25 0.3 0.8 visible 1 decoration }
+		itemDef { name scorefix_modal_title cvartest "cg_drawteamscores" hideCvar { "1" } text "Scoreboard Fix Required" style 0 textscale .27 rect 148 166 344 30 textalign 1 textalignx 172 textaligny 21 forecolor 0.98 0.96 0.9 1 visible 1 decoration }
+		itemDef { name scorefix_modal_text cvartest "cg_drawteamscores" hideCvar { "1" } text "Old scoreboard settings detected.\rClick Apply Fix to switch to\rthe UrT4Max scoreboard theme." style 0 textscale .19 rect 152 204 336 70 textalign 1 textalignx 168 textaligny 15 forecolor 0.85 0.9 1 0.95 visible 1 decoration }
+		itemDef {
+			name scorefix_modal_apply
+			cvartest "cg_drawteamscores"
+			hideCvar { "1" }
+			type ITEM_TYPE_BUTTON
+			rect 230 282 180 30
+			style WINDOW_STYLE_FILLED
+			backcolor 0.12 0.2 0.3 0.82
+			border 1
+			bordercolor 0.2 0.25 0.3 0.8
+			text "Apply Fix"
+			textalign 1
+			textalignx 90
+			textaligny 20
+			textscale .24
+			forecolor 0.98 0.96 0.9 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; setcvar cg_drawteamscores "1" ; setcvar cg_drawteamoverlayscores "1" ; setcvar cg_drawteamoverlay "1" ; exec vid_restart }
+			mouseEnter { setcolor backcolor 0.16 0.26 0.38 0.9 }
+			mouseExit { setcolor backcolor 0.12 0.2 0.3 0.82 }
+		}
+
+
+	}
+}

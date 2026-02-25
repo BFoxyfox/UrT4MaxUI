@@ -1,0 +1,193 @@
+#include "ui/menudef.h"
+#include "ui/theme.inc"
+{
+	/* INGAME ESC MENU */
+
+	assetGlobalDef {
+		font "fonts/fontImage_40" 40
+		smallFont "fonts/fontImage_30" 30
+		bigFont "fonts/fontImage_50" 50
+
+		cursor "ui/assets/3_cursor3"
+		itemFocusSound "sound/misc/menu2.wav"
+
+		fadeClamp 1.0
+		fadeCycle 1
+		fadeAmount 0.1
+		shadowColor 0.1 0.1 0.1 0.25
+	}
+
+	menuDef {
+		#include "ui/theme_modal_dim.menu"
+		#include "ui/theme_common.menu"
+		name "ingame"
+		visible 0
+		fullScreen 0
+		rect 0 0 640 480
+		focusColor 1 1 1 1
+		disableColor .46 .38 .26 1
+
+		itemDef {
+			name ing_panel
+			rect 8 64 196 318
+			style WINDOW_STYLE_FILLED
+			backcolor 0.05 0.07 0.1 0.86
+			border 1
+			bordercolor 0.2 0.25 0.3 0.55
+			visible 1
+			decoration
+		}
+
+		itemDef { name ing_row_about style WINDOW_STYLE_FILLED rect 12 72 188 28 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name ing_row_about_h style WINDOW_STYLE_FILLED rect 12 72 188 28 backcolor 0.12 0.2 0.3 0.85 visible 0 decoration }
+		itemDef { name ing_row_player style WINDOW_STYLE_FILLED rect 12 104 188 28 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name ing_row_player_h style WINDOW_STYLE_FILLED rect 12 104 188 28 backcolor 0.12 0.2 0.3 0.85 visible 0 decoration }
+		itemDef { name ing_row_stats style WINDOW_STYLE_FILLED rect 12 136 188 28 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name ing_row_stats_h style WINDOW_STYLE_FILLED rect 12 136 188 28 backcolor 0.12 0.2 0.3 0.85 visible 0 decoration }
+		itemDef { name ing_row_controls style WINDOW_STYLE_FILLED rect 12 168 188 28 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name ing_row_controls_h style WINDOW_STYLE_FILLED rect 12 168 188 28 backcolor 0.12 0.2 0.3 0.85 visible 0 decoration }
+		itemDef { name ing_row_options style WINDOW_STYLE_FILLED rect 12 200 188 28 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name ing_row_options_h style WINDOW_STYLE_FILLED rect 12 200 188 28 backcolor 0.12 0.2 0.3 0.85 visible 0 decoration }
+		itemDef { name ing_row_system style WINDOW_STYLE_FILLED rect 12 232 188 28 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name ing_row_system_h style WINDOW_STYLE_FILLED rect 12 232 188 28 backcolor 0.12 0.2 0.3 0.85 visible 0 decoration }
+		itemDef { name ing_row_callvote style WINDOW_STYLE_FILLED rect 12 264 188 28 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name ing_row_callvote_h style WINDOW_STYLE_FILLED rect 12 264 188 28 backcolor 0.12 0.2 0.3 0.85 visible 0 decoration }
+		itemDef { name ing_row_rcon style WINDOW_STYLE_FILLED rect 12 296 188 28 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name ing_row_rcon_h style WINDOW_STYLE_FILLED rect 12 296 188 28 backcolor 0.12 0.2 0.3 0.85 visible 0 decoration }
+		itemDef { name ing_row_leave style WINDOW_STYLE_FILLED rect 12 328 188 28 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name ing_row_leave_h style WINDOW_STYLE_FILLED rect 12 328 188 28 backcolor 0.12 0.2 0.3 0.85 visible 0 decoration }
+
+		itemDef { name ing_icon_about style WINDOW_STYLE_SHADER background "ui/assets/urt4_tab_team.tga" rect 20 78 16 16 visible 1 decoration }
+		itemDef { name ing_icon_player style WINDOW_STYLE_SHADER background "ui/assets/urt4_setup_player.tga" rect 20 110 16 16 visible 1 decoration }
+		itemDef { name ing_icon_stats style WINDOW_STYLE_SHADER background "ui/assets/urt4_tab_meter.tga" rect 20 142 16 16 visible 1 decoration }
+		itemDef { name ing_icon_controls style WINDOW_STYLE_SHADER background "ui/assets/urt4_setup_controls.tga" rect 20 174 16 16 visible 1 decoration }
+		itemDef { name ing_icon_options style WINDOW_STYLE_SHADER background "ui/assets/urt4_setup_game.tga" rect 20 206 16 16 visible 1 decoration }
+		itemDef { name ing_icon_system style WINDOW_STYLE_SHADER background "ui/assets/urt4_setup_system.tga" rect 20 238 16 16 visible 1 decoration }
+		itemDef { name ing_icon_callvote style WINDOW_STYLE_SHADER background "ui/assets/urt4_tab_net.tga" rect 20 270 16 16 visible 1 decoration }
+		itemDef { name ing_icon_rcon style WINDOW_STYLE_SHADER background "ui/assets/urt4_tab_debug.tga" rect 20 302 16 16 visible 1 decoration }
+		itemDef { name ing_icon_leave style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_quit.tga" rect 20 334 16 16 visible 1 decoration }
+
+		itemDef {
+			name ing_btn_about
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			rect 12 72 188 28
+			backcolor 0 0 0 0
+			border 0
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; exec "cmd team free" ; uiScript closeingame }
+			mouseEnter { show ing_row_about_h }
+			mouseExit { hide ing_row_about_h }
+		}
+		itemDef {
+			name ing_btn_player
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			rect 12 104 188 28
+			backcolor 0 0 0 0
+			border 0
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; open ingame_player }
+			mouseEnter { show ing_row_player_h }
+			mouseExit { hide ing_row_player_h }
+		}
+		itemDef {
+			name ing_btn_stats
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			rect 12 136 188 28
+			backcolor 0 0 0 0
+			border 0
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; open ingame_stats }
+			mouseEnter { show ing_row_stats_h }
+			mouseExit { hide ing_row_stats_h }
+		}
+		itemDef {
+			name ing_btn_controls
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			rect 12 168 188 28
+			backcolor 0 0 0 0
+			border 0
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; open ingame_controls }
+			mouseEnter { show ing_row_controls_h }
+			mouseExit { hide ing_row_controls_h }
+		}
+		itemDef {
+			name ing_btn_options
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			rect 12 200 188 28
+			backcolor 0 0 0 0
+			border 0
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; open ingame_options }
+			mouseEnter { show ing_row_options_h }
+			mouseExit { hide ing_row_options_h }
+		}
+		itemDef {
+			name ing_btn_system
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			rect 12 232 188 28
+			backcolor 0 0 0 0
+			border 0
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; open ingame_system }
+			mouseEnter { show ing_row_system_h }
+			mouseExit { hide ing_row_system_h }
+		}
+		itemDef {
+			name ing_btn_callvote
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			cvarTest "ui_singleplayeractive"
+			disableCvar { "1" }
+			rect 12 264 188 28
+			backcolor 0 0 0 0
+			border 0
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; open ingame_callvote }
+			mouseEnter { show ing_row_callvote_h }
+			mouseExit { hide ing_row_callvote_h }
+		}
+		itemDef {
+			name ing_btn_rcon
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			cvarTest "ui_singleplayeractive"
+			disableCvar { "1" }
+			rect 12 296 188 28
+			backcolor 0 0 0 0
+			border 0
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; open ingame_rcon }
+			mouseEnter { show ing_row_rcon_h }
+			mouseExit { hide ing_row_rcon_h }
+		}
+		itemDef {
+			name ing_btn_leave
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			rect 12 328 188 28
+			backcolor 0 0 0 0
+			border 0
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; open ingame_leave }
+			mouseEnter { show ing_row_leave_h }
+			mouseExit { hide ing_row_leave_h }
+		}
+
+		itemDef { name ing_txt_about text "Autojoin" type 0 rect 12 72 188 28 textalign 0 textalignx 34 textaligny 20 textscale .24 forecolor 1 1 1 1 backcolor 0 0 0 0 visible 1 decoration }
+		itemDef { name ing_txt_player text "Player" type 0 rect 12 104 188 28 textalign 0 textalignx 34 textaligny 20 textscale .24 forecolor 1 1 1 1 backcolor 0 0 0 0 visible 1 decoration }
+		itemDef { name ing_txt_stats text "Stats" type 0 rect 12 136 188 28 textalign 0 textalignx 34 textaligny 20 textscale .24 forecolor 1 1 1 1 backcolor 0 0 0 0 visible 1 decoration }
+		itemDef { name ing_txt_controls text "Controls" type 0 rect 12 168 188 28 textalign 0 textalignx 34 textaligny 20 textscale .24 forecolor 1 1 1 1 backcolor 0 0 0 0 visible 1 decoration }
+		itemDef { name ing_txt_options text "Game Options" type 0 rect 12 200 188 28 textalign 0 textalignx 34 textaligny 20 textscale .24 forecolor 1 1 1 1 backcolor 0 0 0 0 visible 1 decoration }
+		itemDef { name ing_txt_system text "System" type 0 rect 12 232 188 28 textalign 0 textalignx 34 textaligny 20 textscale .24 forecolor 1 1 1 1 backcolor 0 0 0 0 visible 1 decoration }
+		itemDef { name ing_txt_callvote text "Callvote" type 0 rect 12 264 188 28 textalign 0 textalignx 34 textaligny 20 textscale .24 forecolor 1 1 1 1 backcolor 0 0 0 0 visible 1 decoration cvarTest "ui_singleplayeractive" disableCvar { "1" } }
+		itemDef { name ing_txt_rcon text "RCON" type 0 rect 12 296 188 28 textalign 0 textalignx 34 textaligny 20 textscale .24 forecolor 1 1 1 1 backcolor 0 0 0 0 visible 1 decoration cvarTest "ui_singleplayeractive" disableCvar { "1" } }
+		itemDef { name ing_txt_leave text "Leave" type 0 rect 12 328 188 28 textalign 0 textalignx 34 textaligny 20 textscale .24 forecolor 1 1 1 1 backcolor 0 0 0 0 visible 1 decoration }
+	}
+}

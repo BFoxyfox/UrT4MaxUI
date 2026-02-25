@@ -1,0 +1,15 @@
+
+		// THEME HERO CIRCLE (SHARED)
+		itemDef {
+			name Circle01
+			visible 1
+			type 7
+			rect 140 -240 760 760
+			asset_model "models/misc/Circle01.md3"
+			model_skin "models/misc/square_circle.skin"
+			model_fovx 90
+			model_fovy 90
+			model_angle -35 215 0
+			model_rotation 0 0 -500
+			decoration
+		}

@@ -1,0 +1,547 @@
+#include "ui/menudef.h"
+#include "ui/theme.inc"
+{
+
+	/*	INGAME_SELECT_TEAM
+	Revised by woekele, for 4.0. Slight adjustments, nothing big.
+	*/
+
+	\\ SETUP MENU \\
+
+	menuDef {
+		#include "ui/theme_common.menu"
+		#include "ui/theme_circle.menu"
+		// HEADER
+		itemDef {
+			name setup_title
+			text "Setup"
+			style 0
+			textscale .45
+			rect 20 70 200 30
+			textalign 0
+			textalignx 0
+			textaligny 26
+			forecolor 0.95 0.95 0.98 1
+			visible 1
+			decoration
+		}
+
+		// CENTER MENU ROWS
+		itemDef { name setup_row_startserver style WINDOW_STYLE_FILLED rect 200 120 240 30 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name setup_row_startserver_hover style WINDOW_STYLE_FILLED rect 200 120 240 30 backcolor 0.12 0.2 0.3 0.8 visible 0 decoration }
+
+		itemDef { name setup_row_player style WINDOW_STYLE_FILLED rect 200 160 240 30 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name setup_row_player_hover style WINDOW_STYLE_FILLED rect 200 160 240 30 backcolor 0.12 0.2 0.3 0.8 visible 0 decoration }
+
+		itemDef { name setup_row_controls style WINDOW_STYLE_FILLED rect 200 200 240 30 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name setup_row_controls_hover style WINDOW_STYLE_FILLED rect 200 200 240 30 backcolor 0.12 0.2 0.3 0.8 visible 0 decoration }
+
+		itemDef { name setup_row_gameopts style WINDOW_STYLE_FILLED rect 200 240 240 30 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name setup_row_gameopts_hover style WINDOW_STYLE_FILLED rect 200 240 240 30 backcolor 0.12 0.2 0.3 0.8 visible 0 decoration }
+
+		itemDef { name setup_row_system style WINDOW_STYLE_FILLED rect 200 280 240 30 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name setup_row_system_hover style WINDOW_STYLE_FILLED rect 200 280 240 30 backcolor 0.12 0.2 0.3 0.8 visible 0 decoration }
+
+		itemDef { name setup_row_defaults style WINDOW_STYLE_FILLED rect 200 320 240 30 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name setup_row_defaults_hover style WINDOW_STYLE_FILLED rect 200 320 240 30 backcolor 0.12 0.2 0.3 0.8 visible 0 decoration }
+
+		itemDef { name setup_row_advanced style WINDOW_STYLE_FILLED rect 200 360 240 30 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name setup_row_advanced_hover style WINDOW_STYLE_FILLED rect 200 360 240 30 backcolor 0.12 0.2 0.3 0.8 visible 0 decoration }
+
+		name "setup_menu"
+		visible 0
+		fullscreen 1
+		rect 0 0 640 480
+		background URT4_THEME_BG
+		focusColor 1 1 1 1
+		style 1
+		border 1
+		onEsc { close setup_menu ; open main }
+
+		// BLACK TOP BAR    //
+		itemDef {
+			name window
+			rect -5 -6 650 76
+			style 1
+			border 0
+			backcolor 0.06 0.08 0.12 0.85
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			visible 0
+			decoration
+		}
+		// BLACK BOTTOM BAR    //
+		itemDef {
+			name window
+			rect -5 410 650 76
+			style 1
+			border 0
+			backcolor 0.06 0.08 0.12 0.85
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			visible 0
+			decoration
+		}
+
+		itemDef {
+			name ut_logo_graphic
+			style WINDOW_STYLE_SHADER
+			background "ui/assets/utlogo.tga"
+			rect 6 6 256 64
+			visible 0
+			//     	forecolor .25 .25 .25 1
+			decoration
+		}
+
+		// UI ANIMATIONS	//
+
+		itemDef {
+			name ui_lines1
+			style WINDOW_STYLE_SHADER
+			rect 0 90 640 64
+			visible 0
+			background "ui_lines1"
+			decoration
+		}
+
+		itemDef {
+			name ui_lines2
+			style WINDOW_STYLE_SHADER
+			rect 0 262 640 128
+			visible 0
+			background "ui_lines2"
+			decoration
+		}
+
+		itemdef {
+			name Circle01
+			visible 0
+			type 7
+			rect -170 -300 700 700
+			asset_model "models/misc/Circle01.md3"
+			model_skin "models/misc/square_circle.skin"
+			model_fovx 90
+			model_fovy 90
+			model_angle -35 215 0
+			model_rotation 0 0 -500
+			decoration
+		}
+
+
+		// MENU BAR	//
+		itemDef {
+			name menubar
+			type 0
+			rect 468 159 162 210 //468 215 162 174
+			style 1
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			bordersize 1
+			backcolor 0.05 0.07 0.1 0.4
+			visible 0
+			decoration
+			mouseEnter { show angle_on ; hide angle }
+			mouseExit { show angle ; hide angle_on }
+		}
+
+		itemDef {
+			name angle
+			style WINDOW_STYLE_SHADER
+			background "ui/assets/angle.tga"
+			rect 614 161 16 16 //217
+			visible 0
+			decoration
+		}
+
+		itemDef {
+			name angle_on
+			style WINDOW_STYLE_SHADER
+			background "ui/assets/angle_on.tga"
+			rect 614 161 16 16 //217
+			visible 0
+			decoration
+		}
+
+
+		// Player	//
+		itemDef {
+			name startserver
+			type 1
+			style 1
+			rect 200 120 240 30
+			border 0
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; close setup_menu ; open createserver }
+			mouseenter { show setup_row_startserver_hover }
+			mouseexit { hide setup_row_startserver_hover }
+		}
+
+		itemDef {
+			name player
+			type 1
+			style 1
+			rect 200 160 240 30
+			border 0
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" ;
+			close psetup_menu ;
+			close control_menu ;
+			close system_menu ;
+			close options_menu ;
+			close default_menu ;
+			open psetup_menu }
+			mouseenter { show setup_row_player_hover }
+			mouseexit { hide setup_row_player_hover }
+		}
+
+
+		// Control	//
+		itemDef {
+			name controls
+			type 1
+			style 1
+			rect 200 200 240 30
+			//		rect 470 239 160 30
+			border 0
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" ;
+			close psetup_menu ;
+			close control_menu ;
+			close system_menu ;
+			close options_menu ;
+			close default_menu ;
+			open control_menu }
+			mouseenter { show setup_row_controls_hover }
+			mouseexit { hide setup_row_controls_hover }
+		}
+
+		// 	System		//
+		itemDef {
+			name system
+			type 1
+			style 1
+			rect 200 280 240 30
+			//		rect 470 269 160 30
+			border 0
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" ;
+			close psetup_menu ;
+			close control_menu ;
+			close system_menu ;
+			close options_menu ;
+			close default_menu ;
+			open system_menu }
+			mouseenter { show setup_row_system_hover }
+			mouseexit { hide setup_row_system_hover }
+		}
+
+
+		// Game Options	//
+		itemDef {
+			name gameoptions
+			type 1
+			style 1
+			rect 200 240 240 30
+			//		rect 470 299 160 30
+			border 0
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" ;
+			close psetup_menu ;
+			close control_menu ;
+			close system_menu ;
+			close options_menu ;
+			close default_menu ;
+			open options_menu }
+			mouseenter { show setup_row_gameopts_hover }
+			mouseexit { hide setup_row_gameopts_hover }
+		}
+
+		// Reset Defaults	//
+		itemDef {
+			name defaults
+			type 1
+			style 1
+			rect 200 320 240 30
+			//		rect 470 329 160 30
+			border 0
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" ;
+			close psetup_menu ;
+			close control_menu ;
+			close system_menu ;
+			close options_menu ;
+			close default_menu ;
+			open default_menu }
+			mouseenter { show setup_row_defaults_hover }
+			mouseexit { hide setup_row_defaults_hover }
+		}
+
+		itemDef {
+			name advanced
+			type 1
+			style 1
+			rect 200 360 240 30
+			border 0
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; close psetup_menu ; close control_menu ; close system_menu ; close options_menu ; close default_menu ; open advanced_menu }
+			mouseenter { show setup_row_advanced_hover }
+			mouseexit { hide setup_row_advanced_hover }
+		}
+
+		//  MENU TEXT		//
+
+
+		// ICONS
+		itemDef { name setup_icon_startserver style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_server.tga" rect 212 125 16 16 visible 1 decoration }
+		itemDef { name setup_icon_player style WINDOW_STYLE_SHADER background "ui/assets/urt4_setup_player.tga" rect 212 165 16 16 visible 1 decoration }
+		itemDef { name setup_icon_controls style WINDOW_STYLE_SHADER background "ui/assets/urt4_setup_controls.tga" rect 212 205 16 16 visible 1 decoration }
+		itemDef { name setup_icon_gameopts style WINDOW_STYLE_SHADER background "ui/assets/urt4_setup_game.tga" rect 212 245 16 16 visible 1 decoration }
+		itemDef { name setup_icon_system style WINDOW_STYLE_SHADER background "ui/assets/urt4_setup_system.tga" rect 212 285 16 16 visible 1 decoration }
+		itemDef { name setup_icon_defaults style WINDOW_STYLE_SHADER background "ui/assets/urt4_setup_defaults.tga" rect 212 325 16 16 visible 1 decoration }
+		itemDef { name setup_icon_advanced style WINDOW_STYLE_SHADER background "ui/assets/urt4_setup_advanced.tga" rect 212 365 16 16 visible 1 decoration }
+
+
+		itemDef {
+			name startserver
+			text "Start Server"
+			textscale .23
+			textalign 0
+			textalignx 44
+			textaligny 20
+			type 0
+			style 1
+			rect 200 120 240 30
+			border 0
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			decoration
+		}
+
+		// Player	//
+
+		itemDef {
+			name player
+			text "Player"
+			textscale .23
+			textalign 0		        // center
+			textalignx 44
+			// use it to offset left/right text from the edge
+			// or to center the text on a different point
+			textaligny 20
+			type 0
+			style 1
+			rect 200 160 240 30
+			border 0
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			decoration
+		}
+
+
+		// Control	//
+		itemDef {
+			name controls
+			text "Controls"
+			textscale .23
+			textalign 0		        // center
+			textalignx 44
+			// use it to offset left/right text from the edge
+			// or to center the text on a different point
+			textaligny 20
+			type 0
+			style 1
+			rect 200 200 240 30
+			//		rect 470 239 160 30
+			border 0
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			decoration
+		}
+
+		// 	System		//
+		itemDef {
+			name system
+			text "System"
+			textscale .23
+			textalign 0		        // center
+			textalignx 44
+			// use it to offset left/right text from the edge
+			// or to center the text on a different point
+			textaligny 20
+			type 0
+			style 1
+			rect 200 280 240 30
+			//		rect 470 269 160 30
+			border 0
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			decoration
+		}
+
+
+		// Game Options	//
+		itemDef {
+			name gameoptions
+			text "Game Options"
+			textscale .23
+			textalign 0		        // center
+			textalignx 44
+			// use it to offset left/right text from the edge
+			// or to center the text on a different point
+			textaligny 20
+			type 0
+			style 1
+			rect 200 240 240 30
+			//		rect 470 299 160 30
+			border 0
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			decoration
+		}
+
+		// Reset Defaults	//
+		itemDef {
+			name defaults
+			text "Restore Defaults"
+			textscale .23
+			textalign 0		        // center
+			textalignx 44
+			// use it to offset left/right text from the edge
+			// or to center the text on a different point
+			textaligny 20
+			type 0
+			style 1
+			rect 200 320 240 30
+			//		rect 470 329 160 30
+			border 0
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			decoration
+		}
+
+		itemDef {
+			name advanced
+			text "Advanced"
+			textscale .23
+			textalign 0
+			textalignx 44
+			textaligny 20
+			type 0
+			style 1
+			rect 200 360 240 30
+			border 0
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			decoration
+		}
+ 
+
+		//  BACK		//
+
+		itemDef {
+			name back
+			style 3
+			background "ui/assets/backarrow.tga"
+			rect 20 426 32 32
+			visible 0
+			mouseEnter { hide back ; show back_on }
+		}
+
+		itemDef {
+			name back_on
+			style WINDOW_STYLE_SHADER
+			background "ui/assets/backarrow_on.tga"
+			rect 20 426 32 32
+			//     	backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 0
+			type ITEM_TYPE_BUTTON
+			mouseExit { hide back_on ; show back }
+			action { play "sound/misc/kcaction.wav" ;
+			close player_menu ;
+			close control_menu ;
+			close system_menu ;
+			close options_menu ;
+			close default_menu ;
+			close setup_menu ;
+			open main }
+		}
+
+		itemDef {
+			name back_text
+			group grpControlbutton
+			text "back"
+			textscale .25
+			textalignx 11
+			textaligny 12
+			rect 11 462 60 20
+			style 1
+			//	border 1
+			//	bordercolor 0.2 0.25 0.3 0.6
+			forecolor 1 1 1 1
+			//	backcolor 0 0 0 .65
+			visible 0
+			decoration
+		}
+
+		// BACK (MENU STYLE)
+		itemDef {
+			name back_btn
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			rect 20 418 140 36
+			backcolor 0.06 0.08 0.12 0.45
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; close setup_menu ; open main }
+			mouseEnter { setcolor backcolor 0.12 0.2 0.3 0.55 }
+			mouseExit { setcolor backcolor 0.06 0.08 0.12 0.45 }
+		}
+		itemDef {
+			name back_btn_icon
+			style WINDOW_STYLE_SHADER
+			background "ui/assets/urt4_icon_back.tga"
+			rect 28 426 20 20
+			visible 1
+			decoration
+		}
+		itemDef {
+			name back_btn_text
+			text "Back"
+			type 0
+			textscale .25
+			style WINDOW_STYLE_FILLED
+			rect 20 418 140 36
+			textalign 1
+			textalignx 86
+			textaligny 22
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible 1
+			decoration
+		}
+	}
+
+
+}

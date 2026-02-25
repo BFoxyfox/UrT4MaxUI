@@ -1,0 +1,165 @@
+#include "ui/menudef.h"
+#include "ui/theme.inc"
+{
+	\ ADVANCED SETTINGS MENU \n
+	menuDef {
+		#include "ui/theme_common.menu"
+		name "advanced_menu"
+		visible 0
+		fullscreen 0
+		rect 20 40 600 400
+		focusColor 1 1 1 1
+		style 1
+		border 1
+		popup
+		onOpen { show grpPhys ; hide grpInput ; hide grpNet ; hide grpRender ; hide grpVis ; hide grpDebug }
+		onEsc { close advanced_menu ; open setup_menu }
+
+		itemDef { name theme_logo rect 0 0 0 0 visible 0 decoration }
+
+		itemDef {
+			name window
+			style 1
+			rect 10 10 580 360
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			forecolor 1 1 1 1
+			backcolor 0.05 0.07 0.1 0.9
+			visible 1
+			decoration
+		}
+
+		itemDef {
+			name adv_close_btn
+			type 1
+			style WINDOW_STYLE_FILLED
+			rect 510 12 80 26
+			forecolor 1 1 1 1
+			backcolor 0.12 0.2 0.3 0.9
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; close advanced_menu ; open setup_menu }
+			mouseEnter { setitemcolor adv_close_btn backcolor 0.16 0.26 0.38 0.95 }
+			mouseExit { setitemcolor adv_close_btn backcolor 0.12 0.2 0.3 0.9 }
+		}
+		itemDef { name adv_close_icon style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_close.tga" rect 516 16 16 16 visible 1 decoration }
+		itemDef {
+			name adv_close_text
+			text "Close"
+			type 0
+			textscale .26
+			style WINDOW_STYLE_FILLED
+			rect 510 12 80 26
+			textalign 1
+			textalignx 48
+			textaligny 18
+			forecolor 1 1 1 1
+			backcolor 0 0 0 0
+			border 0
+			visible 1
+			decoration
+		}
+
+		// WARNING
+		itemDef { name adv_warning text "Warning: These settings are untested. Use with caution." style 0 textscale .2 rect 200 28 360 18 textalign 0 textalignx 0 textaligny 14 forecolor 0.9 0.7 0.3 0.9 visible 1 decoration }
+
+		// TAB BUTTONS
+		itemDef { name adv_row_phys style WINDOW_STYLE_FILLED rect 22 56 150 28 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name adv_row_phys_hover style WINDOW_STYLE_FILLED rect 22 56 150 28 backcolor 0.12 0.2 0.3 0.8 visible 0 decoration }
+		itemDef { name adv_row_input style WINDOW_STYLE_FILLED rect 22 92 150 28 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name adv_row_input_hover style WINDOW_STYLE_FILLED rect 22 92 150 28 backcolor 0.12 0.2 0.3 0.8 visible 0 decoration }
+		itemDef { name adv_row_net style WINDOW_STYLE_FILLED rect 22 128 150 28 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name adv_row_net_hover style WINDOW_STYLE_FILLED rect 22 128 150 28 backcolor 0.12 0.2 0.3 0.8 visible 0 decoration }
+		itemDef { name adv_row_render style WINDOW_STYLE_FILLED rect 22 164 150 28 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name adv_row_render_hover style WINDOW_STYLE_FILLED rect 22 164 150 28 backcolor 0.12 0.2 0.3 0.8 visible 0 decoration }
+		itemDef { name adv_row_vis style WINDOW_STYLE_FILLED rect 22 200 150 28 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name adv_row_vis_hover style WINDOW_STYLE_FILLED rect 22 200 150 28 backcolor 0.12 0.2 0.3 0.8 visible 0 decoration }
+		itemDef { name adv_row_debug style WINDOW_STYLE_FILLED rect 22 236 150 28 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name adv_row_debug_hover style WINDOW_STYLE_FILLED rect 22 236 150 28 backcolor 0.12 0.2 0.3 0.8 visible 0 decoration }
+
+		itemDef { name adv_icon_phys style WINDOW_STYLE_SHADER background "ui/assets/urt4_tab_physics.tga" rect 30 62 16 16 visible 1 decoration }
+		itemDef { name adv_icon_input style WINDOW_STYLE_SHADER background "ui/assets/urt4_tab_input.tga" rect 30 98 16 16 visible 1 decoration }
+		itemDef { name adv_icon_net style WINDOW_STYLE_SHADER background "ui/assets/urt4_tab_network.tga" rect 30 134 16 16 visible 1 decoration }
+		itemDef { name adv_icon_render style WINDOW_STYLE_SHADER background "ui/assets/urt4_tab_render.tga" rect 30 170 16 16 visible 1 decoration }
+		itemDef { name adv_icon_vis style WINDOW_STYLE_SHADER background "ui/assets/urt4_tab_visibility.tga" rect 30 206 16 16 visible 1 decoration }
+		itemDef { name adv_icon_debug style WINDOW_STYLE_SHADER background "ui/assets/urt4_tab_debug.tga" rect 30 242 16 16 visible 1 decoration }
+
+		itemDef { name adv_tab_phys type 1 style 1 rect 22 56 150 28 border 0 backcolor 0 0 0 0 forecolor 1 1 1 1 visible 1
+			action { play "sound/misc/kcaction.wav" ; show grpPhys ; hide grpInput ; hide grpNet ; hide grpRender ; hide grpVis ; hide grpDebug }
+			mouseenter { show adv_row_phys_hover }
+			mouseexit { hide adv_row_phys_hover } }
+		itemDef { name adv_tab_phys text "Physics" textscale .22 textalign 0 textalignx 38 textaligny 20 type 0 style 1 rect 22 56 150 28 border 0 backcolor 0 0 0 0 forecolor 1 1 1 1 visible 1 decoration }
+
+		itemDef { name adv_tab_input type 1 style 1 rect 22 92 150 28 border 0 backcolor 0 0 0 0 forecolor 1 1 1 1 visible 1
+			action { play "sound/misc/kcaction.wav" ; hide grpPhys ; show grpInput ; hide grpNet ; hide grpRender ; hide grpVis ; hide grpDebug }
+			mouseenter { show adv_row_input_hover }
+			mouseexit { hide adv_row_input_hover } }
+		itemDef { name adv_tab_input text "Input" textscale .22 textalign 0 textalignx 38 textaligny 20 type 0 style 1 rect 22 92 150 28 border 0 backcolor 0 0 0 0 forecolor 1 1 1 1 visible 1 decoration }
+
+		itemDef { name adv_tab_net type 1 style 1 rect 22 128 150 28 border 0 backcolor 0 0 0 0 forecolor 1 1 1 1 visible 1
+			action { play "sound/misc/kcaction.wav" ; hide grpPhys ; hide grpInput ; show grpNet ; hide grpRender ; hide grpVis ; hide grpDebug }
+			mouseenter { show adv_row_net_hover }
+			mouseexit { hide adv_row_net_hover } }
+		itemDef { name adv_tab_net text "Network" textscale .22 textalign 0 textalignx 38 textaligny 20 type 0 style 1 rect 22 128 150 28 border 0 backcolor 0 0 0 0 forecolor 1 1 1 1 visible 1 decoration }
+
+		itemDef { name adv_tab_render type 1 style 1 rect 22 164 150 28 border 0 backcolor 0 0 0 0 forecolor 1 1 1 1 visible 1
+			action { play "sound/misc/kcaction.wav" ; hide grpPhys ; hide grpInput ; hide grpNet ; show grpRender ; hide grpVis ; hide grpDebug }
+			mouseenter { show adv_row_render_hover }
+			mouseexit { hide adv_row_render_hover } }
+		itemDef { name adv_tab_render text "Render" textscale .22 textalign 0 textalignx 38 textaligny 20 type 0 style 1 rect 22 164 150 28 border 0 backcolor 0 0 0 0 forecolor 1 1 1 1 visible 1 decoration }
+
+		itemDef { name adv_tab_vis type 1 style 1 rect 22 200 150 28 border 0 backcolor 0 0 0 0 forecolor 1 1 1 1 visible 1
+			action { play "sound/misc/kcaction.wav" ; hide grpPhys ; hide grpInput ; hide grpNet ; hide grpRender ; show grpVis ; hide grpDebug }
+			mouseenter { show adv_row_vis_hover }
+			mouseexit { hide adv_row_vis_hover } }
+		itemDef { name adv_tab_vis text "Visibility" textscale .22 textalign 0 textalignx 38 textaligny 20 type 0 style 1 rect 22 200 150 28 border 0 backcolor 0 0 0 0 forecolor 1 1 1 1 visible 1 decoration }
+
+		itemDef { name adv_tab_debug type 1 style 1 rect 22 236 150 28 border 0 backcolor 0 0 0 0 forecolor 1 1 1 1 visible 1
+			action { play "sound/misc/kcaction.wav" ; hide grpPhys ; hide grpInput ; hide grpNet ; hide grpRender ; hide grpVis ; show grpDebug }
+			mouseenter { show adv_row_debug_hover }
+			mouseexit { hide adv_row_debug_hover } }
+		itemDef { name adv_tab_debug text "Debug" textscale .22 textalign 0 textalignx 38 textaligny 20 type 0 style 1 rect 22 236 150 28 border 0 backcolor 0 0 0 0 forecolor 1 1 1 1 visible 1 decoration }
+
+		// CONTENT AREA
+		itemDef { name adv_panel style WINDOW_STYLE_FILLED rect 190 48 380 300 backcolor 0.05 0.07 0.1 0.6 visible 1 decoration }
+
+		// PHYSICS TAB
+		itemDef { group grpPhys name adv_phys_title text "Physics & Movement" style 0 textscale .24 rect 200 58 360 20 textalign 0 textalignx 0 textaligny 16 forecolor 0.9 0.88 0.82 0.9 visible 0 decoration }
+		itemDef { group grpPhys name adv_pmove_fixed type ITEM_TYPE_MULTI text "Fixed Physics:" cvar "pmove_fixed" cvarFloatList { "Off" 0 "On" 1 } rect 200 86 360 20 textalign ITEM_ALIGN_RIGHT textalignx 130 textaligny 16 textscale .22 forecolor 1 1 1 1 visible 0 action { play "sound/misc/kcaction.wav" } }
+		itemDef { group grpPhys name adv_pmove_msec type ITEM_TYPE_MULTI text "Physics Precision:" cvar "pmove_msec" cvarFloatList { "8" 8 "11" 11 "16" 16 } rect 200 106 360 20 textalign ITEM_ALIGN_RIGHT textalignx 130 textaligny 16 textscale .22 forecolor 1 1 1 1 visible 0 action { play "sound/misc/kcaction.wav" } }
+
+		// INPUT TAB
+		itemDef { group grpInput name adv_input_title text "Advanced Input" style 0 textscale .24 rect 200 58 360 20 textalign 0 textalignx 0 textaligny 16 forecolor 0.9 0.88 0.82 0.9 visible 0 decoration }
+		itemDef { group grpInput name adv_in_mouse type ITEM_TYPE_MULTI text "Raw Mouse Input:" cvar "in_mouse" cvarFloatList { "OS" 0 "Raw" 1 } rect 200 86 360 20 textalign ITEM_ALIGN_RIGHT textalignx 130 textaligny 16 textscale .22 forecolor 1 1 1 1 visible 0 action { play "sound/misc/kcaction.wav" } }
+		itemDef { group grpInput name adv_m_filter type ITEM_TYPE_MULTI text "Mouse Smoothing:" cvar "m_filter" cvarFloatList { "Off" 0 "On" 1 } rect 200 106 360 20 textalign ITEM_ALIGN_RIGHT textalignx 130 textaligny 16 textscale .22 forecolor 1 1 1 1 visible 0 action { play "sound/misc/kcaction.wav" } }
+		itemDef { group grpInput name adv_mouseaccel type ITEM_TYPE_SLIDER text "Mouse Acceleration:" cvarfloat "cl_mouseAccel" 0 0 2 rect 200 126 360 20 textalign ITEM_ALIGN_RIGHT textalignx 130 textaligny 16 textscale .22 forecolor 1 1 1 1 visible 0 action { play "sound/misc/kcaction.wav" } }
+
+		// NETWORK TAB
+		itemDef { group grpNet name adv_net_title text "Network / Netcode" style 0 textscale .24 rect 200 58 360 20 textalign 0 textalignx 0 textaligny 16 forecolor 0.9 0.88 0.82 0.9 visible 0 decoration }
+		itemDef { group grpNet name adv_snaps type ITEM_TYPE_MULTI text "Server Snapshots:" cvar "snaps" cvarFloatList { "20" 20 "30" 30 "40" 40 } rect 200 86 360 20 textalign ITEM_ALIGN_RIGHT textalignx 130 textaligny 16 textscale .22 forecolor 1 1 1 1 visible 0 action { play "sound/misc/kcaction.wav" } }
+		itemDef { group grpNet name adv_packetdup type ITEM_TYPE_MULTI text "Packet Duplication:" cvar "cl_packetdup" cvarFloatList { "Off" 0 "1" 1 "2" 2 } rect 200 106 360 20 textalign ITEM_ALIGN_RIGHT textalignx 130 textaligny 16 textscale .22 forecolor 1 1 1 1 visible 0 action { play "sound/misc/kcaction.wav" } }
+
+		// RENDER TAB
+		itemDef { group grpRender name adv_render_title text "Render & Latency" style 0 textscale .24 rect 200 58 360 20 textalign 0 textalignx 0 textaligny 16 forecolor 0.9 0.88 0.82 0.9 visible 0 decoration }
+		itemDef { group grpRender name adv_r_finish type ITEM_TYPE_MULTI text "Low-Latency Frame Sync:" cvar "r_finish" cvarFloatList { "Off" 0 "On" 1 } rect 200 86 360 20 textalign ITEM_ALIGN_RIGHT textalignx 130 textaligny 16 textscale .22 forecolor 1 1 1 1 visible 0 action { play "sound/misc/kcaction.wav" } }
+		itemDef { group grpRender name adv_r_primitives type ITEM_TYPE_MULTI text "Render Mode:" cvar "r_primitives" cvarFloatList { "Auto" 0 "1" 1 "2" 2 "3" 3 } rect 200 106 360 20 textalign ITEM_ALIGN_RIGHT textalignx 130 textaligny 16 textscale .22 forecolor 1 1 1 1 visible 0 action { play "sound/misc/kcaction.wav" } }
+		itemDef { group grpRender name adv_r_subdiv type ITEM_TYPE_SLIDER text "Curve Detail:" cvarfloat "r_subdivisions" 4 4 80 rect 200 126 360 20 textalign ITEM_ALIGN_RIGHT textalignx 130 textaligny 16 textscale .22 forecolor 1 1 1 1 visible 0 action { play "sound/misc/kcaction.wav" } }
+		itemDef { group grpRender name adv_r_lod type ITEM_TYPE_SLIDER text "Curve LOD Quality:" cvarfloat "r_lodCurveError" 0 0 250 rect 200 146 360 20 textalign ITEM_ALIGN_RIGHT textalignx 130 textaligny 16 textscale .22 forecolor 1 1 1 1 visible 0 action { play "sound/misc/kcaction.wav" } }
+		itemDef { group grpRender name adv_r_gamma type ITEM_TYPE_MULTI text "Ignore HW Gamma:" cvar "r_ignorehwgamma" cvarFloatList { "Off" 0 "On" 1 } rect 200 166 360 20 textalign ITEM_ALIGN_RIGHT textalignx 130 textaligny 16 textscale .22 forecolor 1 1 1 1 visible 0 action { play "sound/misc/kcaction.wav" } }
+
+		// VISIBILITY TAB
+		itemDef { group grpVis name adv_vis_title text "Visibility / Competitive" style 0 textscale .24 rect 200 58 360 20 textalign 0 textalignx 0 textaligny 16 forecolor 0.9 0.88 0.82 0.9 visible 0 decoration }
+		itemDef { group grpVis name adv_brasstime type ITEM_TYPE_SLIDER text "Weapon Bob Cycle:" cvarfloat "cg_brasstime" 0 0 1 rect 200 86 360 20 textalign ITEM_ALIGN_RIGHT textalignx 130 textaligny 16 textscale .22 forecolor 1 1 1 1 visible 0 action { play "sound/misc/kcaction.wav" } }
+		itemDef { group grpVis name adv_gibs type ITEM_TYPE_MULTI text "Gib Effects:" cvar "cg_gibs" cvarFloatList { "Off" 0 "On" 1 } rect 200 106 360 20 textalign ITEM_ALIGN_RIGHT textalignx 130 textaligny 16 textscale .22 forecolor 1 1 1 1 visible 0 action { play "sound/misc/kcaction.wav" } }
+		itemDef { group grpVis name adv_blood type ITEM_TYPE_MULTI text "Blood Effects:" cvar "cg_blood" cvarFloatList { "Off" 0 "On" 1 } rect 200 126 360 20 textalign ITEM_ALIGN_RIGHT textalignx 130 textaligny 16 textscale .22 forecolor 1 1 1 1 visible 0 action { play "sound/misc/kcaction.wav" } }
+		itemDef { group grpVis name adv_decals type ITEM_TYPE_MULTI text "Bullet Marks:" cvar "cg_drawdecals" cvarFloatList { "Off" 0 "On" 1 } rect 200 146 360 20 textalign ITEM_ALIGN_RIGHT textalignx 130 textaligny 16 textscale .22 forecolor 1 1 1 1 visible 0 action { play "sound/misc/kcaction.wav" } }
+		itemDef { group grpVis name adv_smooth type ITEM_TYPE_MULTI text "Smooth Player Movement:" cvar "cg_smoothclients" cvarFloatList { "Off" 0 "On" 1 } rect 200 166 360 20 textalign ITEM_ALIGN_RIGHT textalignx 130 textaligny 16 textscale .22 forecolor 1 1 1 1 visible 0 action { play "sound/misc/kcaction.wav" } }
+		itemDef { group grpVis name adv_predict type ITEM_TYPE_MULTI text "Item Pickup Prediction:" cvar "cg_predictitems" cvarFloatList { "Off" 0 "On" 1 } rect 200 186 360 20 textalign ITEM_ALIGN_RIGHT textalignx 130 textaligny 16 textscale .22 forecolor 1 1 1 1 visible 0 action { play "sound/misc/kcaction.wav" } }
+
+		// DEBUG TAB
+		itemDef { group grpDebug name adv_debug_title text "Debug / Advanced" style 0 textscale .24 rect 200 58 360 20 textalign 0 textalignx 0 textaligny 16 forecolor 0.9 0.88 0.82 0.9 visible 0 decoration }
+		itemDef { group grpDebug name adv_developer type ITEM_TYPE_MULTI text "Developer Mode:" cvar "developer" cvarFloatList { "Off" 0 "On" 1 } rect 200 86 360 20 textalign ITEM_ALIGN_RIGHT textalignx 130 textaligny 16 textscale .22 forecolor 1 1 1 1 visible 0 action { play "sound/misc/kcaction.wav" } }
+		itemDef { group grpDebug name adv_nopredict type ITEM_TYPE_MULTI text "Disable Client Prediction:" cvar "cg_nopredict" cvarFloatList { "Off" 0 "On" 1 } rect 200 106 360 20 textalign ITEM_ALIGN_RIGHT textalignx 130 textaligny 16 textscale .22 forecolor 1 1 1 1 visible 0 action { play "sound/misc/kcaction.wav" } }
+	}
+}
