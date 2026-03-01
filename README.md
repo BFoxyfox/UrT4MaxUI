@@ -39,6 +39,11 @@ The pack is generated as a `.pk3` (default: `zzz_urt4maxui_v1_1_beta.pk3`) inclu
 
 The objective is to distribute one file to copy into `q3ut4/`.
 
+## Tip
+On first launch, a popup appears once to initialize the default theme.
+Click the panel to apply default colors and save them to config.
+Then you can fully customize the UI in Setup > Interface.
+
 ## Important warning (Scoreboard)
 
 > The custom **scoreboard is not compatible on servers running `sv_pure 1`**.
