@@ -1,0 +1,325 @@
+#include "ui/menudef.h"
+#include "ui/theme.inc"
+{
+	/* INGAME ESC MENU */
+
+	assetGlobalDef {
+		font "fonts/fontImage_40" 40
+		smallFont "fonts/fontImage_30" 30
+		bigFont "fonts/fontImage_50" 50
+
+		cursor "ui/assets/3_cursor3"
+		itemFocusSound "sound/misc/menu2.wav"
+
+		fadeClamp 1.0
+		fadeCycle 1
+		fadeAmount 0.1
+		shadowColor 0.1 0.1 0.1 0.25
+	}
+
+	menuDef {
+		#include "ui/theme_common.menu"
+		name "ingame"
+		visible 0
+		fullScreen 0
+		rect 0 0 640 480
+		focusColor 1 1 1 1
+		disableColor .46 .38 .26 1
+
+		itemDef {
+			name ing_panel
+			rect 8 64 196 318
+			style WINDOW_STYLE_FILLED
+			backcolor 0 0 0 0
+			border 0
+			bordercolor 0 0 0 0
+			visible 1
+			decoration
+		}
+
+		itemDef { name ing_row_about_0 style WINDOW_STYLE_FILLED rect 12 72 188 28 backcolor 0.03 0.05 0.08 0.80 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "", "0" } }
+		itemDef { name ing_row_about_1 style WINDOW_STYLE_FILLED rect 12 72 188 28 backcolor 0.03 0.09 0.05 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "1" } }
+		itemDef { name ing_row_about_2 style WINDOW_STYLE_FILLED rect 12 72 188 28 backcolor 0.09 0.07 0.04 0.82 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "2" } }
+		itemDef { name ing_row_about_3 style WINDOW_STYLE_FILLED rect 12 72 188 28 backcolor 0.09 0.03 0.04 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "3" } }
+		itemDef { name ing_row_about_4 style WINDOW_STYLE_FILLED rect 12 72 188 28 backcolor 0.44 0.06 0.24 0.96 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "4" } }
+		itemDef { name ing_row_about_5 style WINDOW_STYLE_FILLED rect 12 72 188 28 backcolor 0.10 0.12 0.16 0.84 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "5" } }
+		itemDef { name ing_row_about_6 style WINDOW_STYLE_FILLED rect 12 72 188 28 backcolor 0.05 0.05 0.05 0.92 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "6" } }
+		itemDef { name ing_row_about_7 style WINDOW_STYLE_FILLED rect 12 72 188 28 backcolor 0 0 0 0.45 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "7" } }
+		itemDef { name ing_row_about_h_0 group grpAboutHover style WINDOW_STYLE_FILLED rect 12 72 188 28 backcolor 0.08 0.13 0.20 0.84 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "", "0" } }
+		itemDef { name ing_row_about_h_1 group grpAboutHover style WINDOW_STYLE_FILLED rect 12 72 188 28 backcolor 0.10 0.26 0.12 0.94 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "1" } }
+		itemDef { name ing_row_about_h_2 group grpAboutHover style WINDOW_STYLE_FILLED rect 12 72 188 28 backcolor 0.20 0.14 0.08 0.88 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "2" } }
+		itemDef { name ing_row_about_h_3 group grpAboutHover style WINDOW_STYLE_FILLED rect 12 72 188 28 backcolor 0.26 0.07 0.10 0.94 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "3" } }
+		itemDef { name ing_row_about_h_4 group grpAboutHover style WINDOW_STYLE_FILLED rect 12 72 188 28 backcolor 0.68 0.12 0.36 0.99 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "4" } }
+		itemDef { name ing_row_about_h_5 group grpAboutHover style WINDOW_STYLE_FILLED rect 12 72 188 28 backcolor 0.22 0.26 0.32 0.92 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "5" } }
+		itemDef { name ing_row_about_h_6 group grpAboutHover style WINDOW_STYLE_FILLED rect 12 72 188 28 backcolor 0.95 0.95 0.95 0.95 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "6" } }
+		itemDef { name ing_row_about_h_7 group grpAboutHover style WINDOW_STYLE_FILLED rect 12 72 188 28 backcolor 0 0 0 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "7" } }
+
+		itemDef { name ing_row_player_0 style WINDOW_STYLE_FILLED rect 12 104 188 28 backcolor 0.03 0.05 0.08 0.80 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "", "0" } }
+		itemDef { name ing_row_player_1 style WINDOW_STYLE_FILLED rect 12 104 188 28 backcolor 0.03 0.09 0.05 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "1" } }
+		itemDef { name ing_row_player_2 style WINDOW_STYLE_FILLED rect 12 104 188 28 backcolor 0.09 0.07 0.04 0.82 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "2" } }
+		itemDef { name ing_row_player_3 style WINDOW_STYLE_FILLED rect 12 104 188 28 backcolor 0.09 0.03 0.04 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "3" } }
+		itemDef { name ing_row_player_4 style WINDOW_STYLE_FILLED rect 12 104 188 28 backcolor 0.44 0.06 0.24 0.96 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "4" } }
+		itemDef { name ing_row_player_5 style WINDOW_STYLE_FILLED rect 12 104 188 28 backcolor 0.10 0.12 0.16 0.84 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "5" } }
+		itemDef { name ing_row_player_6 style WINDOW_STYLE_FILLED rect 12 104 188 28 backcolor 0.05 0.05 0.05 0.92 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "6" } }
+		itemDef { name ing_row_player_7 style WINDOW_STYLE_FILLED rect 12 104 188 28 backcolor 0 0 0 0.45 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "7" } }
+		itemDef { name ing_row_player_h_0 group grpPlayerHover style WINDOW_STYLE_FILLED rect 12 104 188 28 backcolor 0.08 0.13 0.20 0.84 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "", "0" } }
+		itemDef { name ing_row_player_h_1 group grpPlayerHover style WINDOW_STYLE_FILLED rect 12 104 188 28 backcolor 0.10 0.26 0.12 0.94 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "1" } }
+		itemDef { name ing_row_player_h_2 group grpPlayerHover style WINDOW_STYLE_FILLED rect 12 104 188 28 backcolor 0.20 0.14 0.08 0.88 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "2" } }
+		itemDef { name ing_row_player_h_3 group grpPlayerHover style WINDOW_STYLE_FILLED rect 12 104 188 28 backcolor 0.26 0.07 0.10 0.94 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "3" } }
+		itemDef { name ing_row_player_h_4 group grpPlayerHover style WINDOW_STYLE_FILLED rect 12 104 188 28 backcolor 0.68 0.12 0.36 0.99 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "4" } }
+		itemDef { name ing_row_player_h_5 group grpPlayerHover style WINDOW_STYLE_FILLED rect 12 104 188 28 backcolor 0.22 0.26 0.32 0.92 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "5" } }
+		itemDef { name ing_row_player_h_6 group grpPlayerHover style WINDOW_STYLE_FILLED rect 12 104 188 28 backcolor 0.95 0.95 0.95 0.95 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "6" } }
+		itemDef { name ing_row_player_h_7 group grpPlayerHover style WINDOW_STYLE_FILLED rect 12 104 188 28 backcolor 0 0 0 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "7" } }
+
+		itemDef { name ing_row_stats_0 style WINDOW_STYLE_FILLED rect 12 136 188 28 backcolor 0.03 0.05 0.08 0.80 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "", "0" } }
+		itemDef { name ing_row_stats_1 style WINDOW_STYLE_FILLED rect 12 136 188 28 backcolor 0.03 0.09 0.05 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "1" } }
+		itemDef { name ing_row_stats_2 style WINDOW_STYLE_FILLED rect 12 136 188 28 backcolor 0.09 0.07 0.04 0.82 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "2" } }
+		itemDef { name ing_row_stats_3 style WINDOW_STYLE_FILLED rect 12 136 188 28 backcolor 0.09 0.03 0.04 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "3" } }
+		itemDef { name ing_row_stats_4 style WINDOW_STYLE_FILLED rect 12 136 188 28 backcolor 0.44 0.06 0.24 0.96 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "4" } }
+		itemDef { name ing_row_stats_5 style WINDOW_STYLE_FILLED rect 12 136 188 28 backcolor 0.10 0.12 0.16 0.84 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "5" } }
+		itemDef { name ing_row_stats_6 style WINDOW_STYLE_FILLED rect 12 136 188 28 backcolor 0.05 0.05 0.05 0.92 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "6" } }
+		itemDef { name ing_row_stats_7 style WINDOW_STYLE_FILLED rect 12 136 188 28 backcolor 0 0 0 0.45 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "7" } }
+		itemDef { name ing_row_stats_h_0 group grpStatsHover style WINDOW_STYLE_FILLED rect 12 136 188 28 backcolor 0.08 0.13 0.20 0.84 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "", "0" } }
+		itemDef { name ing_row_stats_h_1 group grpStatsHover style WINDOW_STYLE_FILLED rect 12 136 188 28 backcolor 0.10 0.26 0.12 0.94 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "1" } }
+		itemDef { name ing_row_stats_h_2 group grpStatsHover style WINDOW_STYLE_FILLED rect 12 136 188 28 backcolor 0.20 0.14 0.08 0.88 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "2" } }
+		itemDef { name ing_row_stats_h_3 group grpStatsHover style WINDOW_STYLE_FILLED rect 12 136 188 28 backcolor 0.26 0.07 0.10 0.94 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "3" } }
+		itemDef { name ing_row_stats_h_4 group grpStatsHover style WINDOW_STYLE_FILLED rect 12 136 188 28 backcolor 0.68 0.12 0.36 0.99 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "4" } }
+		itemDef { name ing_row_stats_h_5 group grpStatsHover style WINDOW_STYLE_FILLED rect 12 136 188 28 backcolor 0.22 0.26 0.32 0.92 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "5" } }
+		itemDef { name ing_row_stats_h_6 group grpStatsHover style WINDOW_STYLE_FILLED rect 12 136 188 28 backcolor 0.95 0.95 0.95 0.95 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "6" } }
+		itemDef { name ing_row_stats_h_7 group grpStatsHover style WINDOW_STYLE_FILLED rect 12 136 188 28 backcolor 0 0 0 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "7" } }
+
+		itemDef { name ing_row_controls_0 style WINDOW_STYLE_FILLED rect 12 168 188 28 backcolor 0.03 0.05 0.08 0.80 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "", "0" } }
+		itemDef { name ing_row_controls_1 style WINDOW_STYLE_FILLED rect 12 168 188 28 backcolor 0.03 0.09 0.05 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "1" } }
+		itemDef { name ing_row_controls_2 style WINDOW_STYLE_FILLED rect 12 168 188 28 backcolor 0.09 0.07 0.04 0.82 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "2" } }
+		itemDef { name ing_row_controls_3 style WINDOW_STYLE_FILLED rect 12 168 188 28 backcolor 0.09 0.03 0.04 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "3" } }
+		itemDef { name ing_row_controls_4 style WINDOW_STYLE_FILLED rect 12 168 188 28 backcolor 0.44 0.06 0.24 0.96 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "4" } }
+		itemDef { name ing_row_controls_5 style WINDOW_STYLE_FILLED rect 12 168 188 28 backcolor 0.10 0.12 0.16 0.84 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "5" } }
+		itemDef { name ing_row_controls_6 style WINDOW_STYLE_FILLED rect 12 168 188 28 backcolor 0.05 0.05 0.05 0.92 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "6" } }
+		itemDef { name ing_row_controls_7 style WINDOW_STYLE_FILLED rect 12 168 188 28 backcolor 0 0 0 0.45 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "7" } }
+		itemDef { name ing_row_controls_h_0 group grpControlsHover style WINDOW_STYLE_FILLED rect 12 168 188 28 backcolor 0.08 0.13 0.20 0.84 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "", "0" } }
+		itemDef { name ing_row_controls_h_1 group grpControlsHover style WINDOW_STYLE_FILLED rect 12 168 188 28 backcolor 0.10 0.26 0.12 0.94 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "1" } }
+		itemDef { name ing_row_controls_h_2 group grpControlsHover style WINDOW_STYLE_FILLED rect 12 168 188 28 backcolor 0.20 0.14 0.08 0.88 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "2" } }
+		itemDef { name ing_row_controls_h_3 group grpControlsHover style WINDOW_STYLE_FILLED rect 12 168 188 28 backcolor 0.26 0.07 0.10 0.94 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "3" } }
+		itemDef { name ing_row_controls_h_4 group grpControlsHover style WINDOW_STYLE_FILLED rect 12 168 188 28 backcolor 0.68 0.12 0.36 0.99 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "4" } }
+		itemDef { name ing_row_controls_h_5 group grpControlsHover style WINDOW_STYLE_FILLED rect 12 168 188 28 backcolor 0.22 0.26 0.32 0.92 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "5" } }
+		itemDef { name ing_row_controls_h_6 group grpControlsHover style WINDOW_STYLE_FILLED rect 12 168 188 28 backcolor 0.95 0.95 0.95 0.95 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "6" } }
+		itemDef { name ing_row_controls_h_7 group grpControlsHover style WINDOW_STYLE_FILLED rect 12 168 188 28 backcolor 0 0 0 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "7" } }
+
+		itemDef { name ing_row_options_0 style WINDOW_STYLE_FILLED rect 12 200 188 28 backcolor 0.03 0.05 0.08 0.80 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "", "0" } }
+		itemDef { name ing_row_options_1 style WINDOW_STYLE_FILLED rect 12 200 188 28 backcolor 0.03 0.09 0.05 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "1" } }
+		itemDef { name ing_row_options_2 style WINDOW_STYLE_FILLED rect 12 200 188 28 backcolor 0.09 0.07 0.04 0.82 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "2" } }
+		itemDef { name ing_row_options_3 style WINDOW_STYLE_FILLED rect 12 200 188 28 backcolor 0.09 0.03 0.04 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "3" } }
+		itemDef { name ing_row_options_4 style WINDOW_STYLE_FILLED rect 12 200 188 28 backcolor 0.44 0.06 0.24 0.96 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "4" } }
+		itemDef { name ing_row_options_5 style WINDOW_STYLE_FILLED rect 12 200 188 28 backcolor 0.10 0.12 0.16 0.84 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "5" } }
+		itemDef { name ing_row_options_6 style WINDOW_STYLE_FILLED rect 12 200 188 28 backcolor 0.05 0.05 0.05 0.92 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "6" } }
+		itemDef { name ing_row_options_7 style WINDOW_STYLE_FILLED rect 12 200 188 28 backcolor 0 0 0 0.45 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "7" } }
+		itemDef { name ing_row_options_h_0 group grpOptionsHover style WINDOW_STYLE_FILLED rect 12 200 188 28 backcolor 0.08 0.13 0.20 0.84 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "", "0" } }
+		itemDef { name ing_row_options_h_1 group grpOptionsHover style WINDOW_STYLE_FILLED rect 12 200 188 28 backcolor 0.10 0.26 0.12 0.94 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "1" } }
+		itemDef { name ing_row_options_h_2 group grpOptionsHover style WINDOW_STYLE_FILLED rect 12 200 188 28 backcolor 0.20 0.14 0.08 0.88 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "2" } }
+		itemDef { name ing_row_options_h_3 group grpOptionsHover style WINDOW_STYLE_FILLED rect 12 200 188 28 backcolor 0.26 0.07 0.10 0.94 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "3" } }
+		itemDef { name ing_row_options_h_4 group grpOptionsHover style WINDOW_STYLE_FILLED rect 12 200 188 28 backcolor 0.68 0.12 0.36 0.99 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "4" } }
+		itemDef { name ing_row_options_h_5 group grpOptionsHover style WINDOW_STYLE_FILLED rect 12 200 188 28 backcolor 0.22 0.26 0.32 0.92 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "5" } }
+		itemDef { name ing_row_options_h_6 group grpOptionsHover style WINDOW_STYLE_FILLED rect 12 200 188 28 backcolor 0.95 0.95 0.95 0.95 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "6" } }
+		itemDef { name ing_row_options_h_7 group grpOptionsHover style WINDOW_STYLE_FILLED rect 12 200 188 28 backcolor 0 0 0 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "7" } }
+
+		itemDef { name ing_row_system_0 style WINDOW_STYLE_FILLED rect 12 232 188 28 backcolor 0.03 0.05 0.08 0.80 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "", "0" } }
+		itemDef { name ing_row_system_1 style WINDOW_STYLE_FILLED rect 12 232 188 28 backcolor 0.03 0.09 0.05 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "1" } }
+		itemDef { name ing_row_system_2 style WINDOW_STYLE_FILLED rect 12 232 188 28 backcolor 0.09 0.07 0.04 0.82 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "2" } }
+		itemDef { name ing_row_system_3 style WINDOW_STYLE_FILLED rect 12 232 188 28 backcolor 0.09 0.03 0.04 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "3" } }
+		itemDef { name ing_row_system_4 style WINDOW_STYLE_FILLED rect 12 232 188 28 backcolor 0.44 0.06 0.24 0.96 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "4" } }
+		itemDef { name ing_row_system_5 style WINDOW_STYLE_FILLED rect 12 232 188 28 backcolor 0.10 0.12 0.16 0.84 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "5" } }
+		itemDef { name ing_row_system_6 style WINDOW_STYLE_FILLED rect 12 232 188 28 backcolor 0.05 0.05 0.05 0.92 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "6" } }
+		itemDef { name ing_row_system_7 style WINDOW_STYLE_FILLED rect 12 232 188 28 backcolor 0 0 0 0.45 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "7" } }
+		itemDef { name ing_row_system_h_0 group grpSystemHover style WINDOW_STYLE_FILLED rect 12 232 188 28 backcolor 0.08 0.13 0.20 0.84 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "", "0" } }
+		itemDef { name ing_row_system_h_1 group grpSystemHover style WINDOW_STYLE_FILLED rect 12 232 188 28 backcolor 0.10 0.26 0.12 0.94 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "1" } }
+		itemDef { name ing_row_system_h_2 group grpSystemHover style WINDOW_STYLE_FILLED rect 12 232 188 28 backcolor 0.20 0.14 0.08 0.88 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "2" } }
+		itemDef { name ing_row_system_h_3 group grpSystemHover style WINDOW_STYLE_FILLED rect 12 232 188 28 backcolor 0.26 0.07 0.10 0.94 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "3" } }
+		itemDef { name ing_row_system_h_4 group grpSystemHover style WINDOW_STYLE_FILLED rect 12 232 188 28 backcolor 0.68 0.12 0.36 0.99 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "4" } }
+		itemDef { name ing_row_system_h_5 group grpSystemHover style WINDOW_STYLE_FILLED rect 12 232 188 28 backcolor 0.22 0.26 0.32 0.92 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "5" } }
+		itemDef { name ing_row_system_h_6 group grpSystemHover style WINDOW_STYLE_FILLED rect 12 232 188 28 backcolor 0.95 0.95 0.95 0.95 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "6" } }
+		itemDef { name ing_row_system_h_7 group grpSystemHover style WINDOW_STYLE_FILLED rect 12 232 188 28 backcolor 0 0 0 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "7" } }
+
+		itemDef { name ing_row_callvote_0 style WINDOW_STYLE_FILLED rect 12 264 188 28 backcolor 0.03 0.05 0.08 0.80 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "", "0" } }
+		itemDef { name ing_row_callvote_1 style WINDOW_STYLE_FILLED rect 12 264 188 28 backcolor 0.03 0.09 0.05 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "1" } }
+		itemDef { name ing_row_callvote_2 style WINDOW_STYLE_FILLED rect 12 264 188 28 backcolor 0.09 0.07 0.04 0.82 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "2" } }
+		itemDef { name ing_row_callvote_3 style WINDOW_STYLE_FILLED rect 12 264 188 28 backcolor 0.09 0.03 0.04 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "3" } }
+		itemDef { name ing_row_callvote_4 style WINDOW_STYLE_FILLED rect 12 264 188 28 backcolor 0.44 0.06 0.24 0.96 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "4" } }
+		itemDef { name ing_row_callvote_5 style WINDOW_STYLE_FILLED rect 12 264 188 28 backcolor 0.10 0.12 0.16 0.84 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "5" } }
+		itemDef { name ing_row_callvote_6 style WINDOW_STYLE_FILLED rect 12 264 188 28 backcolor 0.05 0.05 0.05 0.92 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "6" } }
+		itemDef { name ing_row_callvote_7 style WINDOW_STYLE_FILLED rect 12 264 188 28 backcolor 0 0 0 0.45 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "7" } }
+		itemDef { name ing_row_callvote_h_0 group grpCallvoteHover style WINDOW_STYLE_FILLED rect 12 264 188 28 backcolor 0.08 0.13 0.20 0.84 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "", "0" } }
+		itemDef { name ing_row_callvote_h_1 group grpCallvoteHover style WINDOW_STYLE_FILLED rect 12 264 188 28 backcolor 0.10 0.26 0.12 0.94 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "1" } }
+		itemDef { name ing_row_callvote_h_2 group grpCallvoteHover style WINDOW_STYLE_FILLED rect 12 264 188 28 backcolor 0.20 0.14 0.08 0.88 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "2" } }
+		itemDef { name ing_row_callvote_h_3 group grpCallvoteHover style WINDOW_STYLE_FILLED rect 12 264 188 28 backcolor 0.26 0.07 0.10 0.94 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "3" } }
+		itemDef { name ing_row_callvote_h_4 group grpCallvoteHover style WINDOW_STYLE_FILLED rect 12 264 188 28 backcolor 0.68 0.12 0.36 0.99 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "4" } }
+		itemDef { name ing_row_callvote_h_5 group grpCallvoteHover style WINDOW_STYLE_FILLED rect 12 264 188 28 backcolor 0.22 0.26 0.32 0.92 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "5" } }
+		itemDef { name ing_row_callvote_h_6 group grpCallvoteHover style WINDOW_STYLE_FILLED rect 12 264 188 28 backcolor 0.95 0.95 0.95 0.95 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "6" } }
+		itemDef { name ing_row_callvote_h_7 group grpCallvoteHover style WINDOW_STYLE_FILLED rect 12 264 188 28 backcolor 0 0 0 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "7" } }
+
+		itemDef { name ing_row_rcon_0 style WINDOW_STYLE_FILLED rect 12 296 188 28 backcolor 0.03 0.05 0.08 0.80 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "", "0" } }
+		itemDef { name ing_row_rcon_1 style WINDOW_STYLE_FILLED rect 12 296 188 28 backcolor 0.03 0.09 0.05 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "1" } }
+		itemDef { name ing_row_rcon_2 style WINDOW_STYLE_FILLED rect 12 296 188 28 backcolor 0.09 0.07 0.04 0.82 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "2" } }
+		itemDef { name ing_row_rcon_3 style WINDOW_STYLE_FILLED rect 12 296 188 28 backcolor 0.09 0.03 0.04 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "3" } }
+		itemDef { name ing_row_rcon_4 style WINDOW_STYLE_FILLED rect 12 296 188 28 backcolor 0.44 0.06 0.24 0.96 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "4" } }
+		itemDef { name ing_row_rcon_5 style WINDOW_STYLE_FILLED rect 12 296 188 28 backcolor 0.10 0.12 0.16 0.84 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "5" } }
+		itemDef { name ing_row_rcon_6 style WINDOW_STYLE_FILLED rect 12 296 188 28 backcolor 0.05 0.05 0.05 0.92 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "6" } }
+		itemDef { name ing_row_rcon_7 style WINDOW_STYLE_FILLED rect 12 296 188 28 backcolor 0 0 0 0.45 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "7" } }
+		itemDef { name ing_row_rcon_h_0 group grpRconHover style WINDOW_STYLE_FILLED rect 12 296 188 28 backcolor 0.08 0.13 0.20 0.84 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "", "0" } }
+		itemDef { name ing_row_rcon_h_1 group grpRconHover style WINDOW_STYLE_FILLED rect 12 296 188 28 backcolor 0.10 0.26 0.12 0.94 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "1" } }
+		itemDef { name ing_row_rcon_h_2 group grpRconHover style WINDOW_STYLE_FILLED rect 12 296 188 28 backcolor 0.20 0.14 0.08 0.88 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "2" } }
+		itemDef { name ing_row_rcon_h_3 group grpRconHover style WINDOW_STYLE_FILLED rect 12 296 188 28 backcolor 0.26 0.07 0.10 0.94 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "3" } }
+		itemDef { name ing_row_rcon_h_4 group grpRconHover style WINDOW_STYLE_FILLED rect 12 296 188 28 backcolor 0.68 0.12 0.36 0.99 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "4" } }
+		itemDef { name ing_row_rcon_h_5 group grpRconHover style WINDOW_STYLE_FILLED rect 12 296 188 28 backcolor 0.22 0.26 0.32 0.92 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "5" } }
+		itemDef { name ing_row_rcon_h_6 group grpRconHover style WINDOW_STYLE_FILLED rect 12 296 188 28 backcolor 0.95 0.95 0.95 0.95 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "6" } }
+		itemDef { name ing_row_rcon_h_7 group grpRconHover style WINDOW_STYLE_FILLED rect 12 296 188 28 backcolor 0 0 0 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "7" } }
+
+		itemDef { name ing_row_leave_0 style WINDOW_STYLE_FILLED rect 12 328 188 28 backcolor 0.03 0.05 0.08 0.80 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "", "0" } }
+		itemDef { name ing_row_leave_1 style WINDOW_STYLE_FILLED rect 12 328 188 28 backcolor 0.03 0.09 0.05 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "1" } }
+		itemDef { name ing_row_leave_2 style WINDOW_STYLE_FILLED rect 12 328 188 28 backcolor 0.09 0.07 0.04 0.82 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "2" } }
+		itemDef { name ing_row_leave_3 style WINDOW_STYLE_FILLED rect 12 328 188 28 backcolor 0.09 0.03 0.04 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "3" } }
+		itemDef { name ing_row_leave_4 style WINDOW_STYLE_FILLED rect 12 328 188 28 backcolor 0.44 0.06 0.24 0.96 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "4" } }
+		itemDef { name ing_row_leave_5 style WINDOW_STYLE_FILLED rect 12 328 188 28 backcolor 0.10 0.12 0.16 0.84 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "5" } }
+		itemDef { name ing_row_leave_6 style WINDOW_STYLE_FILLED rect 12 328 188 28 backcolor 0.05 0.05 0.05 0.92 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "6" } }
+		itemDef { name ing_row_leave_7 style WINDOW_STYLE_FILLED rect 12 328 188 28 backcolor 0 0 0 0.45 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "7" } }
+		itemDef { name ing_row_leave_h_0 group grpLeaveHover style WINDOW_STYLE_FILLED rect 12 328 188 28 backcolor 0.08 0.13 0.20 0.84 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "", "0" } }
+		itemDef { name ing_row_leave_h_1 group grpLeaveHover style WINDOW_STYLE_FILLED rect 12 328 188 28 backcolor 0.10 0.26 0.12 0.94 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "1" } }
+		itemDef { name ing_row_leave_h_2 group grpLeaveHover style WINDOW_STYLE_FILLED rect 12 328 188 28 backcolor 0.20 0.14 0.08 0.88 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "2" } }
+		itemDef { name ing_row_leave_h_3 group grpLeaveHover style WINDOW_STYLE_FILLED rect 12 328 188 28 backcolor 0.26 0.07 0.10 0.94 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "3" } }
+		itemDef { name ing_row_leave_h_4 group grpLeaveHover style WINDOW_STYLE_FILLED rect 12 328 188 28 backcolor 0.68 0.12 0.36 0.99 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "4" } }
+		itemDef { name ing_row_leave_h_5 group grpLeaveHover style WINDOW_STYLE_FILLED rect 12 328 188 28 backcolor 0.22 0.26 0.32 0.92 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "5" } }
+		itemDef { name ing_row_leave_h_6 group grpLeaveHover style WINDOW_STYLE_FILLED rect 12 328 188 28 backcolor 0.95 0.95 0.95 0.95 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "6" } }
+		itemDef { name ing_row_leave_h_7 group grpLeaveHover style WINDOW_STYLE_FILLED rect 12 328 188 28 backcolor 0 0 0 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "7" } }
+		itemDef { name ing_icon_about style WINDOW_STYLE_SHADER background "ui/assets/urt4_tab_team.tga" rect 20 78 16 16 visible 1 decoration }
+		itemDef { name ing_icon_player style WINDOW_STYLE_SHADER background "ui/assets/urt4_setup_player.tga" rect 20 110 16 16 visible 1 decoration }
+		itemDef { name ing_icon_stats style WINDOW_STYLE_SHADER background "ui/assets/urt4_tab_meter.tga" rect 20 142 16 16 visible 1 decoration }
+		itemDef { name ing_icon_controls style WINDOW_STYLE_SHADER background "ui/assets/urt4_setup_controls.tga" rect 20 174 16 16 visible 1 decoration }
+		itemDef { name ing_icon_options style WINDOW_STYLE_SHADER background "ui/assets/urt4_setup_game.tga" rect 20 206 16 16 visible 1 decoration }
+		itemDef { name ing_icon_system style WINDOW_STYLE_SHADER background "ui/assets/urt4_setup_system.tga" rect 20 238 16 16 visible 1 decoration }
+		itemDef { name ing_icon_callvote style WINDOW_STYLE_SHADER background "ui/assets/urt4_tab_net.tga" rect 20 270 16 16 visible 1 decoration }
+		itemDef { name ing_icon_rcon style WINDOW_STYLE_SHADER background "ui/assets/urt4_tab_debug.tga" rect 20 302 16 16 visible 1 decoration }
+		itemDef { name ing_icon_leave style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_quit.tga" rect 20 334 16 16 visible 1 decoration }
+
+		itemDef {
+			name ing_btn_about
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			rect 12 72 188 28
+			backcolor 0 0 0 0
+			border 0
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; exec "cmd team free" ; uiScript closeingame }
+			mouseEnter { show grpAboutHover }
+			mouseExit { hide grpAboutHover }
+		}
+		itemDef {
+			name ing_btn_player
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			rect 12 104 188 28
+			backcolor 0 0 0 0
+			border 0
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; open ingame_player }
+			mouseEnter { show grpPlayerHover }
+			mouseExit { hide grpPlayerHover }
+		}
+		itemDef {
+			name ing_btn_stats
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			rect 12 136 188 28
+			backcolor 0 0 0 0
+			border 0
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; open ingame_stats }
+			mouseEnter { show grpStatsHover }
+			mouseExit { hide grpStatsHover }
+		}
+		itemDef {
+			name ing_btn_controls
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			rect 12 168 188 28
+			backcolor 0 0 0 0
+			border 0
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; open ingame_controls }
+			mouseEnter { show grpControlsHover }
+			mouseExit { hide grpControlsHover }
+		}
+		itemDef {
+			name ing_btn_options
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			rect 12 200 188 28
+			backcolor 0 0 0 0
+			border 0
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; open ingame_options }
+			mouseEnter { show grpOptionsHover }
+			mouseExit { hide grpOptionsHover }
+		}
+		itemDef {
+			name ing_btn_system
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			rect 12 232 188 28
+			backcolor 0 0 0 0
+			border 0
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; open ingame_system }
+			mouseEnter { show grpSystemHover }
+			mouseExit { hide grpSystemHover }
+		}
+		itemDef {
+			name ing_btn_callvote
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			cvarTest "ui_singleplayeractive"
+			disableCvar { "1" }
+			rect 12 264 188 28
+			backcolor 0 0 0 0
+			border 0
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; open ingame_callvote }
+			mouseEnter { show grpCallvoteHover }
+			mouseExit { hide grpCallvoteHover }
+		}
+		itemDef {
+			name ing_btn_rcon
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			cvarTest "ui_singleplayeractive"
+			disableCvar { "1" }
+			rect 12 296 188 28
+			backcolor 0 0 0 0
+			border 0
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; open ingame_rcon }
+			mouseEnter { show grpRconHover }
+			mouseExit { hide grpRconHover }
+		}
+		itemDef {
+			name ing_btn_leave
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			rect 12 328 188 28
+			backcolor 0 0 0 0
+			border 0
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; open ingame_leave }
+			mouseEnter { show grpLeaveHover }
+			mouseExit { hide grpLeaveHover }
+		}
+
+		itemDef { name ing_txt_about text "Autojoin" type 0 rect 12 72 188 28 textalign 0 textalignx 34 textaligny 20 textscale .24 forecolor 1 1 1 1 backcolor 0 0 0 0 visible 1 decoration }
+		itemDef { name ing_txt_player text "Player" type 0 rect 12 104 188 28 textalign 0 textalignx 34 textaligny 20 textscale .24 forecolor 1 1 1 1 backcolor 0 0 0 0 visible 1 decoration }
+		itemDef { name ing_txt_stats text "Stats" type 0 rect 12 136 188 28 textalign 0 textalignx 34 textaligny 20 textscale .24 forecolor 1 1 1 1 backcolor 0 0 0 0 visible 1 decoration }
+		itemDef { name ing_txt_controls text "Controls" type 0 rect 12 168 188 28 textalign 0 textalignx 34 textaligny 20 textscale .24 forecolor 1 1 1 1 backcolor 0 0 0 0 visible 1 decoration }
+		itemDef { name ing_txt_options text "Game Options" type 0 rect 12 200 188 28 textalign 0 textalignx 34 textaligny 20 textscale .24 forecolor 1 1 1 1 backcolor 0 0 0 0 visible 1 decoration }
+		itemDef { name ing_txt_system text "System" type 0 rect 12 232 188 28 textalign 0 textalignx 34 textaligny 20 textscale .24 forecolor 1 1 1 1 backcolor 0 0 0 0 visible 1 decoration }
+		itemDef { name ing_txt_callvote text "Callvote" type 0 rect 12 264 188 28 textalign 0 textalignx 34 textaligny 20 textscale .24 forecolor 1 1 1 1 backcolor 0 0 0 0 visible 1 decoration cvarTest "ui_singleplayeractive" disableCvar { "1" } }
+		itemDef { name ing_txt_rcon text "RCON" type 0 rect 12 296 188 28 textalign 0 textalignx 34 textaligny 20 textscale .24 forecolor 1 1 1 1 backcolor 0 0 0 0 visible 1 decoration cvarTest "ui_singleplayeractive" disableCvar { "1" } }
+		itemDef { name ing_txt_leave text "Leave" type 0 rect 12 328 188 28 textalign 0 textalignx 34 textaligny 20 textscale .24 forecolor 1 1 1 1 backcolor 0 0 0 0 visible 1 decoration }
+	}
+}

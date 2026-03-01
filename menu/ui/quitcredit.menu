@@ -1,0 +1,316 @@
+#include "ui/menudef.h"
+#include "ui/theme.inc"
+
+{
+	\\ QUIT CREDIT \\
+
+menuDef {
+		#include "ui/theme_common.menu"
+		#include "ui/theme_circle.menu"
+		name "quitCredit"
+		visible 0
+		fullscreen 1
+		background URT4_THEME_BG
+		focusColor 1 1 1 1
+		style 1
+		border 0
+		onEsc { close quitCredit ; open main }
+		onOpen { }
+
+
+
+		// (theme_common + theme_circle provide header/circle)
+
+
+		itemDef {
+			name credits_title
+			text "Credits"
+			style 0
+			textscale .35
+			rect 40 120 560 40
+			textaligny 28
+			textalignx 0
+			forecolor 0.95 0.95 0.98 1
+			visible 0
+			decoration
+		}
+
+		itemDef {
+			name copyright
+			text "Urban Terror (r) (c) 2000-2018 Frozensand Games Ltd."
+			style 0
+			textscale .18
+			rect 12 438 616 18
+			textaligny 13
+			textalignx 0
+			forecolor 0.75 0.77 0.80 0.85
+			visible 1
+			decoration
+		}
+
+		itemDef {
+			name copyright
+			text "Quake 3 Arena (c) 1999-2005 id Software, inc. all rights reserved"
+			style 0
+			textscale .18
+			rect 12 454 616 18
+			textaligny 13
+			textalignx 0
+			forecolor 0.75 0.77 0.80 0.85
+			visible 1
+			decoration
+		}
+
+		itemDef {
+			name version
+			text "Urban Terror"
+			style 0
+			textscale .2
+			rect 0 442 640 40
+			//textalign 1
+			textaligny 16
+			textalignx 539
+			visible 0
+			decoration
+		}
+
+		itemDef {
+			name version2
+			rect 0 442 640 40
+			type ITEM_TYPE_TEXT
+			cvar "ui_modversion"
+			textalign 1
+			textaligny 16
+			textalignx 600
+			textscale .2
+			style 0
+			visible 0
+			decoration
+		}
+
+		//  SID CREDITS		//
+		itemDef { name qc_panel_0 rect 20 80 600 320 style WINDOW_STYLE_FILLED backcolor 0.06 0.08 0.12 0.35 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "", "0" } }
+		itemDef { name qc_panel_1 rect 20 80 600 320 style WINDOW_STYLE_FILLED backcolor 0.04 0.12 0.08 0.40 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "1" } }
+		itemDef { name qc_panel_2 rect 20 80 600 320 style WINDOW_STYLE_FILLED backcolor 0.14 0.10 0.05 0.42 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "2" } }
+		itemDef { name qc_panel_3 rect 20 80 600 320 style WINDOW_STYLE_FILLED backcolor 0.14 0.05 0.06 0.42 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "3" } }
+		itemDef { name qc_panel_4 rect 20 80 600 320 style WINDOW_STYLE_FILLED backcolor 0.28 0.04 0.16 0.52 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "4" } }
+		itemDef { name qc_panel_5 rect 20 80 600 320 style WINDOW_STYLE_FILLED backcolor 0.08 0.10 0.12 0.40 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "5" } }
+		itemDef { name qc_panel_6 rect 20 80 600 320 style WINDOW_STYLE_FILLED backcolor 0.92 0.92 0.92 0.20 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "6" } }
+		itemDef { name qc_panel_7 rect 20 80 600 320 style WINDOW_STYLE_FILLED backcolor 0 0 0 0.18 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "7" } }
+		itemDef { name qc_header_0 rect 20 80 600 42 style WINDOW_STYLE_FILLED backcolor 0.06 0.08 0.12 0.50 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "", "0" } }
+		itemDef { name qc_header_1 rect 20 80 600 42 style WINDOW_STYLE_FILLED backcolor 0.04 0.12 0.08 0.56 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "1" } }
+		itemDef { name qc_header_2 rect 20 80 600 42 style WINDOW_STYLE_FILLED backcolor 0.14 0.10 0.05 0.58 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "2" } }
+		itemDef { name qc_header_3 rect 20 80 600 42 style WINDOW_STYLE_FILLED backcolor 0.14 0.05 0.06 0.58 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "3" } }
+		itemDef { name qc_header_4 rect 20 80 600 42 style WINDOW_STYLE_FILLED backcolor 0.28 0.04 0.16 0.62 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "4" } }
+		itemDef { name qc_header_5 rect 20 80 600 42 style WINDOW_STYLE_FILLED backcolor 0.08 0.10 0.12 0.56 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "5" } }
+		itemDef { name qc_header_6 rect 20 80 600 42 style WINDOW_STYLE_FILLED backcolor 0.92 0.92 0.92 0.26 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "6" } }
+		itemDef { name qc_header_7 rect 20 80 600 42 style WINDOW_STYLE_FILLED backcolor 0 0 0 0.22 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "7" } }
+
+
+		itemDef {
+			name window
+			rect 20 80 600 320
+			style 1
+			border 0
+			backcolor 0 0 0 0
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			visible 1
+			decoration
+		}
+
+
+		itemDef {
+			name window
+			rect 20 80 600 320
+			style 1
+			border 0
+			backcolor 0 0 0 0
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			visible 1
+			decoration
+		}
+
+
+		itemDef {
+			name credits
+			text "FrozenSand is:"
+			textscale .33
+			textalignx 10
+			textaligny 38
+			rect 20 80 600 42
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.06 0.08 0.12 0.50
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			decoration
+		}
+
+		itemDef {
+			name sid_logo_graphic
+			style WINDOW_STYLE_SHADER
+			background "ui/assets/fs_sid_logo.jpg"
+			rect 22 82 80 40
+			visible 0
+			//     	forecolor .25 .25 .25 1
+			decoration
+		}
+
+		itemDef {
+			name credits
+			text "[ Esc opens Main Menu ]"
+			textscale .33
+			textalign 2
+			textalignx 595
+			textaligny 38
+			rect 20 80 600 42
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 0
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			visible 1
+			decoration
+		}
+
+
+		itemDef {
+			name credits
+			wrapped
+			text
+			"Barbatos\r"
+			"BladeKiller\r"
+			"Blapecool\r"
+			"evilelf\r"
+			"Frankie V\r"
+			"Gost0r\r"
+			"HappyDay\r"
+			"Kalish\r"
+			"Lizart\r"
+			"RabidCow\r"
+			"RaideR\r"
+			"UnifiedTone\r"
+			"v3nd3tta\r"
+			"Zenity\r"
+			textscale .23
+			textalignx 0
+			textaligny 23
+			rect 165 130 160 25
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 0
+			visible 1
+			decoration
+		}
+
+		itemDef {
+			name credits
+			wrapped
+			text
+			"Company Director & Lead Developer\r"
+			"Team Manager & Senior Artist & Modeler\r"
+			"System Admin & Website Developer\r"
+			"Hosting Consultant\r"
+			"Lead Animator & Assets Manager\r"
+			"Lead Programmer\r"
+			"Codebase Developer & Level Designer\r"
+			"Engine Developer & Webmaster & 2D Artist\r"
+			"Level Designer & Modeler\r"
+			"Lead Environments Creator\r"
+			"Company Director & CEO\r"
+			"Composer & Audio Engineer\r"
+			"Level Designer\r"
+			"Codebase Developer & Gameplay Designer\r"
+			textscale .23
+			textalignx 0
+			textaligny 23
+			rect 275 130 185 25
+			style 1
+			forecolor .5 .5 .5 1
+			backcolor 0 0 0 0
+			visible 1
+			decoration
+		}
+
+		itemdef {
+			name next
+			rect 535 360 75 30
+			type 1
+			style WINDOW_STYLE_FILLED
+			forecolor 1 1 1 1
+			backcolor 0 0 0 0
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			visible 1
+			action { setcolor backcolor 0.06 0.08 0.12 0.85; setfocus blah1; play "sound/misc/kcaction.wav"; close quitcredit; open betacredit }
+			mouseEnter { setcolor backcolor 0.16 0.26 0.38 1}
+			mouseExit { setcolor backcolor 0.06 0.08 0.12 0.85 }
+		}
+
+		itemdef {
+			name next2
+			rect 535 360 75 30
+			type 0
+			text "Next"
+			textscale .25
+			textalign 2
+			textalignx 71
+			textaligny 26
+			style WINDOW_STYLE_FILLED
+			forecolor 1 1 1 1
+			backcolor 0.06 0.08 0.12 0.85
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			visible 1
+			decoration
+		}
+
+		itemdef {
+			name previous
+			rect 30 360 75 30
+			type 1
+			style WINDOW_STYLE_FILLED
+			forecolor 1 1 1 1
+			backcolor 0 0 0 0
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			visible 1
+			action { setcolor backcolor 0.06 0.08 0.12 0.85; setfocus blah1; play "sound/misc/kcaction.wav"; close quitcredit; open main }
+			mouseEnter { setcolor backcolor 0.16 0.26 0.38 1}
+			mouseExit { setcolor backcolor 0.06 0.08 0.12 0.85 }
+		}
+
+		itemdef {
+			name previous2
+			rect 30 360 75 30
+			type 0
+			text "Main Menu"
+			textscale .25
+			textalign 2
+			textalignx 71
+			textaligny 26
+			style WINDOW_STYLE_FILLED
+			forecolor 1 1 1 1
+			backcolor 0 0 0 0
+			border 1
+			bordercolor 0.2 0.25 0.3 0.6
+			visible 1
+			decoration
+		}
+
+		itemdef {
+			name blah1
+			rect 0 0 0 0
+			type 1
+			style WINDOW_STYLE_FILLED
+			forecolor 0 0 0 0
+			backcolor 0 0 0 0
+			border 0
+			bordercolor 0 0 0 0
+			visible 0
+		}
+	}
+}

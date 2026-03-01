@@ -1,0 +1,396 @@
+#include "ui/menudef.h"
+#include "ui/theme.inc"
+{
+	menuDef {
+		name "interface_menu"
+		visible 0
+		fullscreen 1
+		rect 0 0 640 480
+		background URT4_THEME_BG
+		focusColor 1 1 1 1
+		style 1
+		onEsc { close interface_menu ; open setup_menu }
+
+		#include "ui/theme_common.menu"
+		#include "ui/theme_circle.menu"
+
+		itemDef { name interface_title text "Interface Personalization" style 0 textscale .34 rect 40 78 500 30 textalign 0 textalignx 0 textaligny 22 forecolor 0.95 0.95 0.98 1 visible 1 decoration }
+		itemDef { name if_preview_box style WINDOW_STYLE_FILLED rect 40 126 132 232 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name if_preview_title text "Live Preview" style 0 textscale .20 rect 48 132 116 16 textalign 1 textalignx 58 textaligny 12 forecolor 0.88 0.92 1 0.95 visible 1 decoration }
+		itemDef { name if_preview_bg_lbl text "BG Tint" style 0 textscale .16 rect 48 154 116 14 textalign 0 textalignx 0 textaligny 10 forecolor 0.85 0.9 0.96 0.90 visible 1 decoration }
+		itemDef { name if_preview_btn_lbl text "Button" style 0 textscale .16 rect 48 196 116 14 textalign 0 textalignx 0 textaligny 10 forecolor 0.85 0.9 0.96 0.90 visible 1 decoration }
+		itemDef { name if_preview_hov_lbl text "Hover" style 0 textscale .16 rect 48 238 116 14 textalign 0 textalignx 0 textaligny 10 forecolor 0.85 0.9 0.96 0.90 visible 1 decoration }
+		itemDef { name if_preview_sel_lbl text "Selected" style 0 textscale .16 rect 48 280 116 14 textalign 0 textalignx 0 textaligny 10 forecolor 0.85 0.9 0.96 0.90 visible 1 decoration }
+		itemDef { name if_preview_txt_lbl text "Text" style 0 textscale .16 rect 48 316 116 14 textalign 0 textalignx 0 textaligny 10 forecolor 0.85 0.9 0.96 0.90 visible 1 decoration }
+
+		itemDef { name if_live_bg_0 style WINDOW_STYLE_FILLED rect 48 168 116 22 backcolor 0.00 0.18 0.45 0.10 visible 1 decoration cvarTest "ui_urt4max_custom_bg" showCvar { "", "0" } }
+		itemDef { name if_live_bg_1 style WINDOW_STYLE_FILLED rect 48 168 116 22 backcolor 0.02 0.24 0.10 0.18 visible 1 decoration cvarTest "ui_urt4max_custom_bg" showCvar { "1" } }
+		itemDef { name if_live_bg_2 style WINDOW_STYLE_FILLED rect 48 168 116 22 backcolor 0.30 0.16 0.02 0.18 visible 1 decoration cvarTest "ui_urt4max_custom_bg" showCvar { "2" } }
+		itemDef { name if_live_bg_3 style WINDOW_STYLE_FILLED rect 48 168 116 22 backcolor 0.28 0.04 0.07 0.18 visible 1 decoration cvarTest "ui_urt4max_custom_bg" showCvar { "3" } }
+		itemDef { name if_live_bg_4 style WINDOW_STYLE_FILLED rect 48 168 116 22 backcolor 0.58 0.06 0.34 0.40 visible 1 decoration cvarTest "ui_urt4max_custom_bg" showCvar { "4" } }
+		itemDef { name if_live_bg_5 style WINDOW_STYLE_FILLED rect 48 168 116 22 backcolor 0.14 0.16 0.20 0.16 visible 1 decoration cvarTest "ui_urt4max_custom_bg" showCvar { "5" } }
+		itemDef { name if_live_bg_6 style WINDOW_STYLE_FILLED rect 48 168 116 22 backcolor 0.00 0.00 0.00 0.32 visible 1 decoration cvarTest "ui_urt4max_custom_bg" showCvar { "6" } }
+		itemDef { name if_live_bg_7 style WINDOW_STYLE_FILLED rect 48 168 116 22 backcolor 0 0 0 0 visible 1 decoration cvarTest "ui_urt4max_custom_bg" showCvar { "7" } }
+
+		itemDef { name if_live_btn_0 style WINDOW_STYLE_FILLED rect 48 210 116 22 backcolor 0.03 0.05 0.08 0.80 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "", "0" } }
+		itemDef { name if_live_btn_1 style WINDOW_STYLE_FILLED rect 48 210 116 22 backcolor 0.03 0.09 0.05 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "1" } }
+		itemDef { name if_live_btn_2 style WINDOW_STYLE_FILLED rect 48 210 116 22 backcolor 0.09 0.07 0.04 0.82 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "2" } }
+		itemDef { name if_live_btn_3 style WINDOW_STYLE_FILLED rect 48 210 116 22 backcolor 0.09 0.03 0.04 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "3" } }
+		itemDef { name if_live_btn_4 style WINDOW_STYLE_FILLED rect 48 210 116 22 backcolor 0.44 0.06 0.24 0.96 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "4" } }
+		itemDef { name if_live_btn_5 style WINDOW_STYLE_FILLED rect 48 210 116 22 backcolor 0.10 0.12 0.16 0.84 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "5" } }
+		itemDef { name if_live_btn_6 style WINDOW_STYLE_FILLED rect 48 210 116 22 backcolor 0.05 0.05 0.05 0.92 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "6" } }
+		itemDef { name if_live_btn_7 style WINDOW_STYLE_FILLED rect 48 210 116 22 backcolor 0 0 0 0.45 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "7" } }
+		itemDef { name if_live_btn_text text "Button" style 0 textscale .15 rect 48 210 116 22 textalign 1 textalignx 58 textaligny 16 forecolor 1.00 1.00 1.00 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "", "0" } }
+		itemDef { name if_live_btn_text text "Button" style 0 textscale .15 rect 48 210 116 22 textalign 1 textalignx 58 textaligny 16 forecolor 0.85 0.90 1.00 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "1" } }
+		itemDef { name if_live_btn_text text "Button" style 0 textscale .15 rect 48 210 116 22 textalign 1 textalignx 58 textaligny 16 forecolor 0.72 0.86 1.00 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "2" } }
+		itemDef { name if_live_btn_text text "Button" style 0 textscale .15 rect 48 210 116 22 textalign 1 textalignx 58 textaligny 16 forecolor 0.72 1.00 0.88 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "3" } }
+		itemDef { name if_live_btn_text text "Button" style 0 textscale .15 rect 48 210 116 22 textalign 1 textalignx 58 textaligny 16 forecolor 0.98 0.87 0.40 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "4" } }
+		itemDef { name if_live_btn_text text "Button" style 0 textscale .15 rect 48 210 116 22 textalign 1 textalignx 58 textaligny 16 forecolor 1.00 0.45 0.45 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "5" } }
+		itemDef { name if_live_btn_text text "Button" style 0 textscale .15 rect 48 210 116 22 textalign 1 textalignx 58 textaligny 16 forecolor 1.00 0.48 0.82 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "6" } }
+		itemDef { name if_live_btn_text text "Button" style 0 textscale .15 rect 48 210 116 22 textalign 1 textalignx 58 textaligny 16 forecolor 0.05 0.05 0.05 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "7" } }
+
+		itemDef { name if_live_hov_0 style WINDOW_STYLE_FILLED rect 48 252 116 22 backcolor 0.08 0.13 0.20 0.84 visible 1 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "", "0" } }
+		itemDef { name if_live_hov_1 style WINDOW_STYLE_FILLED rect 48 252 116 22 backcolor 0.10 0.26 0.12 0.94 visible 1 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "1" } }
+		itemDef { name if_live_hov_2 style WINDOW_STYLE_FILLED rect 48 252 116 22 backcolor 0.20 0.14 0.08 0.88 visible 1 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "2" } }
+		itemDef { name if_live_hov_3 style WINDOW_STYLE_FILLED rect 48 252 116 22 backcolor 0.26 0.07 0.10 0.94 visible 1 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "3" } }
+		itemDef { name if_live_hov_4 style WINDOW_STYLE_FILLED rect 48 252 116 22 backcolor 0.68 0.12 0.36 0.99 visible 1 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "4" } }
+		itemDef { name if_live_hov_5 style WINDOW_STYLE_FILLED rect 48 252 116 22 backcolor 0.22 0.26 0.32 0.92 visible 1 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "5" } }
+		itemDef { name if_live_hov_6 style WINDOW_STYLE_FILLED rect 48 252 116 22 backcolor 0.95 0.95 0.95 0.95 visible 1 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "6" } }
+		itemDef { name if_live_hov_7 style WINDOW_STYLE_FILLED rect 48 252 116 22 backcolor 0 0 0 0 visible 1 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "7" } }
+
+		itemDef { name if_live_sel_0 style WINDOW_STYLE_FILLED rect 48 294 116 22 backcolor 0.12 0.20 0.30 0.90 visible 1 decoration cvarTest "ui_urt4max_custom_sel" showCvar { "", "0" } }
+		itemDef { name if_live_sel_1 style WINDOW_STYLE_FILLED rect 48 294 116 22 backcolor 0.20 0.40 0.20 0.98 visible 1 decoration cvarTest "ui_urt4max_custom_sel" showCvar { "1" } }
+		itemDef { name if_live_sel_2 style WINDOW_STYLE_FILLED rect 48 294 116 22 backcolor 0.34 0.22 0.12 0.90 visible 1 decoration cvarTest "ui_urt4max_custom_sel" showCvar { "2" } }
+		itemDef { name if_live_sel_3 style WINDOW_STYLE_FILLED rect 48 294 116 22 backcolor 0.40 0.12 0.16 0.98 visible 1 decoration cvarTest "ui_urt4max_custom_sel" showCvar { "3" } }
+		itemDef { name if_live_sel_4 style WINDOW_STYLE_FILLED rect 48 294 116 22 backcolor 0.78 0.12 0.40 0.98 visible 1 decoration cvarTest "ui_urt4max_custom_sel" showCvar { "4" } }
+		itemDef { name if_live_sel_5 style WINDOW_STYLE_FILLED rect 48 294 116 22 backcolor 0.36 0.42 0.50 0.96 visible 1 decoration cvarTest "ui_urt4max_custom_sel" showCvar { "5" } }
+		itemDef { name if_live_sel_6 style WINDOW_STYLE_FILLED rect 48 294 116 22 backcolor 0.95 0.95 0.95 0.95 visible 1 decoration cvarTest "ui_urt4max_custom_sel" showCvar { "6" } }
+		itemDef { name if_live_sel_7 style WINDOW_STYLE_FILLED rect 48 294 116 22 backcolor 0 0 0 0 visible 1 decoration cvarTest "ui_urt4max_custom_sel" showCvar { "7" } }
+
+		itemDef { name if_live_txt_0 text "Text Sample Aa" style 0 textscale .17 rect 48 330 116 14 textalign 1 textalignx 58 textaligny 11 forecolor 1.00 1.00 1.00 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "", "0" } }
+		itemDef { name if_live_txt_1 text "Text Sample Aa" style 0 textscale .17 rect 48 330 116 14 textalign 1 textalignx 58 textaligny 11 forecolor 0.85 0.90 1.00 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "1" } }
+		itemDef { name if_live_txt_2 text "Text Sample Aa" style 0 textscale .17 rect 48 330 116 14 textalign 1 textalignx 58 textaligny 11 forecolor 0.72 0.86 1.00 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "2" } }
+		itemDef { name if_live_txt_3 text "Text Sample Aa" style 0 textscale .17 rect 48 330 116 14 textalign 1 textalignx 58 textaligny 11 forecolor 0.72 1.00 0.88 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "3" } }
+		itemDef { name if_live_txt_4 text "Text Sample Aa" style 0 textscale .17 rect 48 330 116 14 textalign 1 textalignx 58 textaligny 11 forecolor 0.98 0.87 0.40 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "4" } }
+		itemDef { name if_live_txt_5 text "Text Sample Aa" style 0 textscale .17 rect 48 330 116 14 textalign 1 textalignx 58 textaligny 11 forecolor 1.00 0.45 0.45 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "5" } }
+		itemDef { name if_live_txt_6 text "Text Sample Aa" style 0 textscale .17 rect 48 330 116 14 textalign 1 textalignx 58 textaligny 11 forecolor 1.00 0.48 0.82 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "6" } }
+		itemDef { name if_live_txt_7 text "Text Sample Aa" style 0 textscale .17 rect 48 330 116 14 textalign 1 textalignx 58 textaligny 11 forecolor 0.05 0.05 0.05 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "7" } }
+
+		itemDef { name if_row_theme style WINDOW_STYLE_FILLED rect 184 126 286 24 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef {
+			name if_theme
+			type ITEM_TYPE_MULTI
+			text "Theme Preset:"
+			cvar "ui_urt4max_theme"
+			cvarFloatList {
+				"^4Classic Blue (Default)" 0
+				"^7High Contrast Mono" 1
+				"^5Midnight Cyan" 2
+				"^7Arctic Ice" 3
+				"^2Emerald Tactical" 4
+				"^2Neon Lime" 5
+				"^3Amber Strike" 6
+				"^1Crimson Pro" 7
+				"^1Ruby Noir" 8
+				"^6Pink Pulse" 9
+				"^4Cobalt Core" 10
+				"^4Navy Gold" 11
+				"^7Steel Frost" 12
+				"^2Cyber Mint" 13
+				"^3Sandstorm" 14
+				"^3Graphite Orange" 15
+				"^7Polar Contrast" 16
+				"^2Forest Contrast" 17
+				"^1Bloodline Contrast" 18
+				"^3Solar Gold" 19
+			}
+			rect 184 126 286 24
+			textalign 0
+			textalignx 14
+			textaligny 20
+			textscale .20
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" }
+		}
+
+		itemDef { name if_row_bg style WINDOW_STYLE_FILLED rect 184 168 286 24 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name if_row_btn style WINDOW_STYLE_FILLED rect 184 198 286 24 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name if_row_hover style WINDOW_STYLE_FILLED rect 184 228 286 24 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name if_row_sel style WINDOW_STYLE_FILLED rect 184 258 286 24 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+		itemDef { name if_row_text style WINDOW_STYLE_FILLED rect 184 288 286 24 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+
+		itemDef { name if_row_table style WINDOW_STYLE_FILLED rect 184 318 286 24 backcolor 0.05 0.07 0.1 0.55 visible 1 decoration }
+
+		itemDef {
+			name if_table_sel
+			type ITEM_TYPE_MULTI
+			text "Table Panels:"
+			cvar "ui_urt4max_custom_table"
+			rect 184 318 286 24
+			textalign 0
+			textalignx 14
+			textaligny 20
+			textscale .20
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" }
+			cvarFloatList {
+				"Blue" 0
+				"Green" 1
+				"Amber" 2
+				"Red" 3
+				"Pink" 4
+				"Gray" 5
+				"Light Contrast" 6
+				"Dark Minimal" 7
+			}
+		}
+
+		itemDef { name if_apply_table_0 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 318 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_table" showCvar { "", "0" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_table 0" ; exec "writeconfig q3config.cfg" ; } }
+		itemDef { name if_apply_table_1 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 318 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_table" showCvar { "1" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_table 1" ; exec "writeconfig q3config.cfg" ; } }
+		itemDef { name if_apply_table_2 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 318 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_table" showCvar { "2" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_table 2" ; exec "writeconfig q3config.cfg" ; } }
+		itemDef { name if_apply_table_3 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 318 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_table" showCvar { "3" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_table 3" ; exec "writeconfig q3config.cfg" ; } }
+		itemDef { name if_apply_table_4 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 318 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_table" showCvar { "4" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_table 4" ; exec "writeconfig q3config.cfg" ; } }
+		itemDef { name if_apply_table_5 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 318 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_table" showCvar { "5" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_table 5" ; exec "writeconfig q3config.cfg" ; } }
+		itemDef { name if_apply_table_6 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 318 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_table" showCvar { "6" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_table 6" ; exec "writeconfig q3config.cfg" ; } }
+		itemDef { name if_apply_table_7 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 318 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_table" showCvar { "7" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_table 7" ; exec "writeconfig q3config.cfg" ; } }
+
+		itemDef {
+			name if_bg_sel
+			type ITEM_TYPE_MULTI
+			text "Background Tint:"
+			cvar "ui_urt4max_custom_bg"
+			rect 184 168 286 24
+			textalign 0
+			textalignx 14
+			textaligny 20
+			textscale .20
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" }
+			cvarFloatList {
+				"Blue" 0
+				"Green" 1
+				"Amber" 2
+				"Red" 3
+				"Pink" 4
+				"Gray" 5
+				"High Contrast Dark" 6
+				"No Tint" 7
+			}
+		}
+
+		itemDef {
+			name if_btn_sel
+			type ITEM_TYPE_MULTI
+			text "Button Normal:"
+			cvar "ui_urt4max_custom_btn"
+			rect 184 198 286 24
+			textalign 0
+			textalignx 14
+			textaligny 20
+			textscale .20
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" }
+			cvarFloatList {
+				"Blue" 0
+				"Green" 1
+				"Amber" 2
+				"Red" 3
+				"Pink" 4
+				"Gray" 5
+				"Black" 6
+				"Transparent" 7
+			}
+		}
+
+		itemDef {
+			name if_hover_sel
+			type ITEM_TYPE_MULTI
+			text "Button Hover:"
+			cvar "ui_urt4max_custom_hover"
+			rect 184 228 286 24
+			textalign 0
+			textalignx 14
+			textaligny 20
+			textscale .20
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" }
+			cvarFloatList {
+				"Blue" 0
+				"Green" 1
+				"Amber" 2
+				"Red" 3
+				"Pink" 4
+				"Gray" 5
+				"High Contrast" 6
+				"None" 7
+			}
+		}
+
+		itemDef {
+			name if_sel_sel
+			type ITEM_TYPE_MULTI
+			text "Button Selected:"
+			cvar "ui_urt4max_custom_sel"
+			rect 184 258 286 24
+			textalign 0
+			textalignx 14
+			textaligny 20
+			textscale .20
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" }
+			cvarFloatList {
+				"Blue" 0
+				"Green" 1
+				"Amber" 2
+				"Red" 3
+				"Pink" 4
+				"Gray" 5
+				"White" 6
+				"None" 7
+			}
+		}
+
+		itemDef {
+			name if_text_sel
+			type ITEM_TYPE_MULTI
+			text "Text/Icon Color:"
+			cvar "ui_urt4max_custom_text"
+			rect 184 288 286 24
+			textalign 0
+			textalignx 14
+			textaligny 20
+			textscale .20
+			forecolor 1 1 1 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" }
+			cvarFloatList {
+				"White" 0
+				"Soft White" 1
+				"Ice Blue" 2
+				"Mint" 3
+				"Gold" 4
+				"Red" 5
+				"Pink" 6
+				"Black" 7
+			}
+		}
+
+		// APPLY BUTTONS (per row, cvar-gated)
+		itemDef { name if_apply_bg_0 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 168 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_bg" showCvar { "", "0" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 0" ; exec "writeconfig q3config.cfg" ; setitemcolor theme_bg_tint backcolor 0.00 0.18 0.45 0.10 ; } }
+		itemDef { name if_apply_bg_1 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 168 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_bg" showCvar { "1" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 1" ; exec "writeconfig q3config.cfg" ; setitemcolor theme_bg_tint backcolor 0.02 0.24 0.10 0.18 ; } }
+		itemDef { name if_apply_bg_2 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 168 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_bg" showCvar { "2" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 2" ; exec "writeconfig q3config.cfg" ; setitemcolor theme_bg_tint backcolor 0.30 0.16 0.02 0.18 ; } }
+		itemDef { name if_apply_bg_3 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 168 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_bg" showCvar { "3" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 3" ; exec "writeconfig q3config.cfg" ; setitemcolor theme_bg_tint backcolor 0.28 0.04 0.07 0.18 ; } }
+		itemDef { name if_apply_bg_4 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 168 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_bg" showCvar { "4" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 4" ; exec "writeconfig q3config.cfg" ; setitemcolor theme_bg_tint backcolor 0.58 0.06 0.34 0.40 ; } }
+		itemDef { name if_apply_bg_5 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 168 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_bg" showCvar { "5" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 5" ; exec "writeconfig q3config.cfg" ; setitemcolor theme_bg_tint backcolor 0.14 0.16 0.20 0.16 ; } }
+		itemDef { name if_apply_bg_6 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 168 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_bg" showCvar { "6" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 6" ; exec "writeconfig q3config.cfg" ; setitemcolor theme_bg_tint backcolor 0.00 0.00 0.00 0.32 ; } }
+		itemDef { name if_apply_bg_7 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 168 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_bg" showCvar { "7" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 7" ; exec "writeconfig q3config.cfg" ; setitemcolor theme_bg_tint backcolor 0 0 0 0 ; } }
+
+		itemDef { name if_apply_btn_0 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 198 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_btn" showCvar { "", "0" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_btn 0" ; exec "writeconfig q3config.cfg" ; setitemcolor login_row backcolor 0.03 0.05 0.08 0.80 ; setitemcolor play_row backcolor 0.03 0.05 0.08 0.80 ; setitemcolor setup_row backcolor 0.03 0.05 0.08 0.80 ; setitemcolor demo_row backcolor 0.03 0.05 0.08 0.80 ; setitemcolor credits_row backcolor 0.03 0.05 0.08 0.80 ; } }
+		itemDef { name if_apply_btn_1 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 198 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_btn" showCvar { "1" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_btn 1" ; exec "writeconfig q3config.cfg" ; setitemcolor login_row backcolor 0.03 0.09 0.05 0.86 ; setitemcolor play_row backcolor 0.03 0.09 0.05 0.86 ; setitemcolor setup_row backcolor 0.03 0.09 0.05 0.86 ; setitemcolor demo_row backcolor 0.03 0.09 0.05 0.86 ; setitemcolor credits_row backcolor 0.03 0.09 0.05 0.86 ; } }
+		itemDef { name if_apply_btn_2 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 198 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_btn" showCvar { "2" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_btn 2" ; exec "writeconfig q3config.cfg" ; setitemcolor login_row backcolor 0.09 0.07 0.04 0.82 ; setitemcolor play_row backcolor 0.09 0.07 0.04 0.82 ; setitemcolor setup_row backcolor 0.09 0.07 0.04 0.82 ; setitemcolor demo_row backcolor 0.09 0.07 0.04 0.82 ; setitemcolor credits_row backcolor 0.09 0.07 0.04 0.82 ; } }
+		itemDef { name if_apply_btn_3 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 198 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_btn" showCvar { "3" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_btn 3" ; exec "writeconfig q3config.cfg" ; setitemcolor login_row backcolor 0.09 0.03 0.04 0.86 ; setitemcolor play_row backcolor 0.09 0.03 0.04 0.86 ; setitemcolor setup_row backcolor 0.09 0.03 0.04 0.86 ; setitemcolor demo_row backcolor 0.09 0.03 0.04 0.86 ; setitemcolor credits_row backcolor 0.09 0.03 0.04 0.86 ; } }
+		itemDef { name if_apply_btn_4 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 198 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_btn" showCvar { "4" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_btn 4" ; exec "writeconfig q3config.cfg" ; setitemcolor login_row backcolor 0.44 0.06 0.24 0.96 ; setitemcolor play_row backcolor 0.44 0.06 0.24 0.96 ; setitemcolor setup_row backcolor 0.44 0.06 0.24 0.96 ; setitemcolor demo_row backcolor 0.44 0.06 0.24 0.96 ; setitemcolor credits_row backcolor 0.44 0.06 0.24 0.96 ; } }
+		itemDef { name if_apply_btn_5 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 198 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_btn" showCvar { "5" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_btn 5" ; exec "writeconfig q3config.cfg" ; setitemcolor login_row backcolor 0.10 0.12 0.16 0.84 ; setitemcolor play_row backcolor 0.10 0.12 0.16 0.84 ; setitemcolor setup_row backcolor 0.10 0.12 0.16 0.84 ; setitemcolor demo_row backcolor 0.10 0.12 0.16 0.84 ; setitemcolor credits_row backcolor 0.10 0.12 0.16 0.84 ; } }
+		itemDef { name if_apply_btn_6 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 198 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_btn" showCvar { "6" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_btn 6" ; exec "writeconfig q3config.cfg" ; setitemcolor login_row backcolor 0.05 0.05 0.05 0.92 ; setitemcolor play_row backcolor 0.05 0.05 0.05 0.92 ; setitemcolor setup_row backcolor 0.05 0.05 0.05 0.92 ; setitemcolor demo_row backcolor 0.05 0.05 0.05 0.92 ; setitemcolor credits_row backcolor 0.05 0.05 0.05 0.92 ; } }
+		itemDef { name if_apply_btn_7 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 198 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_btn" showCvar { "7" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_btn 7" ; exec "writeconfig q3config.cfg" ; setitemcolor login_row backcolor 0 0 0 0.45 ; setitemcolor play_row backcolor 0 0 0 0.45 ; setitemcolor setup_row backcolor 0 0 0 0.45 ; setitemcolor demo_row backcolor 0 0 0 0.45 ; setitemcolor credits_row backcolor 0 0 0 0.45 ; } }
+
+		itemDef { name if_apply_hov_0 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 228 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_hover" showCvar { "", "0" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_hover 0" ; exec "writeconfig q3config.cfg" ; setitemcolor login_row_hover backcolor 0.08 0.13 0.20 0.84 ; setitemcolor play_row_hover backcolor 0.08 0.13 0.20 0.84 ; setitemcolor setup_row_hover backcolor 0.08 0.13 0.20 0.84 ; setitemcolor demo_row_hover backcolor 0.08 0.13 0.20 0.84 ; setitemcolor credits_row_hover backcolor 0.08 0.13 0.20 0.84 ; } }
+		itemDef { name if_apply_hov_1 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 228 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_hover" showCvar { "1" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_hover 1" ; exec "writeconfig q3config.cfg" ; setitemcolor login_row_hover backcolor 0.10 0.26 0.12 0.94 ; setitemcolor play_row_hover backcolor 0.10 0.26 0.12 0.94 ; setitemcolor setup_row_hover backcolor 0.10 0.26 0.12 0.94 ; setitemcolor demo_row_hover backcolor 0.10 0.26 0.12 0.94 ; setitemcolor credits_row_hover backcolor 0.10 0.26 0.12 0.94 ; } }
+		itemDef { name if_apply_hov_2 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 228 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_hover" showCvar { "2" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_hover 2" ; exec "writeconfig q3config.cfg" ; setitemcolor login_row_hover backcolor 0.20 0.14 0.08 0.88 ; setitemcolor play_row_hover backcolor 0.20 0.14 0.08 0.88 ; setitemcolor setup_row_hover backcolor 0.20 0.14 0.08 0.88 ; setitemcolor demo_row_hover backcolor 0.20 0.14 0.08 0.88 ; setitemcolor credits_row_hover backcolor 0.20 0.14 0.08 0.88 ; } }
+		itemDef { name if_apply_hov_3 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 228 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_hover" showCvar { "3" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_hover 3" ; exec "writeconfig q3config.cfg" ; setitemcolor login_row_hover backcolor 0.26 0.07 0.10 0.94 ; setitemcolor play_row_hover backcolor 0.26 0.07 0.10 0.94 ; setitemcolor setup_row_hover backcolor 0.26 0.07 0.10 0.94 ; setitemcolor demo_row_hover backcolor 0.26 0.07 0.10 0.94 ; setitemcolor credits_row_hover backcolor 0.26 0.07 0.10 0.94 ; } }
+		itemDef { name if_apply_hov_4 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 228 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_hover" showCvar { "4" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_hover 4" ; exec "writeconfig q3config.cfg" ; setitemcolor login_row_hover backcolor 0.68 0.12 0.36 0.99 ; setitemcolor play_row_hover backcolor 0.68 0.12 0.36 0.99 ; setitemcolor setup_row_hover backcolor 0.68 0.12 0.36 0.99 ; setitemcolor demo_row_hover backcolor 0.68 0.12 0.36 0.99 ; setitemcolor credits_row_hover backcolor 0.68 0.12 0.36 0.99 ; } }
+		itemDef { name if_apply_hov_5 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 228 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_hover" showCvar { "5" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_hover 5" ; exec "writeconfig q3config.cfg" ; setitemcolor login_row_hover backcolor 0.22 0.26 0.32 0.92 ; setitemcolor play_row_hover backcolor 0.22 0.26 0.32 0.92 ; setitemcolor setup_row_hover backcolor 0.22 0.26 0.32 0.92 ; setitemcolor demo_row_hover backcolor 0.22 0.26 0.32 0.92 ; setitemcolor credits_row_hover backcolor 0.22 0.26 0.32 0.92 ; } }
+		itemDef { name if_apply_hov_6 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 228 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_hover" showCvar { "6" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_hover 6" ; exec "writeconfig q3config.cfg" ; setitemcolor login_row_hover backcolor 0.95 0.95 0.95 0.95 ; setitemcolor play_row_hover backcolor 0.95 0.95 0.95 0.95 ; setitemcolor setup_row_hover backcolor 0.95 0.95 0.95 0.95 ; setitemcolor demo_row_hover backcolor 0.95 0.95 0.95 0.95 ; setitemcolor credits_row_hover backcolor 0.95 0.95 0.95 0.95 ; } }
+		itemDef { name if_apply_hov_7 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 228 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_hover" showCvar { "7" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_hover 7" ; exec "writeconfig q3config.cfg" ; setitemcolor login_row_hover backcolor 0 0 0 0 ; setitemcolor play_row_hover backcolor 0 0 0 0 ; setitemcolor setup_row_hover backcolor 0 0 0 0 ; setitemcolor demo_row_hover backcolor 0 0 0 0 ; setitemcolor credits_row_hover backcolor 0 0 0 0 ; } }
+
+		itemDef { name if_apply_sel_0 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 258 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_sel" showCvar { "", "0" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_sel 0" ; exec "writeconfig q3config.cfg" ; setitemcolor back_btn backcolor 0.12 0.20 0.30 0.90 ; } }
+		itemDef { name if_apply_sel_1 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 258 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_sel" showCvar { "1" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_sel 1" ; exec "writeconfig q3config.cfg" ; setitemcolor back_btn backcolor 0.20 0.40 0.20 0.98 ; } }
+		itemDef { name if_apply_sel_2 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 258 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_sel" showCvar { "2" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_sel 2" ; exec "writeconfig q3config.cfg" ; setitemcolor back_btn backcolor 0.34 0.22 0.12 0.90 ; } }
+		itemDef { name if_apply_sel_3 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 258 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_sel" showCvar { "3" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_sel 3" ; exec "writeconfig q3config.cfg" ; setitemcolor back_btn backcolor 0.40 0.12 0.16 0.98 ; } }
+		itemDef { name if_apply_sel_4 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 258 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_sel" showCvar { "4" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_sel 4" ; exec "writeconfig q3config.cfg" ; setitemcolor back_btn backcolor 0.78 0.12 0.40 0.98 ; } }
+		itemDef { name if_apply_sel_5 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 258 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_sel" showCvar { "5" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_sel 5" ; exec "writeconfig q3config.cfg" ; setitemcolor back_btn backcolor 0.36 0.42 0.50 0.96 ; } }
+		itemDef { name if_apply_sel_6 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 258 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_sel" showCvar { "6" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_sel 6" ; exec "writeconfig q3config.cfg" ; setitemcolor back_btn backcolor 0.95 0.95 0.95 0.95 ; } }
+		itemDef { name if_apply_sel_7 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 258 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_sel" showCvar { "7" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_sel 7" ; exec "writeconfig q3config.cfg" ; setitemcolor back_btn backcolor 0.06 0.08 0.12 0.45 ; } }
+
+		itemDef { name if_apply_txt_0 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 288 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_text" showCvar { "", "0" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_text 0" ; exec "writeconfig q3config.cfg" ; setitemcolor interface_title forecolor 1.00 1.00 1.00 1 ; setitemcolor if_preview_title forecolor 1.00 1.00 1.00 1 ; setitemcolor back_btn_text forecolor 1.00 1.00 1.00 1 ; } }
+		itemDef { name if_apply_txt_1 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 288 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_text" showCvar { "1" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_text 1" ; exec "writeconfig q3config.cfg" ; setitemcolor interface_title forecolor 0.85 0.90 1.00 1 ; setitemcolor if_preview_title forecolor 0.85 0.90 1.00 1 ; setitemcolor back_btn_text forecolor 0.85 0.90 1.00 1 ; } }
+		itemDef { name if_apply_txt_2 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 288 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_text" showCvar { "2" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_text 2" ; exec "writeconfig q3config.cfg" ; setitemcolor interface_title forecolor 0.72 0.86 1.00 1 ; setitemcolor if_preview_title forecolor 0.72 0.86 1.00 1 ; setitemcolor back_btn_text forecolor 0.72 0.86 1.00 1 ; } }
+		itemDef { name if_apply_txt_3 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 288 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_text" showCvar { "3" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_text 3" ; exec "writeconfig q3config.cfg" ; setitemcolor interface_title forecolor 0.72 1.00 0.88 1 ; setitemcolor if_preview_title forecolor 0.72 1.00 0.88 1 ; setitemcolor back_btn_text forecolor 0.72 1.00 0.88 1 ; } }
+		itemDef { name if_apply_txt_4 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 288 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_text" showCvar { "4" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_text 4" ; exec "writeconfig q3config.cfg" ; setitemcolor interface_title forecolor 0.98 0.87 0.40 1 ; setitemcolor if_preview_title forecolor 0.98 0.87 0.40 1 ; setitemcolor back_btn_text forecolor 0.98 0.87 0.40 1 ; } }
+		itemDef { name if_apply_txt_5 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 288 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_text" showCvar { "5" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_text 5" ; exec "writeconfig q3config.cfg" ; setitemcolor interface_title forecolor 1.00 0.45 0.45 1 ; setitemcolor if_preview_title forecolor 1.00 0.45 0.45 1 ; setitemcolor back_btn_text forecolor 1.00 0.45 0.45 1 ; } }
+		itemDef { name if_apply_txt_6 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 288 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_text" showCvar { "6" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_text 6" ; exec "writeconfig q3config.cfg" ; setitemcolor interface_title forecolor 1.00 0.48 0.82 1 ; setitemcolor if_preview_title forecolor 1.00 0.48 0.82 1 ; setitemcolor back_btn_text forecolor 1.00 0.48 0.82 1 ; } }
+		itemDef { name if_apply_txt_7 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 288 56 24 backcolor 0.08 0.12 0.18 0.55 border 0 text "Apply" textalign 1 textalignx 28 textaligny 17 textscale .16 forecolor 0.95 0.95 0.98 1 visible 1 cvarTest "ui_urt4max_custom_text" showCvar { "7" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_text 7" ; exec "writeconfig q3config.cfg" ; setitemcolor interface_title forecolor 0.05 0.05 0.05 1 ; setitemcolor if_preview_title forecolor 0.05 0.05 0.05 1 ; setitemcolor back_btn_text forecolor 0.05 0.05 0.05 1 ; } }
+
+		itemDef { name if_apply_theme_0 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 126 56 24 backcolor 0.10 0.18 0.28 0.62 border 0 text "Preset" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.98 0.96 0.90 1 visible 1 cvarTest "ui_urt4max_theme" showCvar { "", "0" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 0" ; exec "seta ui_urt4max_custom_btn 0" ; exec "seta ui_urt4max_custom_hover 0" ; exec "seta ui_urt4max_custom_sel 0" ; exec "seta ui_urt4max_custom_text 0" ;exec "seta ui_urt4max_custom_table 0" ;  exec "writeconfig q3config.cfg" ; } mouseEnter { setcolor backcolor 0.16 0.28 0.42 0.82 } mouseExit { setcolor backcolor 0.10 0.18 0.28 0.62 } }
+		itemDef { name if_apply_theme_1 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 126 56 24 backcolor 0.10 0.18 0.28 0.62 border 0 text "Preset" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.98 0.96 0.90 1 visible 1 cvarTest "ui_urt4max_theme" showCvar { "1" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 6" ; exec "seta ui_urt4max_custom_btn 5" ; exec "seta ui_urt4max_custom_hover 6" ; exec "seta ui_urt4max_custom_sel 6" ; exec "seta ui_urt4max_custom_text 0" ;exec "seta ui_urt4max_custom_table 6" ;  exec "writeconfig q3config.cfg" ; } mouseEnter { setcolor backcolor 0.16 0.28 0.42 0.82 } mouseExit { setcolor backcolor 0.10 0.18 0.28 0.62 } }
+		itemDef { name if_apply_theme_2 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 126 56 24 backcolor 0.10 0.18 0.28 0.62 border 0 text "Preset" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.98 0.96 0.90 1 visible 1 cvarTest "ui_urt4max_theme" showCvar { "2" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 0" ; exec "seta ui_urt4max_custom_btn 0" ; exec "seta ui_urt4max_custom_hover 0" ; exec "seta ui_urt4max_custom_sel 0" ; exec "seta ui_urt4max_custom_text 2" ;exec "seta ui_urt4max_custom_table 0" ;  exec "writeconfig q3config.cfg" ; } mouseEnter { setcolor backcolor 0.16 0.28 0.42 0.82 } mouseExit { setcolor backcolor 0.10 0.18 0.28 0.62 } }
+		itemDef { name if_apply_theme_3 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 126 56 24 backcolor 0.10 0.18 0.28 0.62 border 0 text "Preset" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.98 0.96 0.90 1 visible 1 cvarTest "ui_urt4max_theme" showCvar { "3" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 5" ; exec "seta ui_urt4max_custom_btn 5" ; exec "seta ui_urt4max_custom_hover 0" ; exec "seta ui_urt4max_custom_sel 0" ; exec "seta ui_urt4max_custom_text 2" ;exec "seta ui_urt4max_custom_table 5" ;  exec "writeconfig q3config.cfg" ; } mouseEnter { setcolor backcolor 0.16 0.28 0.42 0.82 } mouseExit { setcolor backcolor 0.10 0.18 0.28 0.62 } }
+		itemDef { name if_apply_theme_4 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 126 56 24 backcolor 0.10 0.18 0.28 0.62 border 0 text "Preset" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.98 0.96 0.90 1 visible 1 cvarTest "ui_urt4max_theme" showCvar { "4" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 1" ; exec "seta ui_urt4max_custom_btn 1" ; exec "seta ui_urt4max_custom_hover 1" ; exec "seta ui_urt4max_custom_sel 1" ; exec "seta ui_urt4max_custom_text 3" ;exec "seta ui_urt4max_custom_table 1" ;  exec "writeconfig q3config.cfg" ; } mouseEnter { setcolor backcolor 0.16 0.28 0.42 0.82 } mouseExit { setcolor backcolor 0.10 0.18 0.28 0.62 } }
+		itemDef { name if_apply_theme_5 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 126 56 24 backcolor 0.10 0.18 0.28 0.62 border 0 text "Preset" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.98 0.96 0.90 1 visible 1 cvarTest "ui_urt4max_theme" showCvar { "5" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 1" ; exec "seta ui_urt4max_custom_btn 1" ; exec "seta ui_urt4max_custom_hover 1" ; exec "seta ui_urt4max_custom_sel 1" ; exec "seta ui_urt4max_custom_text 0" ;exec "seta ui_urt4max_custom_table 1" ;  exec "writeconfig q3config.cfg" ; } mouseEnter { setcolor backcolor 0.16 0.28 0.42 0.82 } mouseExit { setcolor backcolor 0.10 0.18 0.28 0.62 } }
+		itemDef { name if_apply_theme_6 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 126 56 24 backcolor 0.10 0.18 0.28 0.62 border 0 text "Preset" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.98 0.96 0.90 1 visible 1 cvarTest "ui_urt4max_theme" showCvar { "6" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 2" ; exec "seta ui_urt4max_custom_btn 2" ; exec "seta ui_urt4max_custom_hover 2" ; exec "seta ui_urt4max_custom_sel 2" ; exec "seta ui_urt4max_custom_text 4" ;exec "seta ui_urt4max_custom_table 2" ;  exec "writeconfig q3config.cfg" ; } mouseEnter { setcolor backcolor 0.16 0.28 0.42 0.82 } mouseExit { setcolor backcolor 0.10 0.18 0.28 0.62 } }
+		itemDef { name if_apply_theme_7 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 126 56 24 backcolor 0.10 0.18 0.28 0.62 border 0 text "Preset" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.98 0.96 0.90 1 visible 1 cvarTest "ui_urt4max_theme" showCvar { "7" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 3" ; exec "seta ui_urt4max_custom_btn 3" ; exec "seta ui_urt4max_custom_hover 3" ; exec "seta ui_urt4max_custom_sel 3" ; exec "seta ui_urt4max_custom_text 5" ;exec "seta ui_urt4max_custom_table 3" ;  exec "writeconfig q3config.cfg" ; } mouseEnter { setcolor backcolor 0.16 0.28 0.42 0.82 } mouseExit { setcolor backcolor 0.10 0.18 0.28 0.62 } }
+		itemDef { name if_apply_theme_8 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 126 56 24 backcolor 0.10 0.18 0.28 0.62 border 0 text "Preset" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.98 0.96 0.90 1 visible 1 cvarTest "ui_urt4max_theme" showCvar { "8" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 3" ; exec "seta ui_urt4max_custom_btn 3" ; exec "seta ui_urt4max_custom_hover 3" ; exec "seta ui_urt4max_custom_sel 3" ; exec "seta ui_urt4max_custom_text 0" ;exec "seta ui_urt4max_custom_table 3" ;  exec "writeconfig q3config.cfg" ; } mouseEnter { setcolor backcolor 0.16 0.28 0.42 0.82 } mouseExit { setcolor backcolor 0.10 0.18 0.28 0.62 } }
+		itemDef { name if_apply_theme_9 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 126 56 24 backcolor 0.10 0.18 0.28 0.62 border 0 text "Preset" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.98 0.96 0.90 1 visible 1 cvarTest "ui_urt4max_theme" showCvar { "9" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 4" ; exec "seta ui_urt4max_custom_btn 4" ; exec "seta ui_urt4max_custom_hover 4" ; exec "seta ui_urt4max_custom_sel 4" ; exec "seta ui_urt4max_custom_text 6" ;exec "seta ui_urt4max_custom_table 4" ;  exec "writeconfig q3config.cfg" ; } mouseEnter { setcolor backcolor 0.16 0.28 0.42 0.82 } mouseExit { setcolor backcolor 0.10 0.18 0.28 0.62 } }
+		itemDef { name if_apply_theme_10 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 126 56 24 backcolor 0.10 0.18 0.28 0.62 border 0 text "Preset" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.98 0.96 0.90 1 visible 1 cvarTest "ui_urt4max_theme" showCvar { "10" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 0" ; exec "seta ui_urt4max_custom_btn 0" ; exec "seta ui_urt4max_custom_hover 0" ; exec "seta ui_urt4max_custom_sel 0" ; exec "seta ui_urt4max_custom_text 2" ;exec "seta ui_urt4max_custom_table 0" ;  exec "writeconfig q3config.cfg" ; } mouseEnter { setcolor backcolor 0.16 0.28 0.42 0.82 } mouseExit { setcolor backcolor 0.10 0.18 0.28 0.62 } }
+		itemDef { name if_apply_theme_11 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 126 56 24 backcolor 0.10 0.18 0.28 0.62 border 0 text "Preset" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.98 0.96 0.90 1 visible 1 cvarTest "ui_urt4max_theme" showCvar { "11" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 0" ; exec "seta ui_urt4max_custom_btn 0" ; exec "seta ui_urt4max_custom_hover 0" ; exec "seta ui_urt4max_custom_sel 0" ; exec "seta ui_urt4max_custom_text 4" ;exec "seta ui_urt4max_custom_table 0" ;  exec "writeconfig q3config.cfg" ; } mouseEnter { setcolor backcolor 0.16 0.28 0.42 0.82 } mouseExit { setcolor backcolor 0.10 0.18 0.28 0.62 } }
+		itemDef { name if_apply_theme_12 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 126 56 24 backcolor 0.10 0.18 0.28 0.62 border 0 text "Preset" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.98 0.96 0.90 1 visible 1 cvarTest "ui_urt4max_theme" showCvar { "12" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 5" ; exec "seta ui_urt4max_custom_btn 5" ; exec "seta ui_urt4max_custom_hover 0" ; exec "seta ui_urt4max_custom_sel 0" ; exec "seta ui_urt4max_custom_text 2" ;exec "seta ui_urt4max_custom_table 5" ;  exec "writeconfig q3config.cfg" ; } mouseEnter { setcolor backcolor 0.16 0.28 0.42 0.82 } mouseExit { setcolor backcolor 0.10 0.18 0.28 0.62 } }
+		itemDef { name if_apply_theme_13 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 126 56 24 backcolor 0.10 0.18 0.28 0.62 border 0 text "Preset" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.98 0.96 0.90 1 visible 1 cvarTest "ui_urt4max_theme" showCvar { "13" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 1" ; exec "seta ui_urt4max_custom_btn 1" ; exec "seta ui_urt4max_custom_hover 1" ; exec "seta ui_urt4max_custom_sel 1" ; exec "seta ui_urt4max_custom_text 3" ;exec "seta ui_urt4max_custom_table 1" ;  exec "writeconfig q3config.cfg" ; } mouseEnter { setcolor backcolor 0.16 0.28 0.42 0.82 } mouseExit { setcolor backcolor 0.10 0.18 0.28 0.62 } }
+		itemDef { name if_apply_theme_14 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 126 56 24 backcolor 0.10 0.18 0.28 0.62 border 0 text "Preset" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.98 0.96 0.90 1 visible 1 cvarTest "ui_urt4max_theme" showCvar { "14" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 2" ; exec "seta ui_urt4max_custom_btn 2" ; exec "seta ui_urt4max_custom_hover 2" ; exec "seta ui_urt4max_custom_sel 2" ; exec "seta ui_urt4max_custom_text 0" ;exec "seta ui_urt4max_custom_table 2" ;  exec "writeconfig q3config.cfg" ; } mouseEnter { setcolor backcolor 0.16 0.28 0.42 0.82 } mouseExit { setcolor backcolor 0.10 0.18 0.28 0.62 } }
+		itemDef { name if_apply_theme_15 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 126 56 24 backcolor 0.10 0.18 0.28 0.62 border 0 text "Preset" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.98 0.96 0.90 1 visible 1 cvarTest "ui_urt4max_theme" showCvar { "15" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 5" ; exec "seta ui_urt4max_custom_btn 2" ; exec "seta ui_urt4max_custom_hover 2" ; exec "seta ui_urt4max_custom_sel 2" ; exec "seta ui_urt4max_custom_text 0" ;exec "seta ui_urt4max_custom_table 2" ;  exec "writeconfig q3config.cfg" ; } mouseEnter { setcolor backcolor 0.16 0.28 0.42 0.82 } mouseExit { setcolor backcolor 0.10 0.18 0.28 0.62 } }
+		itemDef { name if_apply_theme_16 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 126 56 24 backcolor 0.10 0.18 0.28 0.62 border 0 text "Preset" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.98 0.96 0.90 1 visible 1 cvarTest "ui_urt4max_theme" showCvar { "16" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 7" ; exec "seta ui_urt4max_custom_btn 5" ; exec "seta ui_urt4max_custom_hover 7" ; exec "seta ui_urt4max_custom_sel 7" ; exec "seta ui_urt4max_custom_text 0" ;exec "seta ui_urt4max_custom_table 6" ;  exec "writeconfig q3config.cfg" ; } mouseEnter { setcolor backcolor 0.16 0.28 0.42 0.82 } mouseExit { setcolor backcolor 0.10 0.18 0.28 0.62 } }
+		itemDef { name if_apply_theme_17 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 126 56 24 backcolor 0.10 0.18 0.28 0.62 border 0 text "Preset" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.98 0.96 0.90 1 visible 1 cvarTest "ui_urt4max_theme" showCvar { "17" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 6" ; exec "seta ui_urt4max_custom_btn 1" ; exec "seta ui_urt4max_custom_hover 1" ; exec "seta ui_urt4max_custom_sel 1" ; exec "seta ui_urt4max_custom_text 0" ;exec "seta ui_urt4max_custom_table 1" ;  exec "writeconfig q3config.cfg" ; } mouseEnter { setcolor backcolor 0.16 0.28 0.42 0.82 } mouseExit { setcolor backcolor 0.10 0.18 0.28 0.62 } }
+		itemDef { name if_apply_theme_18 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 126 56 24 backcolor 0.10 0.18 0.28 0.62 border 0 text "Preset" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.98 0.96 0.90 1 visible 1 cvarTest "ui_urt4max_theme" showCvar { "18" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 6" ; exec "seta ui_urt4max_custom_btn 3" ; exec "seta ui_urt4max_custom_hover 3" ; exec "seta ui_urt4max_custom_sel 3" ; exec "seta ui_urt4max_custom_text 0" ;exec "seta ui_urt4max_custom_table 3" ;  exec "writeconfig q3config.cfg" ; } mouseEnter { setcolor backcolor 0.16 0.28 0.42 0.82 } mouseExit { setcolor backcolor 0.10 0.18 0.28 0.62 } }
+		itemDef { name if_apply_theme_19 type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 476 126 56 24 backcolor 0.10 0.18 0.28 0.62 border 0 text "Preset" textalign 1 textalignx 28 textaligny 17 textscale .15 forecolor 0.98 0.96 0.90 1 visible 1 cvarTest "ui_urt4max_theme" showCvar { "19" } action { play "sound/misc/kcaction.wav" ; exec "seta ui_urt4max_custom_bg 2" ; exec "seta ui_urt4max_custom_btn 2" ; exec "seta ui_urt4max_custom_hover 2" ; exec "seta ui_urt4max_custom_sel 2" ; exec "seta ui_urt4max_custom_text 0" ;exec "seta ui_urt4max_custom_table 2" ;  exec "writeconfig q3config.cfg" ; } mouseEnter { setcolor backcolor 0.16 0.28 0.42 0.82 } mouseExit { setcolor backcolor 0.10 0.18 0.28 0.62 } }
+
+		itemDef { name if_note text "Apply saves one line. Preset applies all color slots." style 0 textscale .16 rect 184 356 348 16 textalign 0 textalignx 6 textaligny 12 forecolor 0.75 0.79 0.85 0.95 visible 1 decoration }
+		itemDef { name if_note2 text "Use Preset or line Apply buttons, then Reload UI if needed." style 0 textscale .16 rect 184 338 348 16 textalign 0 textalignx 6 textaligny 12 forecolor 0.75 0.79 0.85 0.95 visible 1 decoration }
+
+		itemDef {
+			name if_apply_btn
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			rect 184 386 166 28
+			backcolor 0.06 0.08 0.12 0.55
+			border 0
+			text "Apply"
+			textalign 1
+			textalignx 83
+			textaligny 19
+			textscale .20
+			forecolor 0.95 0.95 0.98 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; exec "writeconfig q3config.cfg" }
+			mouseEnter { setcolor backcolor 0.12 0.2 0.3 0.70 }
+			mouseExit { setcolor backcolor 0.06 0.08 0.12 0.55 }
+		}
+
+		itemDef {
+			name if_apply_reload_btn
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_FILLED
+			rect 366 386 166 28
+			backcolor 0.10 0.18 0.28 0.62
+			border 0
+			text "Apply + Reload UI"
+			textalign 1
+			textalignx 83
+			textaligny 19
+			textscale .20
+			forecolor 0.98 0.96 0.90 1
+			visible 1
+			action { play "sound/misc/kcaction.wav" ; exec "writeconfig q3config.cfg" ; vid_restart }
+			mouseEnter { setcolor backcolor 0.16 0.28 0.42 0.82 }
+			mouseExit { setcolor backcolor 0.10 0.18 0.28 0.62 }
+		}
+
+		itemDef { name back_btn type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 20 418 140 36 backcolor 0.06 0.08 0.12 0.45 forecolor 1 1 1 1 visible 1 action { play "sound/misc/kcaction.wav" ; close interface_menu ; open setup_menu } mouseEnter { setcolor backcolor 0.12 0.2 0.3 0.55 } mouseExit { setcolor backcolor 0.06 0.08 0.12 0.45 } }
+		itemDef { name back_btn_icon style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_back.tga" rect 28 426 20 20 visible 1 decoration }
+		itemDef { name back_btn_text text "Back" type 0 textscale .25 style WINDOW_STYLE_FILLED rect 20 418 140 36 textalign 1 textalignx 86 textaligny 22 backcolor 0 0 0 0 forecolor 1 1 1 1 visible 1 decoration }
+	}
+}
