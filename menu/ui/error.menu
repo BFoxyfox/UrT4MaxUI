@@ -2,74 +2,90 @@
 #include "ui/theme.inc"
 
 {
-	\\ ERROR MENU		 \\
+	\ ERROR POPUP MENU \
 
 	menuDef {
-		#include "ui/theme_common.menu"
 		name "error_popmenu"
 		visible 0
 		fullscreen 0
 		rect 170 80 300 320
 		focusColor 1 1 1 1
 		style 1
-		border 1
+		border 0
 		popup
 		onClose { uiScript clearError }
 		onOpen { }
 		onESC { close error_popmenu ; open main }
 
+		itemDef { name err_panel_0 rect 0 0 300 320 style WINDOW_STYLE_FILLED backcolor 0.06 0.08 0.12 0.88 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "", "0" } }
+		itemDef { name err_panel_1 rect 0 0 300 320 style WINDOW_STYLE_FILLED backcolor 0.04 0.12 0.08 0.90 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "1" } }
+		itemDef { name err_panel_2 rect 0 0 300 320 style WINDOW_STYLE_FILLED backcolor 0.14 0.10 0.05 0.90 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "2" } }
+		itemDef { name err_panel_3 rect 0 0 300 320 style WINDOW_STYLE_FILLED backcolor 0.14 0.05 0.06 0.90 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "3" } }
+		itemDef { name err_panel_4 rect 0 0 300 320 style WINDOW_STYLE_FILLED backcolor 0.28 0.04 0.16 0.94 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "4" } }
+		itemDef { name err_panel_5 rect 0 0 300 320 style WINDOW_STYLE_FILLED backcolor 0.08 0.10 0.12 0.90 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "5" } }
+		itemDef { name err_panel_6 rect 0 0 300 320 style WINDOW_STYLE_FILLED backcolor 0.92 0.92 0.92 0.72 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "6" } }
+		itemDef { name err_panel_7 rect 0 0 300 320 style WINDOW_STYLE_FILLED backcolor 0 0 0 0.76 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "7" } }
 
+		itemDef { name err_header_0 rect 0 0 300 32 style WINDOW_STYLE_FILLED backcolor 0.06 0.08 0.12 0.72 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "", "0" } }
+		itemDef { name err_header_1 rect 0 0 300 32 style WINDOW_STYLE_FILLED backcolor 0.04 0.12 0.08 0.76 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "1" } }
+		itemDef { name err_header_2 rect 0 0 300 32 style WINDOW_STYLE_FILLED backcolor 0.14 0.10 0.05 0.78 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "2" } }
+		itemDef { name err_header_3 rect 0 0 300 32 style WINDOW_STYLE_FILLED backcolor 0.14 0.05 0.06 0.78 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "3" } }
+		itemDef { name err_header_4 rect 0 0 300 32 style WINDOW_STYLE_FILLED backcolor 0.28 0.04 0.16 0.80 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "4" } }
+		itemDef { name err_header_5 rect 0 0 300 32 style WINDOW_STYLE_FILLED backcolor 0.08 0.10 0.12 0.76 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "5" } }
+		itemDef { name err_header_6 rect 0 0 300 32 style WINDOW_STYLE_FILLED backcolor 0.92 0.92 0.92 0.52 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "6" } }
+		itemDef { name err_header_7 rect 0 0 300 32 style WINDOW_STYLE_FILLED backcolor 0 0 0 0.56 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "7" } }
 
-		itemdef {
-			name background
-			rect 10 15 300 320
-			style WINDOW_STYLE_SHADER
-		background URT4_THEME_BG
-			border 1
-			bordercolor 0.2 0.25 0.3 0.6
+		itemDef { name err_ok_0 rect 210 285 80 26 style WINDOW_STYLE_FILLED backcolor 0.03 0.05 0.08 0.80 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "", "0" } }
+		itemDef { name err_ok_1 rect 210 285 80 26 style WINDOW_STYLE_FILLED backcolor 0.03 0.09 0.05 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "1" } }
+		itemDef { name err_ok_2 rect 210 285 80 26 style WINDOW_STYLE_FILLED backcolor 0.09 0.07 0.04 0.82 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "2" } }
+		itemDef { name err_ok_3 rect 210 285 80 26 style WINDOW_STYLE_FILLED backcolor 0.09 0.03 0.04 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "3" } }
+		itemDef { name err_ok_4 rect 210 285 80 26 style WINDOW_STYLE_FILLED backcolor 0.44 0.06 0.24 0.96 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "4" } }
+		itemDef { name err_ok_5 rect 210 285 80 26 style WINDOW_STYLE_FILLED backcolor 0.10 0.12 0.16 0.84 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "5" } }
+		itemDef { name err_ok_6 rect 210 285 80 26 style WINDOW_STYLE_FILLED backcolor 0.05 0.05 0.05 0.92 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "6" } }
+		itemDef { name err_ok_7 rect 210 285 80 26 style WINDOW_STYLE_FILLED backcolor 0 0 0 0.45 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "7" } }
+
+		itemDef {
+			name errorname
+			rect 0 0 300 32
+			style 1
+			text "Error"
+			textalign 2
+			textstyle 3
+			textscale .333
+			textalignx 294
+			textaligny 24
+			forecolor 1 1 1 1
+			backcolor 0 0 0 0
 			visible 1
 			decoration
 		}
 
 		itemDef {
-			name errorname
-			rect 10 15 300 25
-			style 1
-			text "error"
-			textalign 2
-			textstyle 0
-			textscale .333
-			textalignx 296
-			textaligny 21
-			forecolor 1 1 1 1
-			backcolor 0.06 0.08 0.12 0.7
-			border 1
-			bordercolor 0.2 0.25 0.3 0.6
+			name err_alert_icon
+			style WINDOW_STYLE_SHADER
+			background "ui/assets/urt4_icon_popup_alert.tga"
+			rect 16 44 26 26
 			visible 1
 			decoration
 		}
 
 		itemDef {
 			name window
-			rect 20 55 280 230
+			rect 12 44 276 232
 			style 1
 			forecolor 0 0 0 0
-			backcolor 0.06 0.08 0.12 0.72
-			border 1
-			bordersize 1
-			bordercolor 0.2 0.25 0.3 0.6
+			backcolor 0 0 0 0.10
+			border 0
 			visible 1
 			decoration
 		}
 
-		//  ERROR TEXT		//
-
 		itemDef {
 			name errorinfo
-			rect 30 65 260 210
+			rect 48 50 236 220
 			type ITEM_TYPE_TEXT
 			style 1
-			textstyle 0
+			textstyle 3
 			autowrapped
 			cvar "com_errorMessage"
 			textalign 0
@@ -81,51 +97,45 @@
 			decoration
 		}
 
-		//  EXIT		//
+		itemDef {
+			name exit_icon
+			style WINDOW_STYLE_SHADER
+			background "ui/assets/urt4_icon_popup_stay.tga"
+			rect 218 291 14 14
+			visible 1
+			decoration
+		}
 
 		itemDef {
 			name exit
-			type 1
-			group grpControlbutton
 			type ITEM_TYPE_BUTTON
 			style WINDOW_STYLE_FILLED
-			rect 220 295 80 26
+			rect 210 285 80 26
 			forecolor 1 1 1 1
-			backcolor 0.06 0.08 0.12 0.7
-			border 1
-			bordercolor 0.2 0.25 0.3 0.6
+			backcolor 0 0 0 0
+			border 0
 			visible 1
-			action { play "sound/misc/kcaction.wav" ;
-			close error_popmenu ;
-			open main }
-			mouseEnter { setcolor backcolor 0.16 0.26 0.38 1}
-			mouseExit { setcolor backcolor 0.06 0.08 0.12 0.7 }
+			action { play "sound/misc/kcaction.wav" ; close error_popmenu ; open main }
+			mouseEnter { setcolor backcolor 1 1 1 0.05 }
+			mouseExit { setcolor backcolor 0 0 0 0 }
 		}
 
 		itemDef {
 			name exit
 			text "Okay"
 			type 0
+			textstyle 3
 			textscale .25
-			group grpControlbutton
-			type ITEM_TYPE_BUTTON
 			style WINDOW_STYLE_FILLED
-			rect 220 295 80 26
+			rect 210 285 80 26
 			textalign 2
 			textalignx 76
 			textaligny 22
 			forecolor 1 1 1 1
 			backcolor 0 0 0 0
-			border 1
-			bordercolor 0.2 0.25 0.3 0.6
+			border 0
 			visible 1
 			decoration
 		}
-
-
 	}
-
-
 }
-
-

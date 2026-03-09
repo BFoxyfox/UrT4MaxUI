@@ -2,113 +2,149 @@
 #include "ui/theme.inc"
 
 {
-	/* 
-	* Auth system - disconnect confirmation popup menu
-	*/
+	/* Disconnect confirmation popup menu */
 
 	menuDef {
-		#include "ui/theme_common.menu"
 		name "disconnect"
 		visible 0
 		fullscreen 0
-		rect 204 122 235 162
+		rect 198 118 244 176
 		focusColor 1 1 1 1
 		style 1
-		border 1
+		border 0
 		popup
 		onopen { setfocus no }
 		onESC { close disconnect ; open main }
 
-		itemdef {
-			name background
-			rect 0 0 235 162
-			style WINDOW_STYLE_SHADER
-		background URT4_THEME_BG
-			border 1
-			bordercolor 0.2 0.25 0.3 0.6
-			visible 1
-			decoration
-		}
+		itemDef { name dc_panel_0 rect 0 0 244 176 style WINDOW_STYLE_FILLED backcolor 0.06 0.08 0.12 0.88 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "", "0" } }
+		itemDef { name dc_panel_1 rect 0 0 244 176 style WINDOW_STYLE_FILLED backcolor 0.04 0.12 0.08 0.90 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "1" } }
+		itemDef { name dc_panel_2 rect 0 0 244 176 style WINDOW_STYLE_FILLED backcolor 0.14 0.10 0.05 0.90 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "2" } }
+		itemDef { name dc_panel_3 rect 0 0 244 176 style WINDOW_STYLE_FILLED backcolor 0.14 0.05 0.06 0.90 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "3" } }
+		itemDef { name dc_panel_4 rect 0 0 244 176 style WINDOW_STYLE_FILLED backcolor 0.28 0.04 0.16 0.94 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "4" } }
+		itemDef { name dc_panel_5 rect 0 0 244 176 style WINDOW_STYLE_FILLED backcolor 0.08 0.10 0.12 0.90 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "5" } }
+		itemDef { name dc_panel_6 rect 0 0 244 176 style WINDOW_STYLE_FILLED backcolor 0.92 0.92 0.92 0.72 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "6" } }
+		itemDef { name dc_panel_7 rect 0 0 244 176 style WINDOW_STYLE_FILLED backcolor 0 0 0 0.76 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "7" } }
+
+		itemDef { name dc_header_0 rect 0 0 244 28 style WINDOW_STYLE_FILLED backcolor 0.06 0.08 0.12 0.72 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "", "0" } }
+		itemDef { name dc_header_1 rect 0 0 244 28 style WINDOW_STYLE_FILLED backcolor 0.04 0.12 0.08 0.76 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "1" } }
+		itemDef { name dc_header_2 rect 0 0 244 28 style WINDOW_STYLE_FILLED backcolor 0.14 0.10 0.05 0.78 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "2" } }
+		itemDef { name dc_header_3 rect 0 0 244 28 style WINDOW_STYLE_FILLED backcolor 0.14 0.05 0.06 0.78 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "3" } }
+		itemDef { name dc_header_4 rect 0 0 244 28 style WINDOW_STYLE_FILLED backcolor 0.28 0.04 0.16 0.80 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "4" } }
+		itemDef { name dc_header_5 rect 0 0 244 28 style WINDOW_STYLE_FILLED backcolor 0.08 0.10 0.12 0.76 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "5" } }
+		itemDef { name dc_header_6 rect 0 0 244 28 style WINDOW_STYLE_FILLED backcolor 0.92 0.92 0.92 0.52 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "6" } }
+		itemDef { name dc_header_7 rect 0 0 244 28 style WINDOW_STYLE_FILLED backcolor 0 0 0 0.56 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "7" } }
+
+		itemDef { name dc_card_0 rect 12 44 220 72 style WINDOW_STYLE_FILLED backcolor 0.03 0.05 0.08 0.62 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "", "0" } }
+		itemDef { name dc_card_1 rect 12 44 220 72 style WINDOW_STYLE_FILLED backcolor 0.03 0.09 0.05 0.66 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "1" } }
+		itemDef { name dc_card_2 rect 12 44 220 72 style WINDOW_STYLE_FILLED backcolor 0.09 0.07 0.04 0.64 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "2" } }
+		itemDef { name dc_card_3 rect 12 44 220 72 style WINDOW_STYLE_FILLED backcolor 0.09 0.03 0.04 0.66 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "3" } }
+		itemDef { name dc_card_4 rect 12 44 220 72 style WINDOW_STYLE_FILLED backcolor 0.24 0.05 0.14 0.70 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "4" } }
+		itemDef { name dc_card_5 rect 12 44 220 72 style WINDOW_STYLE_FILLED backcolor 0.08 0.10 0.12 0.66 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "5" } }
+		itemDef { name dc_card_6 rect 12 44 220 72 style WINDOW_STYLE_FILLED backcolor 0.90 0.90 0.90 0.40 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "6" } }
+		itemDef { name dc_card_7 rect 12 44 220 72 style WINDOW_STYLE_FILLED backcolor 0 0 0 0.42 visible 1 decoration cvarTest "ui_urt4max_custom_table" showCvar { "7" } }
+
+		itemDef { name dc_btn_yes_0 rect 20 128 94 32 style WINDOW_STYLE_FILLED backcolor 0.03 0.05 0.08 0.80 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "", "0" } }
+		itemDef { name dc_btn_yes_1 rect 20 128 94 32 style WINDOW_STYLE_FILLED backcolor 0.03 0.09 0.05 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "1" } }
+		itemDef { name dc_btn_yes_2 rect 20 128 94 32 style WINDOW_STYLE_FILLED backcolor 0.09 0.07 0.04 0.82 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "2" } }
+		itemDef { name dc_btn_yes_3 rect 20 128 94 32 style WINDOW_STYLE_FILLED backcolor 0.09 0.03 0.04 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "3" } }
+		itemDef { name dc_btn_yes_4 rect 20 128 94 32 style WINDOW_STYLE_FILLED backcolor 0.44 0.06 0.24 0.96 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "4" } }
+		itemDef { name dc_btn_yes_5 rect 20 128 94 32 style WINDOW_STYLE_FILLED backcolor 0.10 0.12 0.16 0.84 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "5" } }
+		itemDef { name dc_btn_yes_6 rect 20 128 94 32 style WINDOW_STYLE_FILLED backcolor 0.05 0.05 0.05 0.92 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "6" } }
+		itemDef { name dc_btn_yes_7 rect 20 128 94 32 style WINDOW_STYLE_FILLED backcolor 0 0 0 0.45 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "7" } }
+		itemDef { name dc_btn_no_0 rect 130 128 94 32 style WINDOW_STYLE_FILLED backcolor 0.03 0.05 0.08 0.80 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "", "0" } }
+		itemDef { name dc_btn_no_1 rect 130 128 94 32 style WINDOW_STYLE_FILLED backcolor 0.03 0.09 0.05 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "1" } }
+		itemDef { name dc_btn_no_2 rect 130 128 94 32 style WINDOW_STYLE_FILLED backcolor 0.09 0.07 0.04 0.82 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "2" } }
+		itemDef { name dc_btn_no_3 rect 130 128 94 32 style WINDOW_STYLE_FILLED backcolor 0.09 0.03 0.04 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "3" } }
+		itemDef { name dc_btn_no_4 rect 130 128 94 32 style WINDOW_STYLE_FILLED backcolor 0.44 0.06 0.24 0.96 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "4" } }
+		itemDef { name dc_btn_no_5 rect 130 128 94 32 style WINDOW_STYLE_FILLED backcolor 0.10 0.12 0.16 0.84 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "5" } }
+		itemDef { name dc_btn_no_6 rect 130 128 94 32 style WINDOW_STYLE_FILLED backcolor 0.05 0.05 0.05 0.92 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "6" } }
+		itemDef { name dc_btn_no_7 rect 130 128 94 32 style WINDOW_STYLE_FILLED backcolor 0 0 0 0.45 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "7" } }
 
 		itemDef {
-			name serverinfo
-			rect 0 0 235 25
+			name title
+			rect 0 0 244 28
 			style 1
-			text "Are you sure ?"
+			text "Account Logout"
 			textalign 2
-			textstyle 0
-			textscale .333
-			textalignx 231
-			textaligny 21
+			textstyle 3
+			textscale .33
+			textalignx 238
+			textaligny 22
 			forecolor 1 1 1 1
-			backcolor 0.06 0.08 0.12 0.7
-			border 1
-			bordercolor 0.2 0.25 0.3 0.6
+			backcolor 0 0 0 0
 			visible 1
 			decoration
 		}
-
 
 		itemDef {
-			name window
-			rect 10 40 215 80
-			style 1
-			backcolor 0.06 0.08 0.12 0.7
-			border 1
-			bordercolor 0.2 0.25 0.3 0.6
+			name warning_icon
+			style WINDOW_STYLE_SHADER
+			background "ui/assets/urt4_icon_popup_alert.tga"
+			rect 22 62 28 28
 			visible 1
 			decoration
 		}
-
-
 
 		itemDef {
 			name disconnectmsg
 			wrapped
-			text "Are you sure that \r"
-			"you want to log out ?\r"
+			text "Do you want to sign out\rfrom your game account?\r"
 			style 0
 			decoration
-			textscale .28
-			rect 37 62 110 20
+			textstyle 3
+			textscale .23
+			rect 58 62 164 30
 			textalign 0
 			textalignx 0
-			textaligny 16
+			textaligny 14
 			forecolor 1 1 1 1
 			visible 1
 		}
 
+		itemDef {
+			name yes_icon
+			style WINDOW_STYLE_SHADER
+			background "ui/assets/urt4_icon_popup_leave.tga"
+			rect 28 137 14 14
+			visible 1
+			decoration
+		}
+
+		itemDef {
+			name no_icon
+			style WINDOW_STYLE_SHADER
+			background "ui/assets/urt4_icon_popup_stay.tga"
+			rect 138 137 14 14
+			visible 1
+			decoration
+		}
 
 		itemDef {
 			name no
 			type 1
 			style WINDOW_STYLE_FILLED
-			rect 175 128 50 26
+			rect 130 128 94 32
 			forecolor 1 1 1 1
-			backcolor 0.06 0.08 0.12 0.85
-			border 1
-			bordercolor 0.2 0.25 0.3 0.6
+			backcolor 0 0 0 0
 			visible 1
-			action { play "sound/misc/kcaction.wav" ;
-			close disconnect ; open main }
-			mouseEnter { setitemcolor no backcolor 0.16 0.26 0.38 1 }
-			mouseExit { setitemcolor no backcolor 0.06 0.08 0.12 0.7 }
+			action { play "sound/misc/kcaction.wav" ; close disconnect ; open main }
+			mouseEnter { setitemcolor no backcolor 0.16 0.26 0.38 0.45 }
+			mouseExit { setitemcolor no backcolor 0 0 0 0 }
 		}
 
 		itemDef {
 			name no
-			text "No"
+			text "Cancel"
 			type 0
-			textscale .25
+			textstyle 3
+			textscale .23
 			style WINDOW_STYLE_FILLED
-			rect 175 128 50 26
+			rect 130 128 94 32
 			textalign 2
-			textalignx 46
-			textaligny 22
+			textalignx 89
+			textaligny 26
 			forecolor 1 1 1 1
 			backcolor 0 0 0 0
-			border 1
-			bordercolor 0.2 0.25 0.3 0.6
 			visible 1
 			decoration
 		}
@@ -117,37 +153,30 @@
 			name yes
 			type 1
 			style WINDOW_STYLE_FILLED
-			rect 120 128 50 26
+			rect 20 128 94 32
 			forecolor 1 1 1 1
-			backcolor 0.06 0.08 0.12 0.85
-			border 1
-			bordercolor 0.2 0.25 0.3 0.6
+			backcolor 0 0 0 0
 			visible 1
-			action { play "sound/misc/kcaction.wav" ; uiScript deleteAuthKey ; close disconnect ; open main }
-			mouseEnter { setitemcolor yes backcolor 0.16 0.26 0.38 1 }
-			mouseExit { setitemcolor yes backcolor 0.06 0.08 0.12 0.7 }
+			action { play "sound/misc/kcaction.wav" ; uiScript deleteAuthKey ; close disconnect ; open main ; exec vid_restart }
+			mouseEnter { setitemcolor yes backcolor 0.16 0.26 0.38 0.45 }
+			mouseExit { setitemcolor yes backcolor 0 0 0 0 }
 		}
 
 		itemDef {
 			name yes
-			text "Yes"
+			text "Sign Out"
 			type 0
-			textscale .25
+			textstyle 3
+			textscale .23
 			style WINDOW_STYLE_FILLED
-			rect 120 128 50 26
+			rect 20 128 94 32
 			textalign 2
-			textalignx 46
-			textaligny 22
+			textalignx 89
+			textaligny 26
 			forecolor 1 1 1 1
 			backcolor 0 0 0 0
-			border 1
-			bordercolor 0.2 0.25 0.3 0.6
 			visible 1
 			decoration
 		}
-
 	}
-
-
-
 }

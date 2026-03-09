@@ -13,10 +13,10 @@
 		name "psetup_menu"
 		visible 0
 		fullscreen 0
-		rect 10 20 620 440
+		rect 75 20 490 440
 		focusColor 1 1 1 1
 		style 1
-		border 1
+		border 0
 		popup
 		onEsc  { close psetup_menu ; open setup_menu ; uiScript update "ui_SetName" }
 		onOpen { uiScript update "ui_GetName" ; setfocus window }
@@ -26,10 +26,9 @@
 		itemDef {
 			name window
 			group grpPsetupbutton
-			rect 10 10 600 420
+			rect 10 10 460 420
 			style 1
-			border 1
-			bordercolor 0.2 0.25 0.3 0.6
+			border 0
 			forecolor 1 1 1 1
 			backcolor 0.05 0.07 0.1 0.9
 			visible 1
@@ -38,33 +37,32 @@
 			
 		}
 
-		itemDef {
-			name psetup_close_btn
-			type 1
-			style WINDOW_STYLE_FILLED
-			rect 510 12 80 26
-			forecolor 1 1 1 1
-			backcolor 0.12 0.2 0.3 0.9
-			border 1
-			bordercolor 0.2 0.25 0.3 0.6
-			visible 1
-			action { play "sound/misc/kcaction.wav" ; close psetup_menu ; open setup_menu }
-			mouseEnter { setitemcolor psetup_close_btn backcolor 0.16 0.26 0.38 0.95 }
-			mouseExit { setitemcolor psetup_close_btn backcolor 0.12 0.2 0.3 0.9 }
-		}
+			itemDef {
+				name psetup_close_btn
+				type 1
+				style WINDOW_STYLE_FILLED
+				rect 396 14 74 22
+				forecolor 1 1 1 1
+				backcolor 0.12 0.2 0.3 0.9
+				border 0
+				visible 1
+				action { play "sound/misc/kcaction.wav" ; close psetup_menu ; open setup_menu }
+				mouseEnter { setitemcolor psetup_close_btn backcolor 0.16 0.26 0.38 0.95 }
+				mouseExit { setitemcolor psetup_close_btn backcolor 0.12 0.2 0.3 0.9 }
+			}
 
 		
-		itemDef { name psetup_close_icon style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_close.tga" rect 516 16 16 16 visible 1 decoration }
+		itemDef { name psetup_close_icon style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_close.tga" rect 402 17 14 14 visible 1 decoration }
 itemDef {
 			name psetup_close_text
 			text "Close"
 			type 0
 			textscale .26
 			style WINDOW_STYLE_FILLED
-			rect 510 12 80 26
+			rect 396 14 74 22
 			textalign 1
-			textalignx 48
-			textaligny 18
+			textalignx 44
+			textaligny 17
 			forecolor 1 1 1 1
 			backcolor 0 0 0 0
 			border 0
@@ -78,7 +76,7 @@ itemDef {
 			style WINDOW_STYLE_SHADER
 			visible 0
 			background "ui/assets/angle.tga"
-			rect 580 12 16 16
+			rect 450 12 16 16
 			visible 0
 			decoration
 		}
@@ -89,7 +87,7 @@ itemDef {
 			style WINDOW_STYLE_SHADER
 			visible 0
 			background "ui/assets/angle_on.tga"
-			rect 580 12 16 16
+			rect 450 12 16 16
 			visible 0
 			decoration
 		}
@@ -97,13 +95,13 @@ itemDef {
 		itemDef {
 			name areaname
 			group grpControlbutton
-			text "player setup"
-			textscale .6
-			textalignx 10
-			textaligny 30
-			rect 10 360 200 50
+			text "Pick ally/enemy skins and armband palette"
+			textscale .22
+			textalignx 0
+			textaligny 20
+			rect 20 364 430 28
 			style 1
-			forecolor 1 1 1 .15
+			forecolor 0.82 0.88 0.96 0.45
 			visible 1
 			decoration
 		}
@@ -115,56 +113,58 @@ itemDef {
 		// INSTRUCTIONS // //
 		//////////////////
 
-		itemdef {
-			name instruction_button
-			rect 363 26 70 25
-			type 1
-			style WINDOW_STYLE_FILLED
-			forecolor 1 1 1 1
-			backcolor 0.12 0.2 0.3 0.9
-			border 1
-			bordercolor 0.2 0.25 0.3 0.6
-			visible 1
-			action { setcolor backcolor 0.12 0.2 0.3 0.9; play "sound/misc/kcaction.wav"; close psetup_menu ; open psetup_menu_readme }
-			mouseEnter { setcolor backcolor 0.12 0.2 0.3 0.955}
-			mouseExit { setcolor backcolor 0.12 0.2 0.3 0.9 }
-		}
+			itemdef {
+				name instruction_button
+				rect 336 40 56 18
+				type 1
+				style WINDOW_STYLE_FILLED
+				forecolor 1 1 1 1
+				backcolor 0.12 0.2 0.3 0.9
+				border 0
+				visible 1
+				action { setcolor backcolor 0.12 0.2 0.3 0.9; play "sound/misc/kcaction.wav"; close psetup_menu ; open psetup_menu_readme }
+				mouseEnter { setcolor backcolor 0.12 0.2 0.3 0.955}
+				mouseExit { setcolor backcolor 0.12 0.2 0.3 0.9 }
+			}
 
 		itemdef {
 			name instruction_button2
-			rect 363 26 70 25
+			rect 336 40 56 18
 			type 0
 			text "README"
-			textscale .25
-			textalign 2
-			textalignx 54
-			textaligny 21
-			style WINDOW_STYLE_FILLED
-			forecolor 1 1 1 1
-			backcolor 0 0 0 0
-			border 1
-			bordercolor 0.2 0.25 0.3 0.6
-			visible 1
-			decoration
-		}
-
-		itemDef {
-			name fixed_mod
-			rect 363 57 70 25
-			group "playersettinggroup"
-			type ITEM_TYPE_MULTI
-			text ""
-			cvar "cg_skinFixed"
-			cvarStrList { "^7RELATIVE", "0", "^7FIXED", "1" }
+			textscale .20
 			textalign 1
-			textalignx -4
-			textaligny 21
-			textscale .25
-			visible 1
-			border 1
-			bordercolor 0.2 0.25 0.3 0.6
-			action { play "sound/misc/kcaction.wav" }
-		}
+			textalignx 28
+			textaligny 15
+				style WINDOW_STYLE_FILLED
+				forecolor 1 1 1 1
+				backcolor 0 0 0 0
+				border 0
+				visible 1
+				decoration
+			}
+
+						itemDef {
+							name fixed_mod
+							rect 394 40 58 18
+						group "playersettinggroup"
+						type ITEM_TYPE_MULTI
+					text ""
+					cvar "cg_skinFixed"
+							cvarStrList { "^7RELATIVE", "0", "^7FIXED", "1" }
+							textalign 0
+							textalignx 4
+							textaligny 14
+							textscale .14
+				style WINDOW_STYLE_FILLED
+				forecolor 1 1 1 1
+				backcolor 0.10 0.26 0.20 0.92
+				visible 1
+				border 0
+				action { play "sound/misc/kcaction.wav" }
+				mouseEnter { setitemcolor fixed_mod backcolor 0.12 0.31 0.24 0.96 }
+				mouseExit { setitemcolor fixed_mod backcolor 0.10 0.26 0.20 0.92 }
+			}
 
 		////////////////
 		// PLAYERMENU //
@@ -172,7 +172,7 @@ itemDef {
 
 		itemDef {
 			name namefield
-			rect 0 20 200 20
+			rect 10 20 220 20
 			group "playersettinggroup"
 			type ITEM_TYPE_EDITFIELD
 			text "Nickname:"
@@ -189,7 +189,7 @@ itemDef {
 
 		itemDef {
 			name rgbchooser
-			rect 0 40 200 20
+			rect 10 44 220 20
 			group "playersettinggroup"
 			type ITEM_TYPE_MULTI
 			text "Armband color:"
@@ -202,6 +202,26 @@ itemDef {
 			visible 1
 			action { play "sound/misc/kcaction.wav" }
 		}
+		itemDef {
+			name rgb_palette_bg
+			rect 10 66 220 16
+			style WINDOW_STYLE_FILLED
+			backcolor 0.05 0.07 0.10 0.60
+			visible 1
+			decoration
+		}
+		itemDef { name rgb_white type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 20 68 12 12 backcolor 1 1 1 1 visible 1 action { exec "seta cg_rgb 255 255 255" ; play "sound/misc/kcaction.wav" } }
+		itemDef { name rgb_grey type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 42 68 12 12 backcolor 0.5 0.5 0.5 1 visible 1 action { exec "seta cg_rgb 128 128 128" ; play "sound/misc/kcaction.wav" } }
+		itemDef { name rgb_black type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 64 68 12 12 backcolor 0 0 0 1 visible 1 action { exec "seta cg_rgb 0 0 0" ; play "sound/misc/kcaction.wav" } }
+		itemDef { name rgb_red type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 86 68 12 12 backcolor 1 0 0 1 visible 1 action { exec "seta cg_rgb 255 0 0" ; play "sound/misc/kcaction.wav" } }
+		itemDef { name rgb_green type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 108 68 12 12 backcolor 0 1 0 1 visible 1 action { exec "seta cg_rgb 0 255 0" ; play "sound/misc/kcaction.wav" } }
+		itemDef { name rgb_blue type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 130 68 12 12 backcolor 0 0 1 1 visible 1 action { exec "seta cg_rgb 0 0 255" ; play "sound/misc/kcaction.wav" } }
+		itemDef { name rgb_yellow type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 152 68 12 12 backcolor 1 1 0 1 visible 1 action { exec "seta cg_rgb 255 255 0" ; play "sound/misc/kcaction.wav" } }
+		itemDef { name rgb_cyan type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 174 68 12 12 backcolor 0 1 1 1 visible 1 action { exec "seta cg_rgb 0 255 255" ; play "sound/misc/kcaction.wav" } }
+		itemDef { name rgb_magenta type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 196 68 12 12 backcolor 1 0 1 1 visible 1 action { exec "seta cg_rgb 255 0 255" ; play "sound/misc/kcaction.wav" } }
+
+		itemDef { name psetup_ally_panel style WINDOW_STYLE_FILLED rect 14 108 430 108 backcolor 0.05 0.07 0.10 0.36 visible 1 decoration }
+		itemDef { name psetup_enemy_panel style WINDOW_STYLE_FILLED rect 14 244 430 108 backcolor 0.05 0.07 0.10 0.36 visible 1 decoration }
 
 		///////////////////////
 		// ALLY TEAM CHOSING //
@@ -209,7 +229,7 @@ itemDef {
 
 		itemDef {
 			name instruction
-			rect 0 60 320 20
+			rect 0 86 320 20
 			type ITEM_TYPE_MULTI
 			text "Choose the skin for the ally team:"
 			cvar "cg_skinAlly"
@@ -230,7 +250,7 @@ itemDef {
 			name ally_female0
 			cvarTest "cg_skinAlly"
 			showCvar { "0", "2" }
-			rect 20 88 90 90
+			rect 20 114 96 96
 			style 3
 			type 1
 			action { exec "racered 0" ; exec "raceblue 0" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0 0 0 0 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -242,7 +262,7 @@ itemDef {
 			name ally_female0
 			cvarTest "cg_skinAlly"
 			showCvar { "1" }
-			rect 20 88 90 90
+			rect 20 114 96 96
 			style 3
 			type 1
 			action { exec "racered 0" ; exec "raceblue 0" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0 0 0 0 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -254,7 +274,7 @@ itemDef {
 			name ally_female0
 			cvarTest "cg_skinAlly"
 			showCvar { "3" }
-			rect 20 88 90 90
+			rect 20 114 96 96
 			style 3
 			type 1
 			action { exec "racered 0" ; exec "raceblue 0" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0 0 0 0 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -266,7 +286,7 @@ itemDef {
 			name ally_female0
 			cvarTest "cg_skinAlly"
 			showCvar { "4" }
-			rect 20 88 90 90
+			rect 20 114 96 96
 			style 3
 			type 1
 			action { exec "racered 0" ; exec "raceblue 0" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0 0 0 0 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -278,7 +298,7 @@ itemDef {
 			name ally_female0
 			cvarTest "cg_skinAlly"
 			showCvar { "5" }
-			rect 20 88 90 90
+			rect 20 114 96 96
 			style 3
 			type 1
 			action { exec "racered 0" ; exec "raceblue 0" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0 0 0 0 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -290,7 +310,7 @@ itemDef {
 			name ally_female0
 			cvarTest "cg_skinAlly"
 			showCvar { "6" }
-			rect 20 88 90 90
+			rect 20 114 96 96
 			style 3
 			type 1
 			action { exec "racered 0" ; exec "raceblue 0" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0 0 0 0 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -302,7 +322,7 @@ itemDef {
 			name ally_female0
 			cvarTest "cg_skinAlly"
 			showCvar { "7" }
-			rect 20 88 90 90
+			rect 20 114 96 96
 			style 3
 			type 1
 			action { exec "racered 0" ; exec "raceblue 0" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0 0 0 0 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -314,7 +334,7 @@ itemDef {
 			name ally_female0
 			cvarTest "cg_skinAlly"
 			showCvar { "8" }
-			rect 20 88 90 90
+			rect 20 114 96 96
 			style 3
 			type 1
 			action { exec "racered 0" ; exec "raceblue 0" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0 0 0 0 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -326,7 +346,7 @@ itemDef {
 			name ally_female0
 			cvarTest "cg_skinAlly"
 			showCvar { "9" }
-			rect 20 88 90 90
+			rect 20 114 96 96
 			style 3
 			type 1
 			action { exec "racered 0" ; exec "raceblue 0" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0 0 0 0 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -338,7 +358,7 @@ itemDef {
 			name ally_female0
 			cvarTest "cg_skinAlly"
 			showCvar { "10" }
-			rect 20 88 90 90
+			rect 20 114 96 96
 			style 3
 			type 1
 			action { exec "racered 0" ; exec "raceblue 0" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0 0 0 0 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -350,7 +370,7 @@ itemDef {
 			name ally_female0
 			cvarTest "cg_skinAlly"
 			showCvar { "11" }
-			rect 20 88 90 90
+			rect 20 114 96 96
 			style 3
 			type 1
 			action { exec "racered 0" ; exec "raceblue 0" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0 0 0 0 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -362,7 +382,7 @@ itemDef {
 			name ally_female0
 			cvarTest "cg_skinAlly"
 			showCvar { "12" }
-			rect 20 88 90 90
+			rect 20 114 96 96
 			style 3
 			type 1
 			action { exec "racered 0" ; exec "raceblue 0" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0 0 0 0 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -374,7 +394,7 @@ itemDef {
 			name ally_female0
 			cvarTest "cg_skinAlly"
 			showCvar { "13" }
-			rect 20 88 90 90
+			rect 20 114 96 96
 			style 3
 			type 1
 			action { exec "racered 0" ; exec "raceblue 0" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0 0 0 0 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -386,7 +406,7 @@ itemDef {
 			name ally_female0
 			cvarTest "cg_skinAlly"
 			showCvar { "14" }
-			rect 20 88 90 90
+			rect 20 114 96 96
 			style 3
 			type 1
 			action { exec "racered 0" ; exec "raceblue 0" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0 0 0 0 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -399,7 +419,7 @@ itemDef {
 		// bold border on mouse over
 		itemDef {
 			name ally_female0_br
-			rect 16 84 94 94
+			rect 16 110 100 100
 			style 1
 			backcolor 0.12 0.2 0.3 0.9
 			type 0
@@ -420,7 +440,7 @@ itemDef {
 			name ally_female1
 			cvarTest "cg_skinAlly"
 			showCvar { "0", "2" }
-			rect 128 88 90 90
+			rect 128 114 96 96
 			style 3
 			type 1
 			action { exec "racered 1" ; exec "raceblue 1" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0 0 0 0 }
@@ -432,7 +452,7 @@ itemDef {
 			name ally_female1
 			cvarTest "cg_skinAlly"
 			showCvar { "1" }
-			rect 128 88 90 90
+			rect 128 114 96 96
 			style 3
 			type 1
 			action { exec "racered 1" ; exec "raceblue 1" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0 0 0 0 }
@@ -444,7 +464,7 @@ itemDef {
 			name ally_female1
 			cvarTest "cg_skinAlly"
 			showCvar { "3" }
-			rect 128 88 90 90
+			rect 128 114 96 96
 			style 3
 			type 1
 			action { exec "racered 1" ; exec "raceblue 1" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0 0 0 0 }
@@ -456,7 +476,7 @@ itemDef {
 			name ally_female1
 			cvarTest "cg_skinAlly"
 			showCvar { "4" }
-			rect 128 88 90 90
+			rect 128 114 96 96
 			style 3
 			type 1
 			action { exec "racered 1" ; exec "raceblue 1" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0 0 0 0 }
@@ -468,7 +488,7 @@ itemDef {
 			name ally_female1
 			cvarTest "cg_skinAlly"
 			showCvar { "5" }
-			rect 128 88 90 90
+			rect 128 114 96 96
 			style 3
 			type 1
 			action { exec "racered 1" ; exec "raceblue 1" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0 0 0 0 }
@@ -480,7 +500,7 @@ itemDef {
 			name ally_female1
 			cvarTest "cg_skinAlly"
 			showCvar { "6" }
-			rect 128 88 90 90
+			rect 128 114 96 96
 			style 3
 			type 1
 			action { exec "racered 1" ; exec "raceblue 1" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0 0 0 0 }
@@ -492,7 +512,7 @@ itemDef {
 			name ally_female1
 			cvarTest "cg_skinAlly"
 			showCvar { "7" }
-			rect 128 88 90 90
+			rect 128 114 96 96
 			style 3
 			type 1
 			action { exec "racered 1" ; exec "raceblue 1" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0 0 0 0 }
@@ -504,7 +524,7 @@ itemDef {
 			name ally_female1
 			cvarTest "cg_skinAlly"
 			showCvar { "8" }
-			rect 128 88 90 90
+			rect 128 114 96 96
 			style 3
 			type 1
 			action { exec "racered 1" ; exec "raceblue 1" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0 0 0 0 }
@@ -516,7 +536,7 @@ itemDef {
 			name ally_female1
 			cvarTest "cg_skinAlly"
 			showCvar { "9" }
-			rect 128 88 90 90
+			rect 128 114 96 96
 			style 3
 			type 1
 			action { exec "racered 1" ; exec "raceblue 1" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0 0 0 0 }
@@ -528,7 +548,7 @@ itemDef {
 			name ally_female1
 			cvarTest "cg_skinAlly"
 			showCvar { "10" }
-			rect 128 88 90 90
+			rect 128 114 96 96
 			style 3
 			type 1
 			action { exec "racered 1" ; exec "raceblue 1" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0 0 0 0 }
@@ -540,7 +560,7 @@ itemDef {
 			name ally_female1
 			cvarTest "cg_skinAlly"
 			showCvar { "11" }
-			rect 128 88 90 90
+			rect 128 114 96 96
 			style 3
 			type 1
 			action { exec "racered 1" ; exec "raceblue 1" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0 0 0 0 }
@@ -552,7 +572,7 @@ itemDef {
 			name ally_female1
 			cvarTest "cg_skinAlly"
 			showCvar { "12" }
-			rect 128 88 90 90
+			rect 128 114 96 96
 			style 3
 			type 1
 			action { exec "racered 1" ; exec "raceblue 1" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0 0 0 0 }
@@ -564,7 +584,7 @@ itemDef {
 			name ally_female1
 			cvarTest "cg_skinAlly"
 			showCvar { "13" }
-			rect 128 88 90 90
+			rect 128 114 96 96
 			style 3
 			type 1
 			action { exec "racered 1" ; exec "raceblue 1" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0 0 0 0 }
@@ -576,7 +596,7 @@ itemDef {
 			name ally_female1
 			cvarTest "cg_skinAlly"
 			showCvar { "14" }
-			rect 128 88 90 90
+			rect 128 114 96 96
 			style 3
 			type 1
 			action { exec "racered 1" ; exec "raceblue 1" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0 0 0 0 }
@@ -589,7 +609,7 @@ itemDef {
 		// bold border on mouse over
 		itemDef {
 			name ally_female1_br
-			rect 124 84 94 94
+			rect 124 110 100 100
 			style 1
 			backcolor 0.12 0.2 0.3 0.9
 			type 0
@@ -610,7 +630,7 @@ itemDef {
 			name ally_male2
 			cvarTest "cg_skinAlly"
 			showCvar { "0", "2" }
-			rect 236 88 90 90
+			rect 236 114 96 96
 			style 3
 			type 1
 			action { exec "racered 2" ; exec "raceblue 2" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0 0 0 0 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -622,7 +642,7 @@ itemDef {
 			name ally_male2
 			cvarTest "cg_skinAlly"
 			showCvar { "1" }
-			rect 236 88 90 90
+			rect 236 114 96 96
 			style 3
 			type 1
 			action { exec "racered 2" ; exec "raceblue 2" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0 0 0 0 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -634,7 +654,7 @@ itemDef {
 			name ally_male2
 			cvarTest "cg_skinAlly"
 			showCvar { "3" }
-			rect 236 88 90 90
+			rect 236 114 96 96
 			style 3
 			type 1
 			action { exec "racered 2" ; exec "raceblue 2" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0 0 0 0 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -646,7 +666,7 @@ itemDef {
 			name ally_male2
 			cvarTest "cg_skinAlly"
 			showCvar { "4" }
-			rect 236 88 90 90
+			rect 236 114 96 96
 			style 3
 			type 1
 			action { exec "racered 2" ; exec "raceblue 2" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0 0 0 0 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -658,7 +678,7 @@ itemDef {
 			name ally_male2
 			cvarTest "cg_skinAlly"
 			showCvar { "5" }
-			rect 236 88 90 90
+			rect 236 114 96 96
 			style 3
 			type 1
 			action { exec "racered 2" ; exec "raceblue 2" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0 0 0 0 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -670,7 +690,7 @@ itemDef {
 			name ally_male2
 			cvarTest "cg_skinAlly"
 			showCvar { "6" }
-			rect 236 88 90 90
+			rect 236 114 96 96
 			style 3
 			type 1
 			action { exec "racered 2" ; exec "raceblue 2" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0 0 0 0 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -682,7 +702,7 @@ itemDef {
 			name ally_male2
 			cvarTest "cg_skinAlly"
 			showCvar { "7" }
-			rect 236 88 90 90
+			rect 236 114 96 96
 			style 3
 			type 1
 			action { exec "racered 2" ; exec "raceblue 2" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0 0 0 0 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -694,7 +714,7 @@ itemDef {
 			name ally_male2
 			cvarTest "cg_skinAlly"
 			showCvar { "8" }
-			rect 236 88 90 90
+			rect 236 114 96 96
 			style 3
 			type 1
 			action { exec "racered 2" ; exec "raceblue 2" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0 0 0 0 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -706,7 +726,7 @@ itemDef {
 			name ally_male2
 			cvarTest "cg_skinAlly"
 			showCvar { "9" }
-			rect 236 88 90 90
+			rect 236 114 96 96
 			style 3
 			type 1
 			action { exec "racered 2" ; exec "raceblue 2" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0 0 0 0 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -718,7 +738,7 @@ itemDef {
 			name ally_male2
 			cvarTest "cg_skinAlly"
 			showCvar { "10" }
-			rect 236 88 90 90
+			rect 236 114 96 96
 			style 3
 			type 1
 			action { exec "racered 2" ; exec "raceblue 2" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0 0 0 0 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -730,7 +750,7 @@ itemDef {
 			name ally_male2
 			cvarTest "cg_skinAlly"
 			showCvar { "11" }
-			rect 236 88 90 90
+			rect 236 114 96 96
 			style 3
 			type 1
 			action { exec "racered 2" ; exec "raceblue 2" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0 0 0 0 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -742,7 +762,7 @@ itemDef {
 			name ally_male2
 			cvarTest "cg_skinAlly"
 			showCvar { "12" }
-			rect 236 88 90 90
+			rect 236 114 96 96
 			style 3
 			type 1
 			action { exec "racered 2" ; exec "raceblue 2" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0 0 0 0 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -754,7 +774,7 @@ itemDef {
 			name ally_male2
 			cvarTest "cg_skinAlly"
 			showCvar { "13" }
-			rect 236 88 90 90
+			rect 236 114 96 96
 			style 3
 			type 1
 			action { exec "racered 2" ; exec "raceblue 2" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0 0 0 0 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -766,7 +786,7 @@ itemDef {
 			name ally_male2
 			cvarTest "cg_skinAlly"
 			showCvar { "14" }
-			rect 236 88 90 90
+			rect 236 114 96 96
 			style 3
 			type 1
 			action { exec "racered 2" ; exec "raceblue 2" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0 0 0 0 ; setitemcolor ally_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -779,7 +799,7 @@ itemDef {
 		// bold border on mouse over
 		itemDef {
 			name ally_male2_br
-			rect 232 84 94 94
+			rect 232 110 100 100
 			style 1
 			backcolor 0.12 0.2 0.3 0.9
 			type 0
@@ -800,7 +820,7 @@ itemDef {
 			name ally_male3
 			cvarTest "cg_skinAlly"
 			showCvar { "0", "2" }
-			rect 344 88 90 90
+			rect 344 114 96 96
 			style 3
 			type 1
 			action { exec "racered 3" ; exec "raceblue 3" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0 0 0 0 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -812,7 +832,7 @@ itemDef {
 			name ally_male3
 			cvarTest "cg_skinAlly"
 			showCvar { "1" }
-			rect 344 88 90 90
+			rect 344 114 96 96
 			style 3
 			type 1
 			action { exec "racered 3" ; exec "raceblue 3" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0 0 0 0 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -824,7 +844,7 @@ itemDef {
 			name ally_male3
 			cvarTest "cg_skinAlly"
 			showCvar { "3" }
-			rect 344 88 90 90
+			rect 344 114 96 96
 			style 3
 			type 1
 			action { exec "racered 3" ; exec "raceblue 3" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0 0 0 0 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -836,7 +856,7 @@ itemDef {
 			name ally_male3
 			cvarTest "cg_skinAlly"
 			showCvar { "4" }
-			rect 344 88 90 90
+			rect 344 114 96 96
 			style 3
 			type 1
 			action { exec "racered 3" ; exec "raceblue 3" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0 0 0 0 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -848,7 +868,7 @@ itemDef {
 			name ally_male3
 			cvarTest "cg_skinAlly"
 			showCvar { "5" }
-			rect 344 88 90 90
+			rect 344 114 96 96
 			style 3
 			type 1
 			action { exec "racered 3" ; exec "raceblue 3" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0 0 0 0 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -860,7 +880,7 @@ itemDef {
 			name ally_male3
 			cvarTest "cg_skinAlly"
 			showCvar { "6" }
-			rect 344 88 90 90
+			rect 344 114 96 96
 			style 3
 			type 1
 			action { exec "racered 3" ; exec "raceblue 3" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0 0 0 0 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -872,7 +892,7 @@ itemDef {
 			name ally_male3
 			cvarTest "cg_skinAlly"
 			showCvar { "7" }
-			rect 344 88 90 90
+			rect 344 114 96 96
 			style 3
 			type 1
 			action { exec "racered 3" ; exec "raceblue 3" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0 0 0 0 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -884,7 +904,7 @@ itemDef {
 			name ally_male3
 			cvarTest "cg_skinAlly"
 			showCvar { "8" }
-			rect 344 88 90 90
+			rect 344 114 96 96
 			style 3
 			type 1
 			action { exec "racered 3" ; exec "raceblue 3" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0 0 0 0 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -896,7 +916,7 @@ itemDef {
 			name ally_male3
 			cvarTest "cg_skinAlly"
 			showCvar { "9" }
-			rect 344 88 90 90
+			rect 344 114 96 96
 			style 3
 			type 1
 			action { exec "racered 3" ; exec "raceblue 3" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0 0 0 0 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -908,7 +928,7 @@ itemDef {
 			name ally_male3
 			cvarTest "cg_skinAlly"
 			showCvar { "10" }
-			rect 344 88 90 90
+			rect 344 114 96 96
 			style 3
 			type 1
 			action { exec "racered 3" ; exec "raceblue 3" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0 0 0 0 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -920,7 +940,7 @@ itemDef {
 			name ally_male3
 			cvarTest "cg_skinAlly"
 			showCvar { "11" }
-			rect 344 88 90 90
+			rect 344 114 96 96
 			style 3
 			type 1
 			action { exec "racered 3" ; exec "raceblue 3" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0 0 0 0 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -932,7 +952,7 @@ itemDef {
 			name ally_male3
 			cvarTest "cg_skinAlly"
 			showCvar { "12" }
-			rect 344 88 90 90
+			rect 344 114 96 96
 			style 3
 			type 1
 			action { exec "racered 3" ; exec "raceblue 3" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0 0 0 0 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -944,7 +964,7 @@ itemDef {
 			name ally_male3
 			cvarTest "cg_skinAlly"
 			showCvar { "13" }
-			rect 344 88 90 90
+			rect 344 114 96 96
 			style 3
 			type 1
 			action { exec "racered 3" ; exec "raceblue 3" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0 0 0 0 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -956,7 +976,7 @@ itemDef {
 			name ally_male3
 			cvarTest "cg_skinAlly"
 			showCvar { "14" }
-			rect 344 88 90 90
+			rect 344 114 96 96
 			style 3
 			type 1
 			action { exec "racered 3" ; exec "raceblue 3" ; play "sound/misc/kcaction.wav" ; setitemcolor ally_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_male3_br backcolor 0 0 0 0 ; setitemcolor ally_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor ally_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -969,7 +989,7 @@ itemDef {
 		// bold border on mouse over
 		itemDef {
 			name ally_male3_br
-			rect 340 84 94 94
+			rect 340 110 100 100
 			style 1
 			backcolor 0.12 0.2 0.3 0.9
 			type 0
@@ -1045,7 +1065,7 @@ itemDef {
 
 		itemDef {
 			name instruction
-			rect 0 180 320 20
+			rect 0 222 320 20
 			type ITEM_TYPE_MULTI
 			text "Choose the skin for the enemy team:"
 			cvar "cg_skinEnemy"
@@ -1066,7 +1086,7 @@ itemDef {
 			name enemy_female0
 			cvarTest "cg_skinEnemy"
 			showCvar { "0", "3" }
-			rect 20 206 90 90
+			rect 20 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 0" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0 0 0 0 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1078,7 +1098,7 @@ itemDef {
 			name enemy_female0
 			cvarTest "cg_skinEnemy"
 			showCvar { "1" }
-			rect 20 206 90 90
+			rect 20 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 0" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0 0 0 0 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1090,7 +1110,7 @@ itemDef {
 			name enemy_female0
 			cvarTest "cg_skinEnemy"
 			showCvar { "2" }
-			rect 20 206 90 90
+			rect 20 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 0" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0 0 0 0 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1102,7 +1122,7 @@ itemDef {
 			name enemy_female0
 			cvarTest "cg_skinEnemy"
 			showCvar { "4" }
-			rect 20 206 90 90
+			rect 20 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 0" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0 0 0 0 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1114,7 +1134,7 @@ itemDef {
 			name enemy_female0
 			cvarTest "cg_skinEnemy"
 			showCvar { "5" }
-			rect 20 206 90 90
+			rect 20 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 0" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0 0 0 0 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1126,7 +1146,7 @@ itemDef {
 			name enemy_female0
 			cvarTest "cg_skinEnemy"
 			showCvar { "6" }
-			rect 20 206 90 90
+			rect 20 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 0" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0 0 0 0 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1138,7 +1158,7 @@ itemDef {
 			name enemy_female0
 			cvarTest "cg_skinEnemy"
 			showCvar { "7" }
-			rect 20 206 90 90
+			rect 20 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 0" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0 0 0 0 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1150,7 +1170,7 @@ itemDef {
 			name enemy_female0
 			cvarTest "cg_skinEnemy"
 			showCvar { "8" }
-			rect 20 206 90 90
+			rect 20 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 0" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0 0 0 0 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1162,7 +1182,7 @@ itemDef {
 			name enemy_female0
 			cvarTest "cg_skinEnemy"
 			showCvar { "9" }
-			rect 20 206 90 90
+			rect 20 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 0" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0 0 0 0 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1174,7 +1194,7 @@ itemDef {
 			name enemy_female0
 			cvarTest "cg_skinEnemy"
 			showCvar { "10" }
-			rect 20 206 90 90
+			rect 20 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 0" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0 0 0 0 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1186,7 +1206,7 @@ itemDef {
 			name enemy_female0
 			cvarTest "cg_skinEnemy"
 			showCvar { "11" }
-			rect 20 206 90 90
+			rect 20 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 0" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0 0 0 0 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1198,7 +1218,7 @@ itemDef {
 			name enemy_female0
 			cvarTest "cg_skinEnemy"
 			showCvar { "12" }
-			rect 20 206 90 90
+			rect 20 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 0" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0 0 0 0 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1210,7 +1230,7 @@ itemDef {
 			name enemy_female0
 			cvarTest "cg_skinEnemy"
 			showCvar { "13" }
-			rect 20 206 90 90
+			rect 20 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 0" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0 0 0 0 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1222,7 +1242,7 @@ itemDef {
 			name enemy_female0
 			cvarTest "cg_skinEnemy"
 			showCvar { "14" }
-			rect 20 206 90 90
+			rect 20 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 0" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0 0 0 0 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1235,7 +1255,7 @@ itemDef {
 		// bold border on mouse over
 		itemDef {
 			name enemy_female0_br
-			rect 16 202 94 94
+			rect 16 246 100 100
 			style 1
 			backcolor 0.12 0.2 0.3 0.9
 			type 0
@@ -1256,7 +1276,7 @@ itemDef {
 			name enemy_female1
 			cvarTest "cg_skinEnemy"
 			showCvar { "0", "3" }
-			rect 128 206 90 90
+			rect 128 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 1" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0 0 0 0 }
@@ -1268,7 +1288,7 @@ itemDef {
 			name enemy_female1
 			cvarTest "cg_skinEnemy"
 			showCvar { "1" }
-			rect 128 206 90 90
+			rect 128 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 1" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0 0 0 0 }
@@ -1280,7 +1300,7 @@ itemDef {
 			name enemy_female1
 			cvarTest "cg_skinEnemy"
 			showCvar { "2" }
-			rect 128 206 90 90
+			rect 128 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 1" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0 0 0 0 }
@@ -1292,7 +1312,7 @@ itemDef {
 			name enemy_female1
 			cvarTest "cg_skinEnemy"
 			showCvar { "4" }
-			rect 128 206 90 90
+			rect 128 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 1" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0 0 0 0 }
@@ -1304,7 +1324,7 @@ itemDef {
 			name enemy_female1
 			cvarTest "cg_skinEnemy"
 			showCvar { "5" }
-			rect 128 206 90 90
+			rect 128 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 1" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0 0 0 0 }
@@ -1316,7 +1336,7 @@ itemDef {
 			name enemy_female1
 			cvarTest "cg_skinEnemy"
 			showCvar { "6" }
-			rect 128 206 90 90
+			rect 128 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 1" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0 0 0 0 }
@@ -1328,7 +1348,7 @@ itemDef {
 			name enemy_female1
 			cvarTest "cg_skinEnemy"
 			showCvar { "7" }
-			rect 128 206 90 90
+			rect 128 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 1" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0 0 0 0 }
@@ -1340,7 +1360,7 @@ itemDef {
 			name enemy_female1
 			cvarTest "cg_skinEnemy"
 			showCvar { "8" }
-			rect 128 206 90 90
+			rect 128 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 1" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0 0 0 0 }
@@ -1352,7 +1372,7 @@ itemDef {
 			name enemy_female1
 			cvarTest "cg_skinEnemy"
 			showCvar { "9" }
-			rect 128 206 90 90
+			rect 128 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 1" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0 0 0 0 }
@@ -1364,7 +1384,7 @@ itemDef {
 			name enemy_female1
 			cvarTest "cg_skinEnemy"
 			showCvar { "10" }
-			rect 128 206 90 90
+			rect 128 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 1" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0 0 0 0 }
@@ -1376,7 +1396,7 @@ itemDef {
 			name enemy_female1
 			cvarTest "cg_skinEnemy"
 			showCvar { "11" }
-			rect 128 206 90 90
+			rect 128 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 1" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0 0 0 0 }
@@ -1388,7 +1408,7 @@ itemDef {
 			name enemy_female1
 			cvarTest "cg_skinEnemy"
 			showCvar { "12" }
-			rect 128 206 90 90
+			rect 128 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 1" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0 0 0 0 }
@@ -1400,7 +1420,7 @@ itemDef {
 			name enemy_female1
 			cvarTest "cg_skinEnemy"
 			showCvar { "13" }
-			rect 128 206 90 90
+			rect 128 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 1" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0 0 0 0 }
@@ -1412,7 +1432,7 @@ itemDef {
 			name enemy_female1
 			cvarTest "cg_skinEnemy"
 			showCvar { "14" }
-			rect 128 206 90 90
+			rect 128 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 1" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0 0 0 0 }
@@ -1425,7 +1445,7 @@ itemDef {
 		// bold border on mouse over
 		itemDef {
 			name enemy_female1_br
-			rect 124 202 94 94
+			rect 124 246 100 100
 			style 1
 			backcolor 0.12 0.2 0.3 0.9
 			type 0
@@ -1446,7 +1466,7 @@ itemDef {
 			name enemy_male2
 			cvarTest "cg_skinEnemy"
 			showCvar { "0", "3" }
-			rect 236 206 90 90
+			rect 236 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 2" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0 0 0 0 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1458,7 +1478,7 @@ itemDef {
 			name enemy_male2
 			cvarTest "cg_skinEnemy"
 			showCvar { "1" }
-			rect 236 206 90 90
+			rect 236 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 2" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0 0 0 0 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1470,7 +1490,7 @@ itemDef {
 			name enemy_male2
 			cvarTest "cg_skinEnemy"
 			showCvar { "2" }
-			rect 236 206 90 90
+			rect 236 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 2" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0 0 0 0 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1482,7 +1502,7 @@ itemDef {
 			name enemy_male2
 			cvarTest "cg_skinEnemy"
 			showCvar { "4" }
-			rect 236 206 90 90
+			rect 236 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 2" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0 0 0 0 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1494,7 +1514,7 @@ itemDef {
 			name enemy_male2
 			cvarTest "cg_skinEnemy"
 			showCvar { "5" }
-			rect 236 206 90 90
+			rect 236 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 2" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0 0 0 0 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1506,7 +1526,7 @@ itemDef {
 			name enemy_male2
 			cvarTest "cg_skinEnemy"
 			showCvar { "6" }
-			rect 236 206 90 90
+			rect 236 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 2" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0 0 0 0 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1518,7 +1538,7 @@ itemDef {
 			name enemy_male2
 			cvarTest "cg_skinEnemy"
 			showCvar { "7" }
-			rect 236 206 90 90
+			rect 236 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 2" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0 0 0 0 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1530,7 +1550,7 @@ itemDef {
 			name enemy_male2
 			cvarTest "cg_skinEnemy"
 			showCvar { "8" }
-			rect 236 206 90 90
+			rect 236 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 2" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0 0 0 0 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1542,7 +1562,7 @@ itemDef {
 			name enemy_male2
 			cvarTest "cg_skinEnemy"
 			showCvar { "9" }
-			rect 236 206 90 90
+			rect 236 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 2" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0 0 0 0 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1554,7 +1574,7 @@ itemDef {
 			name enemy_male2
 			cvarTest "cg_skinEnemy"
 			showCvar { "10" }
-			rect 236 206 90 90
+			rect 236 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 2" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0 0 0 0 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1566,7 +1586,7 @@ itemDef {
 			name enemy_male2
 			cvarTest "cg_skinEnemy"
 			showCvar { "11" }
-			rect 236 206 90 90
+			rect 236 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 2" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0 0 0 0 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1578,7 +1598,7 @@ itemDef {
 			name enemy_male2
 			cvarTest "cg_skinEnemy"
 			showCvar { "12" }
-			rect 236 206 90 90
+			rect 236 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 2" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0 0 0 0 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1590,7 +1610,7 @@ itemDef {
 			name enemy_male2
 			cvarTest "cg_skinEnemy"
 			showCvar { "13" }
-			rect 236 206 90 90
+			rect 236 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 2" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0 0 0 0 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1602,7 +1622,7 @@ itemDef {
 			name enemy_male2
 			cvarTest "cg_skinEnemy"
 			showCvar { "14" }
-			rect 236 206 90 90
+			rect 236 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 2" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0 0 0 0 ; setitemcolor enemy_male3_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1615,7 +1635,7 @@ itemDef {
 		// bold border on mouse over
 		itemDef {
 			name enemy_male2_br
-			rect 232 202 94 94
+			rect 232 246 100 100
 			style 1
 			backcolor 0.12 0.2 0.3 0.9
 			type 0
@@ -1636,7 +1656,7 @@ itemDef {
 			name enemy_male3
 			cvarTest "cg_skinEnemy"
 			showCvar { "0", "3" }
-			rect 344 206 90 90
+			rect 344 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 3" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0 0 0 0 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1648,7 +1668,7 @@ itemDef {
 			name enemy_male3
 			cvarTest "cg_skinEnemy"
 			showCvar { "1" }
-			rect 344 206 90 90
+			rect 344 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 3" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0 0 0 0 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1660,7 +1680,7 @@ itemDef {
 			name enemy_male3
 			cvarTest "cg_skinEnemy"
 			showCvar { "2" }
-			rect 344 206 90 90
+			rect 344 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 3" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0 0 0 0 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1672,7 +1692,7 @@ itemDef {
 			name enemy_male3
 			cvarTest "cg_skinEnemy"
 			showCvar { "4" }
-			rect 344 206 90 90
+			rect 344 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 3" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0 0 0 0 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1684,7 +1704,7 @@ itemDef {
 			name enemy_male3
 			cvarTest "cg_skinEnemy"
 			showCvar { "5" }
-			rect 344 206 90 90
+			rect 344 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 3" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0 0 0 0 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1696,7 +1716,7 @@ itemDef {
 			name enemy_male3
 			cvarTest "cg_skinEnemy"
 			showCvar { "6" }
-			rect 344 206 90 90
+			rect 344 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 3" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0 0 0 0 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1708,7 +1728,7 @@ itemDef {
 			name enemy_male3
 			cvarTest "cg_skinEnemy"
 			showCvar { "7" }
-			rect 344 206 90 90
+			rect 344 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 3" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0 0 0 0 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1720,7 +1740,7 @@ itemDef {
 			name enemy_male3
 			cvarTest "cg_skinEnemy"
 			showCvar { "8" }
-			rect 344 206 90 90
+			rect 344 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 3" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0 0 0 0 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1732,7 +1752,7 @@ itemDef {
 			name enemy_male3
 			cvarTest "cg_skinEnemy"
 			showCvar { "9" }
-			rect 344 206 90 90
+			rect 344 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 3" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0 0 0 0 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1744,7 +1764,7 @@ itemDef {
 			name enemy_male3
 			cvarTest "cg_skinEnemy"
 			showCvar { "10" }
-			rect 344 206 90 90
+			rect 344 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 3" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0 0 0 0 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1756,7 +1776,7 @@ itemDef {
 			name enemy_male3
 			cvarTest "cg_skinEnemy"
 			showCvar { "11" }
-			rect 344 206 90 90
+			rect 344 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 3" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0 0 0 0 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1768,7 +1788,7 @@ itemDef {
 			name enemy_male3
 			cvarTest "cg_skinEnemy"
 			showCvar { "12" }
-			rect 344 206 90 90
+			rect 344 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 3" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0 0 0 0 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1780,7 +1800,7 @@ itemDef {
 			name enemy_male3
 			cvarTest "cg_skinEnemy"
 			showCvar { "13" }
-			rect 344 206 90 90
+			rect 344 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 3" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0 0 0 0 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1792,7 +1812,7 @@ itemDef {
 			name enemy_male3
 			cvarTest "cg_skinEnemy"
 			showCvar { "14" }
-			rect 344 206 90 90
+			rect 344 250 96 96
 			style 3
 			type 1
 			action { exec "racefree 3" ; play "sound/misc/kcaction.wav" ; setitemcolor enemy_male2_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_male3_br backcolor 0 0 0 0 ; setitemcolor enemy_female0_br backcolor 0.12 0.2 0.3 0.9 ; setitemcolor enemy_female1_br backcolor 0.12 0.2 0.3 0.9 }
@@ -1805,7 +1825,7 @@ itemDef {
 		// bold border on mouse over
 		itemDef {
 			name enemy_male3_br
-			rect 340 202 94 94
+			rect 340 246 100 100
 			style 1
 			backcolor 0.12 0.2 0.3 0.9
 			type 0

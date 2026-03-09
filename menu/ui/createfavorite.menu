@@ -13,7 +13,7 @@
 		rect 204 122 235 235
 		focusColor 1 1 1 1
 		style 1
-		border 1
+		border 0
 		popup
 		onopen { setfocus nameEntry }
 		onESC { close createfavorite_popmenu ; open joinserver }

@@ -213,6 +213,7 @@
 			text
 			"Registering an account is easy !\r"
 			"Go to the website www.urbanterror.info to create it, it's free.\r"
+            "You also can set your auth by typing in your console /auth-set xxxxxx \r"
 			textscale .3
 			textalign 1
 			textalignx -35

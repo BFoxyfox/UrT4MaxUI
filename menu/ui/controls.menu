@@ -14,7 +14,7 @@
 		rect 20 40 600 400
 		focusColor 1 1 1 1
 		style 1
-		border 1
+		border 0
 		popup
 		onClose
 		{
@@ -39,7 +39,7 @@
 			group grpControlbutton
 			rect 10 10 580 360
 			style 1
-			border 1
+			border 0
 			bordercolor 0.2 0.25 0.3 0.6
 			forecolor 1 1 1 1
 			backcolor 0.05 0.07 0.1 0.97

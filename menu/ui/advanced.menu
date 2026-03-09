@@ -9,7 +9,7 @@
 		rect 20 40 600 400
 		focusColor 1 1 1 1
 		style 1
-		border 1
+		border 0
 		popup
 		onOpen { show grpPhys ; hide grpInput ; hide grpNet ; hide grpRender ; hide grpVis ; hide grpDebug }
 		onEsc { close advanced_menu ; open setup_menu }
@@ -18,7 +18,7 @@
 			name window
 			style 1
 			rect 10 10 580 360
-			border 1
+			border 0
 			bordercolor 0.2 0.25 0.3 0.6
 			forecolor 1 1 1 1
 			backcolor 0.05 0.07 0.1 0.9
@@ -50,7 +50,7 @@
 			rect 510 12 80 26
 			textalign 1
 			textalignx 48
-			textaligny 18
+			textaligny 20
 			forecolor 1 1 1 1
 			backcolor 0 0 0 0
 			border 0

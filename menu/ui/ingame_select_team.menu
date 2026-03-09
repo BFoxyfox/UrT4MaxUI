@@ -23,28 +23,47 @@
 
 		onOpen { }
 
-		itemdef {
-			name window
-			rect 73 79 494 321
-			style WINDOW_STYLE_SHADER
-		background URT4_THEME_BG
-			border 0
-			bordercolor 0 0 0 0
-			visible 0
-			decoration
-		}
+			itemdef {
+				name window
+				rect 73 79 494 321
+				style WINDOW_STYLE_SHADER
+				background URT4_THEME_BG
+				border 0
+				bordercolor 0 0 0 0
+				visible 1
+				decoration
+			}
 
-		itemDef {
-			name window
-			rect 73 79 494 25
-			style WINDOW_STYLE_FILLED
-			forecolor 1 1 1 1
-			backcolor 0.05 0.07 0.10 0.78
-			border 1
-			bordercolor 0.2 0.25 0.3 0.6
-			visible 1
-			decoration
-		}
+			itemDef {
+				name team_panel_tint
+				rect 73 79 494 321
+				style WINDOW_STYLE_FILLED
+				backcolor 0.02 0.04 0.07 0.78
+				border 0
+				visible 1
+				decoration
+			}
+
+			itemDef {
+				name team_panel_topglow
+				rect 73 79 494 26
+				style WINDOW_STYLE_FILLED
+				backcolor 0.10 0.18 0.28 0.22
+				border 0
+				visible 1
+				decoration
+			}
+
+			itemDef {
+				name window
+				rect 73 79 494 25
+				style WINDOW_STYLE_FILLED
+				forecolor 1 1 1 1
+				backcolor 0.05 0.07 0.10 0.78
+				border 0
+				visible 1
+				decoration
+			}
 
 		//  TABS		//
 
@@ -134,6 +153,40 @@
 			visible 1
 			decoration
 		}
+
+		// USER THEME HOVERS (ui_urt4max_custom_hover)
+		itemDef { name team_btn1_hover style WINDOW_STYLE_FILLED rect 446 240 111 30 backcolor 0.08 0.13 0.20 0.84 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "", "0" } }
+		itemDef { name team_btn1_hover style WINDOW_STYLE_FILLED rect 446 240 111 30 backcolor 0.10 0.26 0.12 0.94 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "1" } }
+		itemDef { name team_btn1_hover style WINDOW_STYLE_FILLED rect 446 240 111 30 backcolor 0.20 0.14 0.08 0.88 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "2" } }
+		itemDef { name team_btn1_hover style WINDOW_STYLE_FILLED rect 446 240 111 30 backcolor 0.26 0.07 0.10 0.94 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "3" } }
+		itemDef { name team_btn1_hover style WINDOW_STYLE_FILLED rect 446 240 111 30 backcolor 0.68 0.12 0.36 0.99 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "4" } }
+		itemDef { name team_btn1_hover style WINDOW_STYLE_FILLED rect 446 240 111 30 backcolor 0.22 0.26 0.32 0.92 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "5" } }
+		itemDef { name team_btn1_hover style WINDOW_STYLE_FILLED rect 446 240 111 30 backcolor 0.95 0.95 0.95 0.95 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "6" } }
+		itemDef { name team_btn1_hover style WINDOW_STYLE_FILLED rect 446 240 111 30 backcolor 0 0 0 0 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "7" } }
+		itemDef { name team_btn2_hover style WINDOW_STYLE_FILLED rect 446 280 111 30 backcolor 0.08 0.13 0.20 0.84 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "", "0" } }
+		itemDef { name team_btn2_hover style WINDOW_STYLE_FILLED rect 446 280 111 30 backcolor 0.10 0.26 0.12 0.94 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "1" } }
+		itemDef { name team_btn2_hover style WINDOW_STYLE_FILLED rect 446 280 111 30 backcolor 0.20 0.14 0.08 0.88 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "2" } }
+		itemDef { name team_btn2_hover style WINDOW_STYLE_FILLED rect 446 280 111 30 backcolor 0.26 0.07 0.10 0.94 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "3" } }
+		itemDef { name team_btn2_hover style WINDOW_STYLE_FILLED rect 446 280 111 30 backcolor 0.68 0.12 0.36 0.99 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "4" } }
+		itemDef { name team_btn2_hover style WINDOW_STYLE_FILLED rect 446 280 111 30 backcolor 0.22 0.26 0.32 0.92 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "5" } }
+		itemDef { name team_btn2_hover style WINDOW_STYLE_FILLED rect 446 280 111 30 backcolor 0.95 0.95 0.95 0.95 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "6" } }
+		itemDef { name team_btn2_hover style WINDOW_STYLE_FILLED rect 446 280 111 30 backcolor 0 0 0 0 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "7" } }
+		itemDef { name team_btn3_hover style WINDOW_STYLE_FILLED rect 446 320 111 30 backcolor 0.08 0.13 0.20 0.84 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "", "0" } }
+		itemDef { name team_btn3_hover style WINDOW_STYLE_FILLED rect 446 320 111 30 backcolor 0.10 0.26 0.12 0.94 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "1" } }
+		itemDef { name team_btn3_hover style WINDOW_STYLE_FILLED rect 446 320 111 30 backcolor 0.20 0.14 0.08 0.88 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "2" } }
+		itemDef { name team_btn3_hover style WINDOW_STYLE_FILLED rect 446 320 111 30 backcolor 0.26 0.07 0.10 0.94 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "3" } }
+		itemDef { name team_btn3_hover style WINDOW_STYLE_FILLED rect 446 320 111 30 backcolor 0.68 0.12 0.36 0.99 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "4" } }
+		itemDef { name team_btn3_hover style WINDOW_STYLE_FILLED rect 446 320 111 30 backcolor 0.22 0.26 0.32 0.92 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "5" } }
+		itemDef { name team_btn3_hover style WINDOW_STYLE_FILLED rect 446 320 111 30 backcolor 0.95 0.95 0.95 0.95 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "6" } }
+		itemDef { name team_btn3_hover style WINDOW_STYLE_FILLED rect 446 320 111 30 backcolor 0 0 0 0 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "7" } }
+		itemDef { name team_btn4_hover style WINDOW_STYLE_FILLED rect 446 360 111 30 backcolor 0.08 0.13 0.20 0.84 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "", "0" } }
+		itemDef { name team_btn4_hover style WINDOW_STYLE_FILLED rect 446 360 111 30 backcolor 0.10 0.26 0.12 0.94 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "1" } }
+		itemDef { name team_btn4_hover style WINDOW_STYLE_FILLED rect 446 360 111 30 backcolor 0.20 0.14 0.08 0.88 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "2" } }
+		itemDef { name team_btn4_hover style WINDOW_STYLE_FILLED rect 446 360 111 30 backcolor 0.26 0.07 0.10 0.94 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "3" } }
+		itemDef { name team_btn4_hover style WINDOW_STYLE_FILLED rect 446 360 111 30 backcolor 0.68 0.12 0.36 0.99 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "4" } }
+		itemDef { name team_btn4_hover style WINDOW_STYLE_FILLED rect 446 360 111 30 backcolor 0.22 0.26 0.32 0.92 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "5" } }
+		itemDef { name team_btn4_hover style WINDOW_STYLE_FILLED rect 446 360 111 30 backcolor 0.95 0.95 0.95 0.95 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "6" } }
+		itemDef { name team_btn4_hover style WINDOW_STYLE_FILLED rect 446 360 111 30 backcolor 0 0 0 0 border 0 visible 0 decoration cvarTest "ui_urt4max_custom_hover" showCvar { "7" } }
 
 		itemDef	{
 			name type
@@ -624,8 +677,8 @@
 			{ exec "cmd team free" ; play "sound/misc/kcaction.wav" ;
 			close ingame_ut_select_team;
 			open ingame_ut_select_gear }
-			mouseEnter { setcolor backcolor 0.18 0.24 0.30 0.92}
-			mouseExit { setcolor backcolor 0.05 0.07 0.10 0.78 }
+			mouseEnter { show team_btn1_hover }
+			mouseExit { hide team_btn1_hover }
 			cvarTest "g_gametype"
 			disableCvar { "11" } 
 		}
@@ -645,8 +698,8 @@
 			action
 			{ exec "cmd team free" ; play "sound/misc/kcaction.wav" ;
 			close ingame_ut_select_team }
-			mouseEnter { setcolor backcolor 0.18 0.24 0.30 0.92}
-			mouseExit { setcolor backcolor 0.05 0.07 0.10 0.78 }
+			mouseEnter { show team_btn1_hover }
+			mouseExit { hide team_btn1_hover }
 			cvarTest "g_gametype"
 			enableCvar { "11" } 
 		}
@@ -686,8 +739,8 @@
 			{ exec "cmd team red" ; play "sound/misc/kcaction.wav" ;
 			close ingame_ut_select_team;
 			open ingame_ut_select_gear }
-			mouseEnter { setcolor backcolor 0.18 0.24 0.30 0.92 }
-			mouseExit { setcolor backcolor 0.05 0.07 0.10 0.78 }
+			mouseEnter { show team_btn2_hover }
+			mouseExit { hide team_btn2_hover }
 			cvarTest "g_gametype"
 			hideCvar { "0" ; "1" ; "9" ; "11"} // FFA, LMS, JUMP, GG
 		}
@@ -727,8 +780,8 @@
 			{ exec "cmd team blue" ; play "sound/misc/kcaction.wav" ;
 			close ingame_ut_select_team;
 			open ingame_ut_select_gear }
-			mouseEnter { setcolor backcolor 0.18 0.24 0.30 0.92 }
-			mouseExit { setcolor backcolor 0.05 0.07 0.10 0.78 }
+			mouseEnter { show team_btn3_hover }
+			mouseExit { hide team_btn3_hover }
 			cvarTest "g_gametype"
 			hideCvar { "0" ; "1" ; "9" ; "11"} 
 		}
@@ -767,8 +820,8 @@
 			action
 			{ exec "cmd team s" ; play "sound/misc/kcaction.wav" ;
 			close ingame_ut_select_team }
-			mouseEnter { setcolor backcolor 0.18 0.24 0.30 0.92}
-			mouseExit { setcolor backcolor 0.05 0.07 0.10 0.78 }
+			mouseEnter { show team_btn4_hover }
+			mouseExit { hide team_btn4_hover }
 		}
 
 		itemDef {

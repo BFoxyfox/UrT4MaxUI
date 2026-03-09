@@ -16,7 +16,7 @@
 		rect 158 80 320 340
 		focusColor 1 1 1 1
 		style 1
-		border 1
+		border 0
 		popup
 		onClose { }
 		onOpen { uiScript FindPlayer ; setfocus namefield }
@@ -185,7 +185,7 @@
 		//////////////
 
 		
-		itemDef { name close_icon style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_close.tga" rect 420 290 16 16 visible 1 decoration }
+itemDef { name close_icon style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_popup_stay.tga" rect 420 290 16 16 visible 1 decoration }
 itemDef {
 			name exit
 			text "Close"

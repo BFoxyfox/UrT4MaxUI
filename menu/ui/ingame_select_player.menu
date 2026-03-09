@@ -113,11 +113,11 @@
 			visible 1
 		}
 
-		itemDef {
-			name rgbchooser
-			rect 17 65 200 20
-			group "playersettinggroup"
-			type ITEM_TYPE_MULTI
+			itemDef {
+				name rgbchooser
+				rect 17 65 200 20
+				group "playersettinggroup"
+				type ITEM_TYPE_MULTI
 			text "Armband color:"
 			cvar "cg_rgb"
 			cvarStrList { "^7White", "255 255 255", "^7Grey", "128 128 128", "^7Black", "0 0 0", "^1Red", "255 0 0", "^2Green", "0 255 0", "^4Blue", "0 0 255", "^3Yellow", "255 255 0", "^5Cyan", "0 255 255", "^6Magenta", "255 0 255" }
@@ -125,28 +125,45 @@
 			textalignx 19
 			textaligny 10
 			textscale .25
-			visible 1
-			action { play "sound/misc/kcaction.wav" }
-		}
+				visible 1
+				action { play "sound/misc/kcaction.wav" }
+			}
+			itemDef {
+				name rgb_palette_bg
+				rect 27 83 220 16
+				style WINDOW_STYLE_FILLED
+				backcolor 0.05 0.07 0.10 0.60
+				visible 1
+				decoration
+			}
+			itemDef { name rgb_white type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 37 85 12 12 backcolor 1 1 1 1 visible 1 action { exec "seta cg_rgb 255 255 255" ; play "sound/misc/kcaction.wav" } }
+			itemDef { name rgb_grey type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 59 85 12 12 backcolor 0.5 0.5 0.5 1 visible 1 action { exec "seta cg_rgb 128 128 128" ; play "sound/misc/kcaction.wav" } }
+			itemDef { name rgb_black type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 81 85 12 12 backcolor 0 0 0 1 visible 1 action { exec "seta cg_rgb 0 0 0" ; play "sound/misc/kcaction.wav" } }
+			itemDef { name rgb_red type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 103 85 12 12 backcolor 1 0 0 1 visible 1 action { exec "seta cg_rgb 255 0 0" ; play "sound/misc/kcaction.wav" } }
+			itemDef { name rgb_green type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 125 85 12 12 backcolor 0 1 0 1 visible 1 action { exec "seta cg_rgb 0 255 0" ; play "sound/misc/kcaction.wav" } }
+			itemDef { name rgb_blue type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 147 85 12 12 backcolor 0 0 1 1 visible 1 action { exec "seta cg_rgb 0 0 255" ; play "sound/misc/kcaction.wav" } }
+			itemDef { name rgb_yellow type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 169 85 12 12 backcolor 1 1 0 1 visible 1 action { exec "seta cg_rgb 255 255 0" ; play "sound/misc/kcaction.wav" } }
+			itemDef { name rgb_cyan type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 191 85 12 12 backcolor 0 1 1 1 visible 1 action { exec "seta cg_rgb 0 255 255" ; play "sound/misc/kcaction.wav" } }
+			itemDef { name rgb_magenta type ITEM_TYPE_BUTTON style WINDOW_STYLE_FILLED rect 213 85 12 12 backcolor 1 0 1 1 visible 1 action { exec "seta cg_rgb 255 0 255" ; play "sound/misc/kcaction.wav" } }
 
-		///////////////////////
-		// ALLY TEAM CHOSING //
-		///////////////////////
+			///////////////////////
+			// ALLY TEAM CHOSING //
+			///////////////////////
 
-		itemDef {
-			name instruction
-			rect 17 85 320 20
-			type ITEM_TYPE_MULTI
-			text "Choose the skin for the ally team:"
-			cvar "cg_skinAlly"
+			itemDef {
+				name instruction
+				rect 17 99 320 20
+				type ITEM_TYPE_MULTI
+				text "Choose the skin for the ally team:"
+				cvar "cg_skinAlly"
 			cvarStrList { "^3DEFAULT", "0", "^3GRIFFINS", "1", "^3RED DRAGONS", "2", "^3SWAT", "3", "^3PURPLE HAZE", "4", "^3FUGITIVES", "5", "^3OILERS", "6", "^3ICE DRAGONS", "7", "^3BLACK ICE", "8", "^3DESERT", "9", "^3COWBOY", "10", "^3CAVALRY", "11", "^3DROOGS", "12", "^3DrPINK", "13", "DrBLUE", "14" }
 			textalign 0
 			textalignx 20
-			textaligny 22
-			textscale 0.25
-			visible 1
-			action { play "sound/misc/kcaction.wav" }
-		}
+				textaligny 10
+				textscale 0.25
+				visible 1
+				action { play "sound/misc/kcaction.wav" }
+			}
 
 		/////////////////////////////////////
 		// SELECTION BOX FOR FEMALE 0 ALLY //

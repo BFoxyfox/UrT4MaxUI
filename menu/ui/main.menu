@@ -25,7 +25,7 @@
 		fullScreen 1
 		visible 1
 		focusColor 1 1 1 1
-		onOpen { setcvar ui_urt4max_version "UrT4Max UI 1.1 BETA" ; uiScript stopRefresh ; uiScript update "ui_GetName" ; playlooped "ui/music/mainmenu.wav" }
+		onOpen { setcvar ui_urt4max_version "UrT4Max UI 1.2 BETA" ; uiScript stopRefresh ; uiScript update "ui_GetName" ; playlooped "ui/music/mainmenu.wav" }
 		onESC { uiScript "quit" }
 
 
@@ -51,8 +51,6 @@
 		itemDef { name demo_row_hover style WINDOW_STYLE_FILLED rect 44 236 186 30 backcolor 0.08 0.13 0.20 0.84 visible 0 decoration }
 		itemDef { name credits_row style WINDOW_STYLE_FILLED rect 44 276 186 30 backcolor 0.03 0.05 0.08 0.80 visible 1 decoration }
 		itemDef { name credits_row_hover style WINDOW_STYLE_FILLED rect 44 276 186 30 backcolor 0.08 0.13 0.20 0.84 visible 0 decoration }
-		itemDef { name quitoption_bg style WINDOW_STYLE_FILLED rect 548 4 84 30 backcolor 0.03 0.05 0.08 0.80 visible 1 decoration }
-		itemDef { name quitoption_text text "Quit" type 0 textscale .22 style WINDOW_STYLE_FILLED rect 584 6 50 28 textalign 1 textalignx 25 textaligny 18 backcolor 0 0 0 0 forecolor 1.00 1.00 1.00 1 visible 1 decoration }
 		itemDef { name login_row style WINDOW_STYLE_FILLED rect 2 2 100 18 backcolor 0 0 0 0 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "", "0" } }
 		itemDef { name login_row style WINDOW_STYLE_FILLED rect 2 2 100 18 backcolor 0 0 0 0 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "1" } }
 		itemDef { name login_row style WINDOW_STYLE_FILLED rect 2 2 100 18 backcolor 0 0 0 0 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "2" } }
@@ -154,30 +152,28 @@
 		itemDef { name credits_icon_hover style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_credits.tga" rect 58 281 20 20 visible 0 decoration }
 
 		// QUIT ICON (TOP RIGHT)
-		itemDef { name quitoption_bg style WINDOW_STYLE_FILLED rect 548 4 84 30 backcolor 0.03 0.05 0.08 0.80 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "", "0" } }
-		itemDef { name quitoption_bg style WINDOW_STYLE_FILLED rect 548 4 84 30 backcolor 0.03 0.09 0.05 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "1" } }
-		itemDef { name quitoption_bg style WINDOW_STYLE_FILLED rect 548 4 84 30 backcolor 0.09 0.07 0.04 0.82 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "2" } }
-		itemDef { name quitoption_bg style WINDOW_STYLE_FILLED rect 548 4 84 30 backcolor 0.09 0.03 0.04 0.86 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "3" } }
-		itemDef { name quitoption_bg style WINDOW_STYLE_FILLED rect 548 4 84 30 backcolor 0.44 0.06 0.24 0.96 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "4" } }
-		itemDef { name quitoption_bg style WINDOW_STYLE_FILLED rect 548 4 84 30 backcolor 0.10 0.12 0.16 0.84 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "5" } }
-		itemDef { name quitoption_bg style WINDOW_STYLE_FILLED rect 548 4 84 30 backcolor 0.05 0.05 0.05 0.92 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "6" } }
-		itemDef { name quitoption_bg style WINDOW_STYLE_FILLED rect 548 4 84 30 backcolor 0 0 0 0.45 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "7" } }
-		itemDef { name quitoption_icon style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_quit.tga" rect 560 10 20 20 visible 1 decoration }
-		itemDef { name quitoption_icon_hover style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_quit.tga" rect 560 10 20 20 visible 0 decoration }
-		itemDef { name quitoption_text text "Quit" type 0 textscale .22 style WINDOW_STYLE_FILLED rect 584 6 50 28 textalign 1 textalignx 25 textaligny 18 backcolor 0 0 0 0 forecolor 1.00 1.00 1.00 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "", "0" } }
-		itemDef { name quitoption_text text "Quit" type 0 textscale .22 style WINDOW_STYLE_FILLED rect 584 6 50 28 textalign 1 textalignx 25 textaligny 18 backcolor 0 0 0 0 forecolor 0.85 0.90 1.00 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "1" } }
-		itemDef { name quitoption_text text "Quit" type 0 textscale .22 style WINDOW_STYLE_FILLED rect 584 6 50 28 textalign 1 textalignx 25 textaligny 18 backcolor 0 0 0 0 forecolor 0.72 0.86 1.00 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "2" } }
-		itemDef { name quitoption_text text "Quit" type 0 textscale .22 style WINDOW_STYLE_FILLED rect 584 6 50 28 textalign 1 textalignx 25 textaligny 18 backcolor 0 0 0 0 forecolor 0.72 1.00 0.88 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "3" } }
-		itemDef { name quitoption_text text "Quit" type 0 textscale .22 style WINDOW_STYLE_FILLED rect 584 6 50 28 textalign 1 textalignx 25 textaligny 18 backcolor 0 0 0 0 forecolor 0.98 0.87 0.40 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "4" } }
-		itemDef { name quitoption_text text "Quit" type 0 textscale .22 style WINDOW_STYLE_FILLED rect 584 6 50 28 textalign 1 textalignx 25 textaligny 18 backcolor 0 0 0 0 forecolor 1.00 0.45 0.45 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "5" } }
-		itemDef { name quitoption_text text "Quit" type 0 textscale .22 style WINDOW_STYLE_FILLED rect 584 6 50 28 textalign 1 textalignx 25 textaligny 18 backcolor 0 0 0 0 forecolor 1.00 0.48 0.82 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "6" } }
-		itemDef { name quitoption_text text "Quit" type 0 textscale .22 style WINDOW_STYLE_FILLED rect 584 6 50 28 textalign 1 textalignx 25 textaligny 18 backcolor 0 0 0 0 forecolor 0.05 0.05 0.05 1 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "7" } }
+		itemDef { name quitoption_bg style WINDOW_STYLE_FILLED rect 556 6 74 24 backcolor 0.02 0.03 0.05 0.48 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "", "0" } }
+		itemDef { name quitoption_bg style WINDOW_STYLE_FILLED rect 556 6 74 24 backcolor 0.02 0.06 0.04 0.50 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "1" } }
+		itemDef { name quitoption_bg style WINDOW_STYLE_FILLED rect 556 6 74 24 backcolor 0.06 0.05 0.03 0.49 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "2" } }
+		itemDef { name quitoption_bg style WINDOW_STYLE_FILLED rect 556 6 74 24 backcolor 0.06 0.02 0.03 0.50 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "3" } }
+		itemDef { name quitoption_bg style WINDOW_STYLE_FILLED rect 556 6 74 24 backcolor 0.14 0.04 0.10 0.54 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "4" } }
+		itemDef { name quitoption_bg style WINDOW_STYLE_FILLED rect 556 6 74 24 backcolor 0.06 0.08 0.10 0.50 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "5" } }
+		itemDef { name quitoption_bg style WINDOW_STYLE_FILLED rect 556 6 74 24 backcolor 0.04 0.04 0.04 0.54 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "6" } }
+		itemDef { name quitoption_bg style WINDOW_STYLE_FILLED rect 556 6 74 24 backcolor 0 0 0 0.28 visible 1 decoration cvarTest "ui_urt4max_custom_btn" showCvar { "7" } }
+		itemDef { name quitoption_icon style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_close.tga" rect 564 12 12 12 visible 1 decoration }
+		itemDef { name quitoption_icon_hover style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_close.tga" rect 564 12 12 12 visible 0 decoration }
+		itemDef { name quitoption_text text "Quit" type 0 textscale .19 style WINDOW_STYLE_FILLED rect 582 7 46 22 textalign 1 textalignx 23 textaligny 15 backcolor 0 0 0 0 forecolor 0.82 0.86 0.92 0.90 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "", "0" } }
+		itemDef { name quitoption_text text "Quit" type 0 textscale .19 style WINDOW_STYLE_FILLED rect 582 7 46 22 textalign 1 textalignx 23 textaligny 15 backcolor 0 0 0 0 forecolor 0.82 0.86 0.92 0.90 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "1" } }
+		itemDef { name quitoption_text text "Quit" type 0 textscale .19 style WINDOW_STYLE_FILLED rect 582 7 46 22 textalign 1 textalignx 23 textaligny 15 backcolor 0 0 0 0 forecolor 0.82 0.86 0.92 0.90 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "2" } }
+		itemDef { name quitoption_text text "Quit" type 0 textscale .19 style WINDOW_STYLE_FILLED rect 582 7 46 22 textalign 1 textalignx 23 textaligny 15 backcolor 0 0 0 0 forecolor 0.82 0.86 0.92 0.90 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "3" } }
+		itemDef { name quitoption_text text "Quit" type 0 textscale .19 style WINDOW_STYLE_FILLED rect 582 7 46 22 textalign 1 textalignx 23 textaligny 15 backcolor 0 0 0 0 forecolor 0.82 0.86 0.92 0.90 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "4" } }
+		itemDef { name quitoption_text text "Quit" type 0 textscale .19 style WINDOW_STYLE_FILLED rect 582 7 46 22 textalign 1 textalignx 23 textaligny 15 backcolor 0 0 0 0 forecolor 0.82 0.86 0.92 0.90 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "5" } }
+		itemDef { name quitoption_text text "Quit" type 0 textscale .19 style WINDOW_STYLE_FILLED rect 582 7 46 22 textalign 1 textalignx 23 textaligny 15 backcolor 0 0 0 0 forecolor 0.82 0.86 0.92 0.90 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "6" } }
+		itemDef { name quitoption_text text "Quit" type 0 textscale .19 style WINDOW_STYLE_FILLED rect 582 7 46 22 textalign 1 textalignx 23 textaligny 15 backcolor 0 0 0 0 forecolor 0.82 0.86 0.92 0.90 visible 1 decoration cvarTest "ui_urt4max_custom_text" showCvar { "7" } }
 
 		// CLICK AREAS
 		itemDef {
 			name loginoption
-			cvartest "name"
-			hideCvar { "New_UrT_Player", "Unnamed Player" }
 			cvartest "cl_auth"
 			hideCvar { "10" }
 			type 1
@@ -194,8 +190,6 @@
 
 		itemDef {
 			name loginoption
-			cvartest "name"
-			hideCvar { "New_UrT_Player", "Unnamed Player" }
 			cvartest "cl_auth"
 			showCvar { "10" }
 			type 1
@@ -205,15 +199,13 @@
 			backcolor 0 0 0 0
 			forecolor 1 1 1 1
 			visible 1
-			action { play "sound/misc/kcaction.wav" ; uiScript deleteAuthKey ; exec vid_restart }
+			action { play "sound/misc/kcaction.wav" ; open disconnect }
 			mouseEnter { show login_row_hover ; show login_icon_hover ; hide login_icon }
 			mouseExit { hide login_row_hover ; hide login_icon_hover ; show login_icon }
 		}
 
 		itemDef {
 			name multiplayeroption
-			cvartest "name"
-			hideCvar { "New_UrT_Player", "Unnamed Player" }
 			type 1
 			style WINDOW_STYLE_EMPTY
 			rect 44 156 186 30
@@ -228,8 +220,6 @@
 
 		itemDef {
 			name setupoption
-			cvartest "name"
-			hideCvar { "New_UrT_Player", "Unnamed Player" }
 			type 1
 			style WINDOW_STYLE_EMPTY
 			rect 44 196 186 30
@@ -244,8 +234,6 @@
 
 		itemDef {
 			name demooption
-			cvartest "name"
-			hideCvar { "New_UrT_Player", "Unnamed Player" }
 			type 1
 			style WINDOW_STYLE_EMPTY
 			rect 44 236 186 30
@@ -260,8 +248,6 @@
 
 		itemDef {
 			name creditsoption
-			cvartest "name"
-			hideCvar { "New_UrT_Player", "Unnamed Player" }
 			type 1
 			style WINDOW_STYLE_EMPTY
 			rect 44 276 186 30
@@ -276,11 +262,9 @@
 
 		itemDef {
 			name quitoption
-			cvartest "name"
-			hideCvar { "New_UrT_Player", "Unnamed Player" }
 			type 1
 			style WINDOW_STYLE_EMPTY
-			rect 556 6 78 28
+			rect 556 6 74 24
 			border 0
 			backcolor 0 0 0 0
 			forecolor 1 1 1 1
@@ -291,7 +275,7 @@
 		}
 
 		// VERSIONS (MAIN ONLY)
-						itemDef { name theme_urt4max text "UrT4Max UI 1.1 BETA" style 0 textscale .16 rect 524 458 104 18 textalign 0 textalignx 0 textaligny 13 forecolor 0.92 0.90 0.84 0.95 visible 1 decoration }
+						itemDef { name theme_urt4max text "UrT4Max UI 1.2 BETA" style 0 textscale .16 rect 524 458 104 18 textalign 0 textalignx 0 textaligny 13 forecolor 0.92 0.90 0.84 0.95 visible 1 decoration }
 
 		// RENDERER (MAIN ONLY)
 		itemDef { name resolution_label text "Resolution:" style 0 textscale .14 rect 10 390 80 18 textaligny 13 textalignx 0 forecolor 0.62 0.64 0.68 0.72 visible 1 decoration }
@@ -314,7 +298,7 @@
 		itemDef { name renderer_value type ITEM_TYPE_TEXT cvar "r_glDriver" style 0 textscale .14 rect 90 404 300 18 textaligny 13 textalignx 0 forecolor 0.62 0.64 0.68 0.72 visible 1 decoration }
 		itemDef { name cpu_label text "CPU:" style 0 textscale .14 rect 10 418 80 18 textaligny 13 textalignx 0 forecolor 0.62 0.64 0.68 0.72 visible 1 decoration }
 		itemDef { name cpu_value type ITEM_TYPE_TEXT cvar "sys_cpuString" style 0 textscale .14 rect 90 418 300 18 textaligny 13 textalignx 0 forecolor 0.62 0.64 0.68 0.72 visible 1 decoration }
-		itemDef { name github_label text "Github:" style 0 textscale .14 rect 10 432 80 18 textaligny 13 textalignx 0 forecolor 0.62 0.64 0.68 0.72 visible 1 decoration }
+		itemDef { name github_label text "Git:" style 0 textscale .14 rect 10 432 80 18 textaligny 13 textalignx 0 forecolor 0.62 0.64 0.68 0.72 visible 1 decoration }
 		itemDef { name github_value text "https://github.com/BFoxyfox/UrT4MaxUI" style 0 textscale .14 rect 90 432 300 18 textaligny 13 textalignx 0 forecolor 0.62 0.64 0.68 0.72 visible 1 decoration }
 
 		// LABELS

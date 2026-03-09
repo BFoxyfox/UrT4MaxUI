@@ -15,14 +15,14 @@
 		itemDef {
 			name setup_title
 			text "Setup"
-			style 0
-			textscale .45
-			rect 20 70 200 30
-			textalign 0
-			textalignx 0
-			textaligny 26
-			forecolor 0.95 0.95 0.98 1
-			visible 1
+			style 0 
+			textscale .34 
+			rect 40 78 500 30 
+			textalign 0 
+			textalignx 0 
+			textaligny 22 
+			forecolor 0.95 0.95 0.98 1 
+			visible 1 
 			decoration
 		}
 
@@ -287,7 +287,7 @@
 			backcolor 0 0 0 0
 			forecolor 1 1 1 1
 			visible 1
-			action { play "sound/misc/kcaction.wav" ; close setup_menu ; open createserver }
+			action { play "sound/misc/kcaction.wav" ; open createserver }
 			mouseenter { show setup_row_startserver_hover }
 			mouseexit { hide setup_row_startserver_hover }
 		}

@@ -18,7 +18,6 @@
 	}
 
 	menuDef {
-		#include "ui/theme_common.menu"
 		name "ingame"
 		visible 0
 		fullScreen 0

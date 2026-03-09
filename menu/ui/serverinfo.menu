@@ -13,7 +13,7 @@
 		rect 80 26 520 428
 		focusColor 1 1 1 1
 		style 1
-		border 1
+		border 0
 		popup
 		onClose { }
 		onOpen { uiScript ServerStatus }
@@ -50,7 +50,7 @@
 			style 1
 			text "Server Information"
 			textalign 2
-			textstyle 0
+			textstyle 3
 			textscale .333
 			textalignx 476
 			textaligny 22
@@ -161,7 +161,7 @@
 		}
 
 		
-		itemDef { name close_icon style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_close.tga" rect 484 22 14 14 visible 1 decoration }
+		itemDef { name close_icon style WINDOW_STYLE_SHADER background "ui/assets/urt4_icon_popup_stay.tga" rect 484 22 14 14 visible 1 decoration }
 itemDef {
 			name exit
 			text "Close"
